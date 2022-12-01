@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="写作,计算机,前端" />
+   
+  <meta name="description" content="文初阳的个人博客" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    react生命周期 |  夜落初阳
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  <link rel="stylesheet" href="/dist/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  
+  
+
+  
+
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-react生命周期"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  react生命周期
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/03/30/react生命周期/" class="article-date">
+  <time datetime="2021-03-30T13:54:20.000Z" itemprop="datePublished">2021-03-30</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/计算机/">计算机</a> / <a class="article-category-link" href="/categories/计算机/前端/">前端</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line vab"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.5k</span>
+        </span>
+    </span>
+
+     
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="JS-的生命周期有哪些"><a href="#JS-的生命周期有哪些" class="headerlink" title="JS 的生命周期有哪些"></a>JS 的生命周期有哪些</h1><p>暂且抛开 react ，单说生命周期。一个元素，从出生到死亡的全过程。</p>
+<ol>
+<li>创建元素</li>
+<li>填充内容</li>
+<li>挂载到页面</li>
+<li>更新内容</li>
+<li>销毁元素<br><a href="https://codesandbox.io/s/js-lifecycle-vu9m7?file=/src/index.js" target="_blank" rel="noopener">演示 Demo</a></li>
+</ol>
+<h1 id="react-生命周期有哪些"><a href="#react-生命周期有哪些" class="headerlink" title="react 生命周期有哪些"></a>react 生命周期有哪些</h1><p><a href="https://zh-hans.reactjs.org/docs/react-component.html#the-component-lifecycle" target="_blank" rel="noopener">官网文档组件的生命周期</a></p>
+<ol>
+<li>挂载相关<br><em><a href="#constructor-NaN">constructor()</a><br><a href="#static-getDerivedStateFromProps-props-state">static getDerivedStateFromProps()</a>
+</em><a href="#render">render()</a><br>*<a href="#componentDidMount">componentDidMount()</a><br><em>componentWillMount() 即将过时</em></li>
+<li>更新相关<br>static getDerivedStateFromProps()<br><em><a href="#shouldComponentUpdate">shouldComponentUpdate()</a><br>render()<br><a href="#getSnapshotBeforeUpdate-prevProps-prevState">getSnapshotBeforeUpdate()</a>
+</em><a href="#componentDidUpdate-prevProps-prevState-snapshot">componentDidUpdate()</a><br><em>componentWillUpdate() 即将过时</em><br><em>componentWillReceiveProps() 即将过时</em></li>
+<li>卸载相关<br>*<a href="#componentWillUnmount">componentWillUnmount()</a></li>
+<li>错误处理（抛出错误的时候会调用的方法）<br><a href="#static-getDerivedStateFromError-error-amp-componentDidCatch-error-errorInfo">static getDerivedStateFromError()</a><br><a href="#static-getDerivedStateFromError-error-amp-componentDidCatch-error-errorInfo">componentDidCatch()</a></li>
+</ol>
+<p><a href="https://codesandbox.io/s/life-cycle-nvmcg?file=/src/App.js" target="_blank" rel="noopener">生命周期示例</a><br><a href="https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/" target="_blank" rel="noopener">生命周期图示</a>，点击 Show less common lifecycles 可看见所有的生命周期。<br>正常情况下当你创建了一个组件，会先执行 constructor 方法构建组件，然后是 getDerivedStateFromProps 来从 props 中获取新的 state 值（仅在某些特殊时候需要用），然后是 render 进行组件的渲染，最后挂载到页面之后会执行 componentDidMount 。<br>如果你需要更新一个页面，改变自己的 state 之后，会先执行 getDerivedStateFromProps ，然后执行 shouldComponentUpdate ，如果这个函数返回的是 false ，那么就不继续更新页面（但是此时的 state 值已经改了）。<br>如果确定要继续更新页面的话，会继续执行 render 进行渲染。getSnapshotBeforeUpdate 在渲染出来的新东西挂载到页面之前获取之前的状态，props 和 state，这个函数的返回值会作为 componentDidUpdate 的第三个参数。 componentDidUpdate 在组件更新之后执行。<br>如果子组件出现了错误，那么会先执行父组件的 getDerivedStateFromError 从错误信息获取新的 state 值，然后卸载子组件，在卸载子组件之前执行子组件的 componentWillUnmount 方法。然后执行父组件的 componentDidCatch 捕获错误信息写入日志。<br>如果子组件是正常卸载的话，只会执行子组件的 componentWillUnmount 。</p>
+<h1 id="生命周期方法使用"><a href="#生命周期方法使用" class="headerlink" title="生命周期方法使用"></a>生命周期方法使用</h1><h2 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor()"></a>constructor()</h2><p>常用场景：</p>
+<ol>
+<li>init state</li>
+<li>事件处理函数（注意使用箭头函数或者 bind 来避免 this 潜在的问题）</li>
+</ol>
+<h2 id="render"><a href="#render" class="headerlink" title="render()"></a>render()</h2><ol>
+<li>返回一个 react 元素 <code>&lt;div&gt;&lt;h1&gt;Hi&lt;/h1&gt;&lt;/div&gt;</code></li>
+<li><p>返回多个 react 元素 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;React.Fragment&gt;</span><br><span class="line">   &lt;h1&gt;Hi&lt;/h1&gt;</span><br><span class="line">   &lt;h1&gt;Hello&lt;/h1&gt;</span><br><span class="line">   &lt;h1&gt;Valemagalas&lt;/h1&gt;</span><br><span class="line"> &lt;/React.Fragment&gt;</span><br></pre></td></tr></table></figure>
+<p> 或者省去 React.Fragment , 形如</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;&gt;</span><br><span class="line">  &lt;h1&gt;Hi&lt;/h1&gt;</span><br><span class="line">  &lt;h1&gt;Hello&lt;/h1&gt;</span><br><span class="line">  &lt;h1&gt;Valemagalas&lt;/h1&gt;</span><br><span class="line">&lt;/&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>返回一个挂载在某个元素上的元素，常用于创建对话框。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">return ReactDOM.createPortal(</span><br><span class="line">  this.props.children,</span><br><span class="line">  domNode</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>假如这是一个对话框，组件名为 Dialog , 我们可以把 domNode 设置为根元素，然后在这里面写对话框的具体内容 <code>&lt;Dialog&gt;...&lt;/Dialog&gt;</code></p>
+</li>
+<li>返回 Boolean ，常用于 <code>return flag &amp;&amp; &lt;Child /&gt;</code> ，flag 为 boolean ，如果 flag 为 true ，则渲染 Child 组件，否则什么都不渲染。</li>
+</ol>
+<p>js 有 6 种原始数据类型和三种复杂数据类型: Undefined(undefined), Boolean(false), Number(123), String(“”), BigInt(BigInt(“9”)/9n), Symbol(Symbol()), Null(null), Object({}), Function(()=&gt;{})<br>render 不能返回 undefined, Object, 可以返回 Boolean, Number, String, BigInt, Symbol, Null, Function。<br>其中返回 String 或者 Number，比如 <code>hello</code> 。它会把它直接渲染到页面。<br>BigInt 和 Symbol, Boolean 不会报错。Function 会给出一个警告。<br>允许 <code>return null</code> 但是不允许 <code>return undefined</code></p>
+<h2 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount()"></a>componentDidMount()</h2><p>已经 render ，挂到了 DOM 树上，但是还没有显示到屏幕。<br>常用场景：</p>
+<ol>
+<li>向后台请求数据</li>
+<li>设置 subscription（添加事件订阅），注意要在 componentWillUnmount() 里边 unsubsribe。</li>
+</ol>
+<h2 id="componentDidUpdate-prevProps-prevState-snapshot"><a href="#componentDidUpdate-prevProps-prevState-snapshot" class="headerlink" title="componentDidUpdate(prevProps, prevState, snapshot)"></a>componentDidUpdate(prevProps, prevState, snapshot)</h2><p>在触发更新之后调用，初始化的时候不会调用。<br>如果组件实现了 getSnapshotBeforeUpdate() 生命周期，它的返回值就是这个的第三个参数。<br>如果 shouldComponentUpdate() 的返回值为 false，则不会调用 componentDidUpdate()</p>
+<h2 id="componentWillUnmount"><a href="#componentWillUnmount" class="headerlink" title="componentWillUnmount()"></a>componentWillUnmount()</h2><p>组件销毁之前调用</p>
+<h2 id="shouldComponentUpdate"><a href="#shouldComponentUpdate" class="headerlink" title="shouldComponentUpdate()"></a>shouldComponentUpdate()</h2><p>首次渲染或者使用 forceUpdate() 时不调用此方法，返回 false 时会阻止组件更新。</p>
+<h2 id="forceUpdate-amp-setState"><a href="#forceUpdate-amp-setState" class="headerlink" title="forceUpdate() &amp; setState()"></a>forceUpdate() &amp; setState()</h2><p>这两个是我们主动调用，其它都是 react 自动调用。<br>更新一般发生在 state 或者 props 发生改变的时候，但如果你使用了其他数据，可以用 forceUpdate 来强制更新。<br>forceUpdate 不会触发 shouldComponentUpdate 。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Box1 extends React.Component &#123;</span><br><span class="line">  constructor() &#123;</span><br><span class="line">    super();</span><br><span class="line">    this.name = 2333</span><br><span class="line">  &#125;</span><br><span class="line">  handleClick = ()=&gt;&#123;</span><br><span class="line">    this.name = Math.random()</span><br><span class="line">    this.forceUpdate()</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    console.log(&quot;render&quot;);</span><br><span class="line">    return (</span><br><span class="line">      &lt;div&gt; hello, &#123;this.name&#125;</span><br><span class="line">        &lt;button onClick=&#123;this.handleClick&#125;&gt; Click me &lt;/button&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="static-getDerivedStateFromProps-props-state"><a href="#static-getDerivedStateFromProps-props-state" class="headerlink" title="static getDerivedStateFromProps(props, state)"></a>static getDerivedStateFromProps(props, state)</h2><p>会在调用 render 之前调用，返回一个对象来更新 state，如果返回 null 则不更新任何内容。<a href="https://codesandbox.io/s/getderivedstatefromprops-8zhti?file=/src/App.js" target="_blank" rel="noopener">使用方法</a><br>每次渲染前都会触发这个方法，不论是 props 更新了还是 state 更新了。</p>
+<h2 id="getSnapshotBeforeUpdate-prevProps-prevState"><a href="#getSnapshotBeforeUpdate-prevProps-prevState" class="headerlink" title="getSnapshotBeforeUpdate(prevProps, prevState)"></a>getSnapshotBeforeUpdate(prevProps, prevState)</h2><p>在 update 之前获取一些信息，返回值会传给 componentDidUpdate()</p>
+<h2 id="static-getDerivedStateFromError-error-amp-componentDidCatch-error-errorInfo"><a href="#static-getDerivedStateFromError-error-amp-componentDidCatch-error-errorInfo" class="headerlink" title="static getDerivedStateFromError(error) &amp; componentDidCatch(error, errorInfo)"></a>static getDerivedStateFromError(error) &amp; componentDidCatch(error, errorInfo)</h2><p><a href="https://codesandbox.io/s/error-boundaries-g35gc?file=/src/App.js" target="_blank" rel="noopener">Error boundaries demo</a><br>错误边界，捕获子组件的错误。如果子组件发生了错误，那么显示降级 UI 。这两个用来做这件事情。<br>getDerivedStateFromError 将抛出的错误作为参数，返回新的 state 值。在渲染阶段调用，不允许有副作用（不确定的输出结果）。可以用来设置 state 值，从而渲染降级 UI。<br>componentDidCatch 在后代组件抛出错误时调用，允许有副作用。可以用来写 error log。</p>
+<h1 id="使用总结"><a href="#使用总结" class="headerlink" title="使用总结"></a>使用总结</h1><ol>
+<li>constructor: 数据初始化（state 初始化）、事件监听。<br>其中数据更新会放在点击事件里边，需要注意的是 setState 会触发组件的更新，所以不要在组件更新的钩子里写 setState 。</li>
+<li>componentDidMount: 数据请求、事件订阅</li>
+<li>shouldComponentUpdate: 手动阻止更新</li>
+</ol>
+<p>遇到什么操作该放到哪里的问题时，反向想一想它不能放在哪。比如说 ajax 请求，如果我需要获取数据，那么按说挂载的几个生命周期都可以，constructor, getDerivedStateFromProps, render, componentDidMount, 但是官网说 constructor 中要避免引入副作用， getDerivedStateFromProps 主要用来从 props 获取 state， render 在每次更新的时候都会调用，所以只能放在 componentDidMount 里边了。</p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2021/03/30/react生命周期/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生命周期/">生命周期</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2021/04/02/Hooks使用指南/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Hooks使用指南
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2021/03/29/ReactRouter使用指南/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">ReactRouter使用指南</div>
+      </a>
+    
+  </nav>
+
+  
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2018-2022
+        <i class="ri-heart-fill heart_icon"></i> 文初阳
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        由 <a href="https://hexo.io" target="_blank">Hexo</a> 强力驱动
+        <span class="division">|</span>
+        主题 - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="夜落初阳"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.png">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechatpay.png">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<!-- Tocbot -->
+
+<script src="/js/tocbot.min.js"></script>
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+<script src="/dist/main.js"></script>
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+<link rel="stylesheet" href="/css/clipboard.css">
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+    
+  </div>
+</body>
+
+</html>

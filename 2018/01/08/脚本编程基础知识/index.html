@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="写作,计算机,前端" />
+   
+  <meta name="description" content="文初阳的个人博客" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    脚本编程基础知识 |  夜落初阳
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  <link rel="stylesheet" href="/dist/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  
+  
+
+  
+
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-脚本编程基础知识"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  脚本编程基础知识
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2018/01/08/脚本编程基础知识/" class="article-date">
+  <time datetime="2018-01-08T03:01:48.000Z" itemprop="datePublished">2018-01-08</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/计算机/">计算机</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line vab"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.9k</span>
+        </span>
+    </span>
+
+     
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="你以为什么是脚本？"><a href="#你以为什么是脚本？" class="headerlink" title="你以为什么是脚本？"></a>你以为什么是脚本？</h2><p>&emsp;&emsp;不知道你有没有接触过高级编程语言，比如C、C++、Java等，这些语言的执行通常需要经过编写-编译-链接-运行等过程，而脚本语言则不然。一个脚本通常是解释运行而非编译。<br>&emsp;&emsp;我们在维基百科上搜Script（脚本），得到的结果有两个——剧本和脚本程序。虽然说两个是不一样的东西，但依然是可以放在一起理解的。所谓的剧本，就是演员照着一步一步做的东西。比如下边的这一段<br><img src="https://raw.githubusercontent.com/wenchuyang/ImagesForMarkdown/856d1eae45643b8a5af8bc9aea027822b53a007a/images/90%600S%40Z14FH3WGF%7D~NURDVQ.png" alt><br>&emsp;&emsp;而我们编程领域的脚本程序不是给人照着做的，而是给计算机照着做的。你输入指令，让计算机能够看懂，然后计算机为你一步一步执行这些指令。</p>
+<h2 id="让我们来试着写一个脚本？"><a href="#让我们来试着写一个脚本？" class="headerlink" title="让我们来试着写一个脚本？"></a>让我们来试着写一个脚本？</h2><ol>
+<li>进入一个目录，然后新建脚本文件，一般脚本文件的后缀是.sh，但是它并没有什么用。在Windows下文件的后缀名决定着该文件的默认打开方式，但在命令行下，打开方式是我们手动指定的，比如<code>vim demo.txt</code>或者<code>open -a &#39;Google Chrome&#39; demo.txt</code>都是可以的。所以命令行下我们写后缀主要还是给我们自己看，让我们自己一眼就知道这个文件是个什么文件。<br>&emsp;&emsp;我们在/f/wcy/local文件目录下建立一个demo.sh文件。</li>
+<li><p>编辑demo.sh文件。<code>vim demo.sh</code>(当然，你也可以用其他方式打开然后编辑。或者你也可以写下其他的脚本代码。)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir demo //新建一个名为demo的目录</span><br><span class="line">cd demo //进入demo这个目录</span><br><span class="line">mkdir css js //新建两个文件夹css和js</span><br><span class="line">touch index.html css/style.css js/main.js //新建三个文件</span><br><span class="line">exit //退出</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>（Windows不需要）给demo.sh添加执行权限<code>chmod +x demo.sh</code></p>
+</li>
+<li>在你需要执行该脚本的目录执行<code>sh /f/wcy/local/demo.sh</code>，然后你就可以在当前目录看到你需要的demo文件夹以及里边你使用脚本创建的文件了。</li>
+<li>事实上，你可以现在结束这篇文章，因为你已经成功地运行了一个你自己写的脚本。但是，作为一名程序员，你还需要知道一些其他的东西。比如——把你的脚本文件目录添加到path中。<br>&emsp;&emsp;玩过java的应该对path都不会太陌生，虽然可能并不能理解path的含义，但是多少都应该是听过的。这里我不想太深入写，只能说，path里边可以写一堆目录，我们每次输入命令的时候都会依次在这些目录里边查找有没有同名的文件，如果有就执行。<br>&emsp;&emsp;type命令可以显示这个查找的过程。which命令可以告诉你查询最终的结果是什么，比如<code>which mkdir</code>在我这边执行的结果就是<code>/usr/bin/mkdir</code>。在计算机当中，所有的命令都是可执行文件，也就是，脚本。计算机中不可执行的文件是配置文件，就是我们常说的config文件。<br>&emsp;&emsp;以上，我们只需要把/f/wcy/local（请修改成你的脚本文件存在的目录）添加到<code>~/.bashrc</code>（这个文件不解释了，以前解释过。<a href="http://blog.csdn.net/writing_happy/article/details/78686739" target="_blank" rel="noopener">常见问题合集，修改bash命令路径下有这个文件的作用</a>，事实上你可以不用了解。）<br>&emsp;&emsp;先进入local目录，输入<code>pwd</code>得到它的绝对路径。然后<code>touch ~/.bashrc</code>创建.bashrc文件。接着打开文件，在最后一行添加<code>export PATH=&quot;local的绝对路径:$PATH&quot;</code>。然后<code>source ~/.bashrc</code>。成功。之前你需要运行<code>sh /f/wcy/local/demo.sh</code>而现在你可以不需要输入路径直接运行<code>sh demo.sh</code>了。</li>
+<li>仅仅是创建一个名为demo的文件夹会不会太单调了呢？让我们来加个参数吧！<br>&emsp;&emsp;在bash里边，$1表示第一个参数，别问我怎么知道的，自己搜去。你只需要看懂下边的代码就好了，有需要的功能再去搜索。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir $1</span><br><span class="line">cd $1</span><br><span class="line">mkdir css js</span><br><span class="line">touch index.html css/style.css js/main.js</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>&emsp;&emsp;现在，你可以运行<code>sh demo.sh aa</code>来创建一个名为aa的文件夹了。</p>
+<ol start="7">
+<li><p>如果说我已经创建过一个名为aa的文件夹，然后又来运行<code>sh demo.sh aa</code>呢？显而易见，它是会报错的。那么我们能不能不让它报那么难看的错，给用户一个提示信息呢？是的，加一个判断。如果这个文件存在，那么就让它输出”The directory is already exist!”，如果不存在那就创建。所以，你可以Google一下bash脚本的if语句怎么用。这里是代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">if [ -d $1 ]; then</span><br><span class="line">  echo &apos;The directory is already exist!&apos;</span><br><span class="line">  exit 1 //表示程序运行出错，错误代码为1</span><br><span class="line">else</span><br><span class="line">  mkdir $1</span><br><span class="line">  cd $1</span><br><span class="line">  mkdir css js</span><br><span class="line">  touch index.html css/style.css js/main.js</span><br><span class="line">  echo &apos;success&apos;</span><br><span class="line">  exit 0 //表示0个错误</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>是的，经过上述步骤基本已经完成了一个小脚本案例了。我们最后来进行测试环节。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sh demo.sh aa &amp;&amp; echo &apos;成功&apos; //如果前边的程序执行成功就显示字符串“成功”</span><br><span class="line">sh demo.sh bb || echo &apos;失败&apos; //如果前边的程序返回的是非0，显示“失败”</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="换个node-js脚本玩玩？"><a href="#换个node-js脚本玩玩？" class="headerlink" title="换个node.js脚本玩玩？"></a>换个node.js脚本玩玩？</h2><p>&emsp;&emsp;我们上边写的脚本是Bash Script（Bash脚本），现在，换个我们前端用的js脚本玩玩？基本规则其实都差不多，两个的语法方面略微有一点差别。你想要实现什么功能的话都可以去Google。比如你可以搜索node js change dir，来找到如何在node下转换路径。你也可以进入nodejs官网nodejs.org–&gt;docs–&gt;api直接在里边查，<a href="https://nodejs.org/api/fs.html#fs_fs_mkdirsync_path_mode" target="_blank" rel="noopener">比如文件系统(file system—fs)的一些操作。</a><br><img src="https://raw.githubusercontent.com/wenchuyang/ImagesForMarkdown/5b61dc97261e0b4500a194a722e950116aeef692/images/5ULKJXL4ACL%24YCDQ%24TXKY.png" alt><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">node //先进入node</span><br><span class="line">process.chdir(&apos;F:\\wcy\\local&apos;) //改变系统路径到你需要的目录（这个路径写法是windows下的写法。。。保持微笑不吐槽）</span><br><span class="line">console.log(process.cwd())  //得到当前所处路径并打印出来console.log()相信你不会陌生。</span><br><span class="line">//Ctrl+D退出node环境</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;上边用bash命令我们执行写的是<code>sh demo.sh</code>，如果你省略sh直接写<code>demo.sh</code>依然可以得到你想要的结果。因为系统默认使用sh（即shell）来运行脚本。但到了这里可就不行了。你知道的，文件后缀并不影响，所以如果你依然用shell来执行demo.js文件，显然是有问题的。我们一般会用<code>node demo.js</code>来运行这个文件。如果你想让这个文件默认用node执行，请在文件的第一行加上<code>#!/usr/bin/env node</code>。<br>综上，将上述功能换成js脚本的话，就应该是这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env node</span><br><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line">dirName = process.argv[2] // 你传的参数是从第 2 个开始的</span><br><span class="line">if (fs.existsSync(dirName)) &#123;</span><br><span class="line">	console.log(&quot;The file is already exist&quot;);</span><br><span class="line">	process.exit(1);</span><br><span class="line">&#125;</span><br><span class="line">	fs.mkdirSync(&quot;./&quot; + dirName) // mkdir $1</span><br><span class="line">	process.chdir(&quot;./&quot; + dirName) // cd $1</span><br><span class="line">	fs.mkdirSync(&apos;css&apos;) // mkdir css</span><br><span class="line">	fs.mkdirSync(&apos;js&apos;) // mkdir js</span><br><span class="line">	fs.writeFileSync(&quot;./index.html&quot;, &quot;&lt;!DOCTYPE&gt;&lt;title&gt;Hello&lt;/title&gt;&lt;h1&gt;Hi&lt;/h1&gt;&quot;)</span><br><span class="line">	fs.writeFileSync(&quot;css/style.css&quot;, &quot;h1&#123;color: red;&#125;&quot;)</span><br><span class="line">	fs.writeFileSync(&quot;./js/main.js&quot;, &quot;var string = &apos;Hello World&apos; alert(string)&quot;)</span><br><span class="line">	process.exit(0)</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;这里对第三行稍微解释一下，为什么前边bash传的参数算是第一个而后边js算是第二个呢？给一段代码吧，反正我是这样理解的。<code>demo.sh xx</code>，<code>node demo.js xx</code>，从0开始数。</p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2018/01/08/脚本编程基础知识/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2018/04/08/浅谈js变量声明/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            浅谈js变量声明
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2018/01/05/GitHub-Hexo快速搭建博客/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">GitHub+Hexo快速搭建博客</div>
+      </a>
+    
+  </nav>
+
+  
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2018-2022
+        <i class="ri-heart-fill heart_icon"></i> 文初阳
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        由 <a href="https://hexo.io" target="_blank">Hexo</a> 强力驱动
+        <span class="division">|</span>
+        主题 - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="夜落初阳"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.png">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechatpay.png">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<!-- Tocbot -->
+
+<script src="/js/tocbot.min.js"></script>
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+<script src="/dist/main.js"></script>
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+<link rel="stylesheet" href="/css/clipboard.css">
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+    
+  </div>
+</body>
+
+</html>
