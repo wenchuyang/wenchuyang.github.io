@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo进阶使用指南</title>
+    <url>/2021/01/09/Hexo%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h1 id="初步使用"><a href="#初步使用" class="headerlink" title="初步使用"></a>初步使用</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new title.md</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>分别是新建、更新、预览、同步。</p>
+<h1 id="config-yml文件"><a href="#config-yml文件" class="headerlink" title="_config.yml文件"></a>_config.yml文件</h1><p>每个theme会有一个单独的_config.yml文件，用于自定义主题。<br>而你的bolg generator下也会有一个全局的_config.yml文件，用于你自己博客的基础信息配置。可以逐项预览下来，这里只挑一些说。</p>
+<h1 id="default-layout"><a href="#default-layout" class="headerlink" title="default_layout"></a>default_layout</h1><p>默认布局，在<code>blog/_config.yml</code>文件里有设置。<br>有三种布局：post, page, draft。<br>其中draft是草稿，不会主动发布到网站，需要手动执行<code>hexo publish &lt;title&gt;</code>进行发布。要把文章存为草稿的话，从_post文件夹移到_draft文件夹。<br>在本地预览的时候，你可以把<code>render_drafts</code>设置为true，或者是<code>hexo server --draft</code>。<br>page是页面，会给你创建文件夹，以及文件夹目录中自动创建一个index.md文件。<br><code>blog/source</code>文件夹内的_post和_draft文件夹是存放你的博客文档的，除了设置默认的layout之外，你还可以在创建文件的时候指定<code>hexo new post/draft test</code>。</p>
+<h1 id="categories-amp-tags"><a href="#categories-amp-tags" class="headerlink" title="categories &amp; tags"></a>categories &amp; tags</h1><p>创建完文章之后打开文章，头部一般会有信息<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo进阶使用指南</span><br><span class="line">date: 2021-01-09 13:31:57</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<p>你可以在里边加上categories和tags，下面两种方法都可以。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line">  - 计算机</span><br><span class="line">  - 实用</span><br><span class="line">tags: [Hexo, 计算机]</span><br></pre></td></tr></table></figure></p>
+<p>如果你只需要一个tag或者一个category可以像这样：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">categories: 计算机</span><br><span class="line">tags: </span><br><span class="line">  - Hexo</span><br></pre></td></tr></table></figure></p>
+<h1 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h1><p>默认模板。你可以在你的blog generator文件夹下找到<code>Scaffold</code>文件，里面存放的是新建文件时的默认模板。你可以在里边添加或修改一些东西。</p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GitHub+Hexo快速搭建博客</title>
     <url>/2018/01/05/GitHub-Hexo%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<p>Hexo 是一个快速、简洁且高效的博客框架。事实上，你也可以选择上<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">官网</a>看教程。利用GitHub+Hexo我们可以快速搭建一个个人博客网站。以下是使用教程。</p>
@@ -62,22 +81,50 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo进阶使用指南</title>
-    <url>/2021/01/09/Hexo%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1 id="初步使用"><a href="#初步使用" class="headerlink" title="初步使用"></a>初步使用</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new title.md</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-<p>分别是新建、更新、预览、同步。</p>
-<h1 id="config-yml文件"><a href="#config-yml文件" class="headerlink" title="_config.yml文件"></a>_config.yml文件</h1><p>每个theme会有一个单独的_config.yml文件，用于自定义主题。<br>而你的bolg generator下也会有一个全局的_config.yml文件，用于你自己博客的基础信息配置。可以逐项预览下来，这里只挑一些说。</p>
-<h1 id="default-layout"><a href="#default-layout" class="headerlink" title="default_layout"></a>default_layout</h1><p>默认布局，在<code>blog/_config.yml</code>文件里有设置。<br>有三种布局：post, page, draft。<br>其中draft是草稿，不会主动发布到网站，需要手动执行<code>hexo publish &lt;title&gt;</code>进行发布。要把文章存为草稿的话，从_post文件夹移到_draft文件夹。<br>在本地预览的时候，你可以把<code>render_drafts</code>设置为true，或者是<code>hexo server --draft</code>。<br>page是页面，会给你创建文件夹，以及文件夹目录中自动创建一个index.md文件。<br><code>blog/source</code>文件夹内的_post和_draft文件夹是存放你的博客文档的，除了设置默认的layout之外，你还可以在创建文件的时候指定<code>hexo new post/draft test</code>。</p>
-<h1 id="categories-amp-tags"><a href="#categories-amp-tags" class="headerlink" title="categories &amp; tags"></a>categories &amp; tags</h1><p>创建完文章之后打开文章，头部一般会有信息<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo进阶使用指南</span><br><span class="line">date: 2021-01-09 13:31:57</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<p>你可以在里边加上categories和tags，下面两种方法都可以。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line">  - 计算机</span><br><span class="line">  - 实用</span><br><span class="line">tags: [Hexo, 计算机]</span><br></pre></td></tr></table></figure></p>
-<p>如果你只需要一个tag或者一个category可以像这样：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">categories: 计算机</span><br><span class="line">tags: </span><br><span class="line">  - Hexo</span><br></pre></td></tr></table></figure></p>
-<h1 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h1><p>默认模板。你可以在你的blog generator文件夹下找到<code>Scaffold</code>文件，里面存放的是新建文件时的默认模板。你可以在里边添加或修改一些东西。</p>
+    <title>ReactRouter使用指南</title>
+    <url>/2021/03/29/ReactRouter%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>router 是路由，在互联网上，把信息从源地址传输到目的地址的活动。<br>React Router 是一个基于 React 的路由库，帮助我们在解析路由的同时保持页面与 URL 之间的同步。</p>
+<h1 id="React-Router-的使用"><a href="#React-Router-的使用" class="headerlink" title="React Router 的使用"></a>React Router 的使用</h1><p><a href="https://codesandbox.io/s/react-router-wmxnl?file=/src/App.js" target="_blank" rel="noopener">一个简单的 tab 页</a></p>
+<ol>
+<li>引入 react-router-dom 库，因为是在浏览器上的应用，不是 native ，所以引入的是 -dom 库</li>
+<li><p>在代码中添加路由</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; BrowserRouter as Router, Link, Switch, Route &#125; from &quot;react-router-dom&quot;;</span><br><span class="line">&lt;Router&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;nav&gt;</span><br><span class="line">      &lt;Link to=&quot;/&quot;&gt;Home&lt;/Link&gt;</span><br><span class="line">      &lt;Link to=&quot;/about&quot;&gt;About&lt;/Link&gt;</span><br><span class="line">      &lt;Link to=&quot;/users&quot;&gt;Users&lt;/Link&gt;</span><br><span class="line">    &lt;/nav&gt;</span><br><span class="line">    &lt;Switch&gt;</span><br><span class="line">      &lt;Route path=&quot;/about&quot;&gt;about&lt;/Route&gt;</span><br><span class="line">      &lt;Route path=&quot;/users&quot;&gt;users&lt;/Route&gt;</span><br><span class="line">      &lt;Route path=&quot;/&quot;&gt;home&lt;/Route&gt;</span><br><span class="line">    &lt;/Switch&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/Router&gt;</span><br></pre></td></tr></table></figure>
+<p>实现的效果是点击 nav 中的按钮之后下面的 switch 中会自动显示相应的区域，并且 URL 也会自动添加相应的后缀。而且在修改了 URL 之后，switch 中也会自动变化。</p>
+</li>
+</ol>
+<p>这就是 React Router 帮我们实现的。</p>
+<h1 id="自己实现-React-Router-效果"><a href="#自己实现-React-Router-效果" class="headerlink" title="自己实现 React Router 效果"></a>自己实现 React Router 效果</h1><p><a href="https://codesandbox.io/s/tab-qiehuan-8tpdq?file=/src/App.js" target="_blank" rel="noopener">Demo 源码</a></p>
+<ol>
+<li>创建一个组件，有 nav 区域和 content 区域。</li>
+<li>添加 this.state , 然后给 nav 里面的元素添加点击事件来修改 state 的值。</li>
+<li><p>给 content 区域添加条件渲染，至此已经完成了一个 tab 切换效果。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line"> let button = &quot;&quot;;</span><br><span class="line"> switch (this.state.display) &#123;</span><br><span class="line">   case &quot;users&quot;:</span><br><span class="line">     button = &lt;div&gt;users&lt;/div&gt;;</span><br><span class="line">     break;</span><br><span class="line">   case &quot;about&quot;:</span><br><span class="line">     button = &lt;div&gt;about&lt;/div&gt;;</span><br><span class="line">     break;</span><br><span class="line">   default:</span><br><span class="line">     button = &lt;div&gt;home&lt;/div&gt;;</span><br><span class="line"> &#125;</span><br><span class="line"> return (</span><br><span class="line">   &lt;div className=&quot;App&quot;&gt;</span><br><span class="line">     ...</span><br><span class="line">     &lt;div className=&quot;content&quot;&gt;&#123;button&#125;&lt;/div&gt;</span><br><span class="line">   &lt;/div&gt;</span><br><span class="line"> );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>现在，在切换的时候修改 url ，<code>window.location.hash = &quot;about&quot;</code></p>
+</li>
+<li>通过 <code>window.location.hash</code> 来初始化 this.state.display 的值，从而实现 content 根据 url 的不同而修改。</li>
+</ol>
+<p>这里使用 window.location.hash 来修改 url ，实际上修改路由还可以用 window.location.pathname 和 window.history.pushState() ,要注意他们的区别：</p>
+<ol>
+<li><p><code>window.location.hash =</code> the best way, 不会刷新页面。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">window.location.hash = &quot;home&quot;</span><br><span class="line">console.log(window.location.hash)  // &quot;#home&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>window.location.pathname =</code>，修改 pathname 的话，相当于改了路径，浏览器会以为你要跳转页面，于是自动刷新。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">window.location.pathname = &quot;home&quot;</span><br><span class="line">console.log(window.location.pathname) // &quot;/home&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>window.history.pushState()</code>, 同样不刷新页面，但是需要后端将 default 路径都指向首页，不然可能会报这个页面不存在。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">window.history.pushState(null, &quot;&quot;, &quot;home&quot;)</span><br><span class="line">console.log(window.location.pathname) // &quot;/home&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>以上是不使用 React Router 实现 tab 切换的全过程，React Router 帮我们简化了这个过程。</p>
 ]]></content>
       <categories>
         <category>计算机</category>
+        <category>前端</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
+        <tag>react</tag>
+        <tag>react-router</tag>
       </tags>
   </entry>
   <entry>
@@ -175,26 +222,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2018/01/05/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>nvm 的安装使用</title>
     <url>/2022/12/01/nvm%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="nvm-是什么"><a href="#nvm-是什么" class="headerlink" title="nvm 是什么"></a>nvm 是什么</h1><p>node version manager , node 版本管理器，是用来管理 node 版本的，让你可以在你的电脑上同时安装多个 node 版本。</p>
@@ -226,6 +253,26 @@
       <tags>
         <tag>nvm</tag>
         <tag>工具使用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2018/01/05/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -294,53 +341,6 @@
       <tags>
         <tag>react</tag>
         <tag>生命周期</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ReactRouter使用指南</title>
-    <url>/2021/03/29/ReactRouter%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>router 是路由，在互联网上，把信息从源地址传输到目的地址的活动。<br>React Router 是一个基于 React 的路由库，帮助我们在解析路由的同时保持页面与 URL 之间的同步。</p>
-<h1 id="React-Router-的使用"><a href="#React-Router-的使用" class="headerlink" title="React Router 的使用"></a>React Router 的使用</h1><p><a href="https://codesandbox.io/s/react-router-wmxnl?file=/src/App.js" target="_blank" rel="noopener">一个简单的 tab 页</a></p>
-<ol>
-<li>引入 react-router-dom 库，因为是在浏览器上的应用，不是 native ，所以引入的是 -dom 库</li>
-<li><p>在代码中添加路由</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; BrowserRouter as Router, Link, Switch, Route &#125; from &quot;react-router-dom&quot;;</span><br><span class="line">&lt;Router&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;nav&gt;</span><br><span class="line">      &lt;Link to=&quot;/&quot;&gt;Home&lt;/Link&gt;</span><br><span class="line">      &lt;Link to=&quot;/about&quot;&gt;About&lt;/Link&gt;</span><br><span class="line">      &lt;Link to=&quot;/users&quot;&gt;Users&lt;/Link&gt;</span><br><span class="line">    &lt;/nav&gt;</span><br><span class="line">    &lt;Switch&gt;</span><br><span class="line">      &lt;Route path=&quot;/about&quot;&gt;about&lt;/Route&gt;</span><br><span class="line">      &lt;Route path=&quot;/users&quot;&gt;users&lt;/Route&gt;</span><br><span class="line">      &lt;Route path=&quot;/&quot;&gt;home&lt;/Route&gt;</span><br><span class="line">    &lt;/Switch&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/Router&gt;</span><br></pre></td></tr></table></figure>
-<p>实现的效果是点击 nav 中的按钮之后下面的 switch 中会自动显示相应的区域，并且 URL 也会自动添加相应的后缀。而且在修改了 URL 之后，switch 中也会自动变化。</p>
-</li>
-</ol>
-<p>这就是 React Router 帮我们实现的。</p>
-<h1 id="自己实现-React-Router-效果"><a href="#自己实现-React-Router-效果" class="headerlink" title="自己实现 React Router 效果"></a>自己实现 React Router 效果</h1><p><a href="https://codesandbox.io/s/tab-qiehuan-8tpdq?file=/src/App.js" target="_blank" rel="noopener">Demo 源码</a></p>
-<ol>
-<li>创建一个组件，有 nav 区域和 content 区域。</li>
-<li>添加 this.state , 然后给 nav 里面的元素添加点击事件来修改 state 的值。</li>
-<li><p>给 content 区域添加条件渲染，至此已经完成了一个 tab 切换效果。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line"> let button = &quot;&quot;;</span><br><span class="line"> switch (this.state.display) &#123;</span><br><span class="line">   case &quot;users&quot;:</span><br><span class="line">     button = &lt;div&gt;users&lt;/div&gt;;</span><br><span class="line">     break;</span><br><span class="line">   case &quot;about&quot;:</span><br><span class="line">     button = &lt;div&gt;about&lt;/div&gt;;</span><br><span class="line">     break;</span><br><span class="line">   default:</span><br><span class="line">     button = &lt;div&gt;home&lt;/div&gt;;</span><br><span class="line"> &#125;</span><br><span class="line"> return (</span><br><span class="line">   &lt;div className=&quot;App&quot;&gt;</span><br><span class="line">     ...</span><br><span class="line">     &lt;div className=&quot;content&quot;&gt;&#123;button&#125;&lt;/div&gt;</span><br><span class="line">   &lt;/div&gt;</span><br><span class="line"> );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>现在，在切换的时候修改 url ，<code>window.location.hash = &quot;about&quot;</code></p>
-</li>
-<li>通过 <code>window.location.hash</code> 来初始化 this.state.display 的值，从而实现 content 根据 url 的不同而修改。</li>
-</ol>
-<p>这里使用 window.location.hash 来修改 url ，实际上修改路由还可以用 window.location.pathname 和 window.history.pushState() ,要注意他们的区别：</p>
-<ol>
-<li><p><code>window.location.hash =</code> the best way, 不会刷新页面。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">window.location.hash = &quot;home&quot;</span><br><span class="line">console.log(window.location.hash)  // &quot;#home&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>window.location.pathname =</code>，修改 pathname 的话，相当于改了路径，浏览器会以为你要跳转页面，于是自动刷新。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">window.location.pathname = &quot;home&quot;</span><br><span class="line">console.log(window.location.pathname) // &quot;/home&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>window.history.pushState()</code>, 同样不刷新页面，但是需要后端将 default 路径都指向首页，不然可能会报这个页面不存在。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">window.history.pushState(null, &quot;&quot;, &quot;home&quot;)</span><br><span class="line">console.log(window.location.pathname) // &quot;/home&quot;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>以上是不使用 React Router 实现 tab 切换的全过程，React Router 帮我们简化了这个过程。</p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>react</tag>
-        <tag>react-router</tag>
       </tags>
   </entry>
   <entry>
@@ -433,65 +433,6 @@
       </tags>
   </entry>
   <entry>
-    <title>react背景知识</title>
-    <url>/2021/03/25/react%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AF%86/</url>
-    <content><![CDATA[<p>网页三要素：HTML、CSS and JS，在 react 里应该是什么样子的呢？</p>
-<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><p>react 没有 HTML 。<br>这样说有点绝对，但是并不是完全不正确。你使用 create-react-app 创建一个 react 项目的时候，会发现在 public 文件夹下有一个 index.html 文件，里边有一个 id 为 root 的 div 。<br>但是你要知道，我们写的所有代码，都应该是在 src 文件夹下的。我们不需要去修改这个唯一的 html 文件，为什么？<br>抛开 react ，如果我们需要修改页面中的某个东西的时候，我们会怎么做？<br>获取元素，修改元素，然后再把元素放回去。<br>而 react 给了我们另一种可能——<br>创建一个元素，然后放到页面。需要更新的时候创建一个新的元素，然后替换掉之前的元素。省去了从页面获取元素的那一步。<br>还是那句话， react 没有 HTML 。<br>平时写在 html 文件里的东西， react 放到了 JavaScript 里边。<br>react 使用 <code>React.createElement(&quot;div&quot;)</code> 来创建一个 <code>&lt;div /&gt;</code> ，用 <code>React.render(React.createElement(&quot;div&quot;), document.querySelector(&quot;#root&quot;))</code> 将 <code>&lt;div /&gt;</code> 挂到 id 为 root 的元素下。<br>在 react 中，html 唯一的作用就是提供一个节点，让 js 把生成的元素挂到这个节点上。<br>这样我们在需要修改 DOM 元素的时候，只需要用 js 直接修改，然后再重新 render ，将修改好的虚拟的 DOM 元素渲染到页面。省去了之前从页面获取 DOM 元素的步骤。</p>
-<h2 id="关于虚拟-DOM"><a href="#关于虚拟-DOM" class="headerlink" title="关于虚拟 DOM"></a>关于虚拟 DOM</h2><p>DOM 全称 Document Object Model ，文档对象模型，将 html 页面元素与一个个对象相对应，方便我们使用 js 来操控 html 文档。比如 <code>var x = document.querySelector(&quot;#root&quot;)</code>,我们通过这段代码从 html 页面上获取了一个真实的 DOM 元素。变量 x 对应着页面上一个 id 为 root 的节点。<br>而我们使用<code>const x = React.createElement(&quot;div&quot;)</code>则创建了一个标签为 div 的虚拟 DOM ，它与页面上的 div 相对应。<br>总的来说，虚拟 DOM 是表示 DOM 节点的 js 对象，对应页面的真实的 DOM 元素。</p>
-<h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><p>如果我想往页面加一个 button ，那么我应该这样写 <code>React.render(React.createElement(&quot;button&quot;), document.querySelector(&quot;#root&quot;))</code> ，如果这个 button 需要绑定事件，那么应该使用<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">React.createElement(&quot;button&quot;, &#123;</span><br><span class="line">    onClick: ()=&gt;&#123;console.log(&quot;here are we&quot;)&#125;</span><br><span class="line">&#125;, &quot;Click me&quot;)</span><br></pre></td></tr></table></figure></p>
-<p>其中第一个参数是元素标签；第二个参数是一个对象，上边写了元素属性；第三个参数是元素的内容。这样我们创建好了一个虚拟 DOM。<br>感觉很麻烦。<br>所以有了 jsx 语法。<br>jsx 做了什么呢？它允许我们在 js 里写一段看上去像 html 的代码。<br>比如上述的 button 创建，你可以这样<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;button onClick=&#123;()=&gt;console.log(&quot;here are we&quot;)&#125;&gt;Click me&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
-<p>其中<code>{}</code>里边是 js 的变量，如果不加的话会默认把它当做字符串。<br>需要注意的是在这里 onClick 是给 button 绑定一个事件，如果你直接写 <code>onClick = {console.log(1)}</code> ，意思是把 console.log(1) 当做一个事件绑定上去，于是在绑定事件的时候会执行这段代码。所以需要使用一个函数把它包裹起来，这样才是在点击按钮的时候执行这个匿名函数。<br>另，给函数加 class 的话用的是 <code>className=&quot;xxx&quot;</code> 而不是 html 中的 <code>class=&quot;xxx&quot;</code>。</p>
-<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><p>react 里的 css 有两种方案。</p>
-<h2 id="传统方案"><a href="#传统方案" class="headerlink" title="传统方案"></a>传统方案</h2><p>传统的给元素加 class ，内容与样式分离。css 写在 css 文件里，然后 <code>import &quot;./style.css&quot;</code> 引入 css 。<br>这种方法的一个弊端在于我们需要特别注意 class 的互相影响问题。如果组件 A 有一个叫做 title 的类，而它引用的另一个组件 B 同样也有一个 title 类，B 组件会继承 A 组件设置的 title 的样式。<br>而为了干掉这个不确定的因素，部分人会选择以组件名为前缀的 class 名字，这样可以有效防止各组件之间的样式冲突。参考 BEM 命名规范。</p>
-<h2 id="CSS-in-JS"><a href="#CSS-in-JS" class="headerlink" title="CSS in JS"></a>CSS in JS</h2><p>因为上一个方案命名的繁琐为人诟病，而 css 没有办法做到自动区分两个重名的 class ，所以有人想，不要 css 了。<br>根据这个思路，很多人，想了很多不同的解决方案。<br>在 github 搜索 “css in js” 可以看到一个完整的列表——版本号、star 数、下载量、package 名，你可以根据需要自行选择好用的方案。<br>这里介绍三种</p>
-<ol>
-<li><p><a href="https://styled-components.com/docs/basics#installation" target="_blank" rel="noopener">styled-components</a> 在组件内部的 js 文件中写样式代码。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 样式</span><br><span class="line">const Title = styled.h1`</span><br><span class="line">    font-size: 1.5em;</span><br><span class="line">    text-align: center;</span><br><span class="line">    color: palevioletred;</span><br><span class="line">`;</span><br><span class="line">// jsx</span><br><span class="line">&lt;Title&gt; hello &lt;/Title&gt;</span><br></pre></td></tr></table></figure>
-<p> 组件之间是彼此分离的，而组件内部内容样式和行为杂糅在了一起，好处是不论这个组件写的如何，不会影响到其他的组件。</p>
-</li>
-<li><p><a href="https://github.com/gajus/react-css-modules" target="_blank" rel="noopener">react-css-module</a> 配置略麻烦，解决方案比前面的那种纯净一点。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import CSSModules from &apos;react-css-modules&apos;;</span><br><span class="line">import styles from &apos;./style.css&apos;;</span><br><span class="line">&lt;h1 styleName=&apos;title&apos;&gt;hello&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>emotion 语法繁琐，有点像内联样式。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/** @jsx jsx */</span><br><span class="line">import &#123; jsx &#125; from &apos;@emotion/react&apos;</span><br><span class="line">&lt;h1 css=&#123;&#123; color: &apos;red&apos; &#125;&#125;&gt; hello &lt;/h1&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>具体选择什么方案自然是仁者见仁，但是需要注意的是，如果你是打算要建一个 UI 库，那么请选择传统方案。<br>在 CSS in JS 方案中，虽然我们没有写类名，但是在运行的时候， js 会自动为我们生成一个类名，你可以在浏览器的检查元素里看见。<br>在你自己的应用中，这不是什么问题。但是如果是建 UI 库，别人不知道类名，就无法覆盖样式。</p>
-<hr>
-<p>以上， react 可能只有 js ….</p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>前端</category>
-        <category>react</category>
-      </categories>
-      <tags>
-        <tag>react</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>src和href的区别</title>
-    <url>/2022/12/01/src%E5%92%8Chref%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><ul>
-<li>src 指的是 source，用来内联一个额外的文件，比如 <code>&lt;img src=&#39;a.png&#39; /&gt;</code> 就是下载 a.png , 然后把它放到这个位置上来。</li>
-<li>href 全称是 hypertext reference, 超文本引用，一般是用来建立当前文档和外部文档的一个联系，相当于一个桥梁的作用。比如 <code>&lt;a href=&#39;https://www.baidu.com&#39;&gt;上网&lt;/a&gt;</code>, 点击这个超文本就能顺着它到外部文档上去。</li>
-</ul>
-<h1 id="link-和-script"><a href="#link-和-script" class="headerlink" title="link 和 script"></a>link 和 script</h1><p>这两个标签分别是用来引入 css 和 js 的，分别用到了 href 和 src 属性，这里之所以拿出来单独讲是因为就我个人而言上面的定义没法说服我理解这两个标签。<br>讲之前先简单地提一下浏览器的渲染过程：加载 HTML -&gt; 解析 HTML 以构建 DOM 树 -&gt; 发请求下载 DOM 链接的资源 -&gt; 确定渲染规则构建 render 树 -&gt; 将 style 应用到 DOM 节点上(布局 render 树) -&gt; 渲染页面(绘制 render 树)<br>在我们输入 URL 之后，浏览器会向服务器发送请求，服务器返回的一般是一个 HTML，浏览器拿到这个 HTML 文件之后开始做解析开始构建 DOM 树。浏览器是从上往下一行一行解析的，在遇到需要做资源请求的时候就继续向服务器发请求。<br>link 和 script 的不同点在于，link 发了请求之后就继续解析下一行，而 script 发了请求之后，就在等待请求的返回结果，然后执行 js 语句。执行完 js 语句之后，再去解析下一行。也因此如果内嵌 script 的话，最好是放在文档结尾，一般在 body 结束标签的上方（因为 body 标签下面的可能会被部分浏览器忽略）；而内嵌 style 的话都是放在文档头部，head 结束标签的上方。<br>但实际上我们在 html 里面写如下一段代码会发现链接的几个资源是同时下载的，并没有出现阻塞的情况。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;./styles.css&quot; /&gt;</span><br><span class="line">&lt;script src=&quot;./index.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;img src=&quot;1.jpg&quot; /&gt;</span><br><span class="line">&lt;div id=&quot;app&quot;&gt;111&lt;/div&gt;</span><br><span class="line">&lt;script src=&quot;./index2.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<p>这是因为浏览器的预加载机制，在浏览器解析并构建 DOM 树的时候，预加载扫描仪同时扫描文档并请求高优先级资源，它的存在减少了 script 标签带来的阻塞。<br>但这并不影响它的主流程：解析 HTML 的时候遇到 script 标签会执行完里面的脚本再继续解析下一行。</p>
-<h2 id="link"><a href="#link" class="headerlink" title="link"></a>link</h2><p>link 的特殊之处在于，虽然它使用的是 href，但是它是会主动下载它链接的资源的。相比之下 a 标签其实只是做了一个链接，并不会主动去发送请求。<br>另外想要提的一点就是 CSS 是渲染阻塞的：浏览器会阻塞页面渲染直到它接收和执行了所有的 CSS。CSS 是渲染阻塞是因为规则可以被覆盖，所以内容不能被渲染直到 CSSOM 的完成。但是它不阻塞 DOM 的加载，而且 DOM 的构建是一点一点往页面上 push 的。</p>
-<h2 id="script"><a href="#script" class="headerlink" title="script"></a>script</h2><p>script 和 img 相比较而言，img 不会阻塞加载，只是做资源请求。在 HTML5 中，script 标签添加了两个属性：async 和 defer，可以用来控制是否做内容的阻塞。<br>如果添加了 async，那么会异步加载这个 script 引入的资源，在资源获取完成的时候执行脚本，与浏览器当前解析到哪里无关；<br>如果添加了 defer，那么会等到页面全部解析完成之后再去加载这个 script 引入的资源（在预加载的情况下会预加载，但还是会放到最后执行加载进来的 js ）；<br>如果都没有添加的话，就是前面说的先获取资源执行脚本，再解析下一行。<br>之前默认阻塞是因为 js 是可以操作 DOM 的，所以 js 的执行顺序其实是会影响页面布局，在添加了这两个属性之后相当于其中的风险由开发者控制，在没有必要的时候不需要让它阻塞流程。</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://stackoverflow.com/questions/3395359/difference-between-src-and-href" target="_blank" rel="noopener">stack overflow: difference between src and href</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/What_is_JavaScript" target="_blank" rel="noopener">MDN: 什么是 JavaScript</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/Performance/How_browsers_work" target="_blank" rel="noopener">MDN: 渲染页面：浏览器的工作原理</a><br><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_works#how_does_css_actually_work" target="_blank" rel="noopener">MDN: How CSS works</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/Performance/Critical_rendering_path" target="_blank" rel="noopener">MDN: 关键渲染路径</a></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>前端</category>
-        <category>HTML</category>
-      </categories>
-      <tags>
-        <tag>面试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>react获取元素</title>
     <url>/2021/04/05/react%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0/</url>
     <content><![CDATA[<h1 id="你真的要获取元素吗"><a href="#你真的要获取元素吗" class="headerlink" title="你真的要获取元素吗"></a>你真的要获取元素吗</h1><p>正常情况下我们并不需要获取元素，如果需要修改某个组件，一般情况下是通过父组件传递的 props 或者自己本身的 state 来重新渲染。<br>但是如果要获取元素， react 同样提供了一些方法。</p>
@@ -540,180 +481,25 @@
       </tags>
   </entry>
   <entry>
-    <title>redux使用指南</title>
-    <url>/2021/03/27/redux%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<h1 id="什么时候使用"><a href="#什么时候使用" class="headerlink" title="什么时候使用"></a>什么时候使用</h1><p>redux 帮助我们进行状态（数据）管理。如果你可以不用，那么就没有必要用。<br>如果应用中有以下场景可以考虑使用：</p>
-<ol>
-<li>某个组件的状态需要共享</li>
-<li>某个组件需要在任何地方都可以拿到</li>
-<li>一个组件需要改变全局状态</li>
-<li>一个组件需要改变另一个组件的状态</li>
-</ol>
-<h1 id="redux-思路"><a href="#redux-思路" class="headerlink" title="redux 思路"></a>redux 思路</h1><p>所有的变量和处理函数都放在 store 里。<code>var store = Redux.createStore(reducer)</code><br>变量用 state 存储，处理函数是 action . reducer 是一个函数，接收旧的 state , 返回新的 state . 并且负责 state 的初始化和 action 的分类处理 . <code>reducer = function(state, action){...}</code><br>action 参数是一个对象 <code>{type: &quot;&quot;, payload: &quot;&quot;}</code> , 其中 type 表示 action 类型， payload 是 action 函数 的参数。<br>外部获取变量使用 <code>store.getState()</code> 拿到 state 的值。<br><code>store.subscribe(render)</code> 用来监听 action ，一旦 action 被触发 (dispatch) 了，就执行 render 函数。 render 函数负责刷新页面。<br><code>store.dispatch({ type: &quot;add&quot;, payload: 1 })</code> 触发一个类型为 “add” 的 action ， 并且传入参数 1 。在需要调用的时候调用。</p>
-<h1 id="原生-js-redux"><a href="#原生-js-redux" class="headerlink" title="原生 js + redux"></a>原生 js + redux</h1><p><a href="https://codesandbox.io/s/redux-with-js-uon9m?file=/src/index.js" target="_blank" rel="noopener">原生 js + redux Demo</a><br>redux 作为一个状态管理工具，同样适用于原生 js 。这里用它实现一个点击加一的效果。</p>
-<ol>
-<li>在 index.html 里创建一个 id 为 app 的 div 作为根元素。</li>
-<li>安装 redux 包</li>
-<li><p>声明一个 reducer 函数，传递两个参数 state (数据) 和 action (类型和函数参数) 。</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var reducer = function (state, action) &#123;</span><br><span class="line">    state = state || &#123;  // init state</span><br><span class="line">        number: 0</span><br><span class="line">    &#125;;</span><br><span class="line">    switch (action.type) &#123; // 事件处理</span><br><span class="line">        case &quot;add&quot;:</span><br><span class="line">            return &#123; number: state.number + action.payload &#125;;</span><br><span class="line">        default:</span><br><span class="line">            return state;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>根据 reducer 创建 store</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; createStore &#125; from &quot;redux&quot;;</span><br><span class="line">var store = createStore(reducer);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>监听 store 里边的改动。<code>store.subscribe(render)</code></p>
-</li>
-<li><p>创建 render 函数</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function render() &#123;</span><br><span class="line">    let str = `</span><br><span class="line">        &lt;div id=&quot;display&quot;&gt;$&#123;store.getState().number&#125;&lt;/div&gt;</span><br><span class="line">            &lt;button id=&quot;add1&quot;&gt;点我加一&lt;/button&gt;</span><br><span class="line">    `;</span><br><span class="line">    document.getElementById(&quot;app&quot;).innerHTML = str;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>执行 render 函数，渲染页面。<code>render()</code></p>
-</li>
-<li>给 button 添加事件监听，在点击了按钮之后执行 store.dispatch ，发布时间。<br>这里因为 render 的时候会重新弄一个 button 上去，并不是原先的 button 了，如果直接监听 button 的点击事件的话，那么这个函数只能执行一次。所以采用事件委托，监听根节点 #app 的点击事件，然后判断如果是在 button 上的点击则执行接下来的语句。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">document.getElementById(&quot;app&quot;).addEventListener(&quot;click&quot;, (e) =&gt; &#123;</span><br><span class="line">    if (e.target.id === &quot;add1&quot;) &#123;</span><br><span class="line">        store.dispatch(&#123; type: &quot;add&quot;, payload: 1 &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>至此效果完成。<br>可以看见我们创建了一个页面，然后给 button 添加了一个事件，如果点击了这个按钮，就发布（ dispatch ） 一个类型为 add 、 参数为 1 的事件。<br>而 store.subscribe(render) 监听到了这个事件，并在响应之后调用 render 函数，从而刷新页面。</p>
-<h1 id="react-redux"><a href="#react-redux" class="headerlink" title="react + redux"></a>react + redux</h1><p><a href="https://codesandbox.io/s/redux-with-react-vfq19?file=/src/index.js" target="_blank" rel="noopener">react + redux Demo</a><br>和 react 结合的 redux 和上面几乎没有区别，只是页面的刷新从 js 的刷新变成了 react 的刷新。<br>还是点击加一的例子，步骤 1~5 同上。<br>其余代码如下<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function App() &#123;</span><br><span class="line">  function add() &#123;</span><br><span class="line">    store.dispatch(&#123; type: &quot;add&quot;, payload: 1 &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  return (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;div&gt; &#123;store.getState().number&#125; &lt;/div&gt;</span><br><span class="line">      &lt;button onClick=&#123;add&#125;&gt; 点我加一 &lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line">function render() &#123;</span><br><span class="line">  ReactDOM.render(&lt;App /&gt;, document.getElementById(&quot;root&quot;));</span><br><span class="line">&#125;</span><br><span class="line">render();</span><br></pre></td></tr></table></figure></p>
-<h1 id="react-redux-1"><a href="#react-redux-1" class="headerlink" title="react-redux"></a>react-redux</h1><p><a href="https://codesandbox.io/s/react-redux-ko0b1?file=/src/App.js" target="_blank" rel="noopener">react-redux Demo</a><br>react-redux 是一个单独的依赖包，为了更便捷地在 react 中使用 redux 。<br>它把组件分成了 UI 组件和容器组件，UI 组件负责 UI 的呈现，而容器组件负责管理数据和逻辑。<br>我们知道，redux 是用来帮助我们管理数据的一个工具。<br>在 react-redux 中，如果一个组件既有 UI 又有业务逻辑，我们需要把它拆分为两个部分：外面是一个容器组件，里边包含一个 UI 组件。<br>依然是这个点击加一的例子。</p>
-<ol>
-<li>创建 reducer , 创建 store</li>
-<li><p>使用 Provider 将 store 传给子组件</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; Provider &#125; from &quot;react-redux&quot;;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;Provider store=&#123;store&#125;&gt;</span><br><span class="line">        &lt;App /&gt;</span><br><span class="line">    &lt;/Provider&gt;,</span><br><span class="line">    rootElement</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在子组件 App 中接收 state . （创建一个 App.js 文件）</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function App(props) &#123;</span><br><span class="line">    return (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;div&gt;&#123;props.number&#125;&lt;/div&gt;</span><br><span class="line">            &lt;button onClick=&#123;props.add.bind(this)&#125;&gt;点我加一&lt;/button&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这个 App 就是 UI 组件，它没有自己的状态，直接接收 props 的 number 并展示在页面上。<br>button 的 click 事件同样也是 props 传进来的。</p>
-</li>
-<li><p>创建 state 转换成 props 的函数</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function mapStateToProps(state) &#123;</span><br><span class="line">    const &#123; number &#125; = state;</span><br><span class="line">    return &#123; number: number &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> 将 state.number 赋值给 props.number , 并返回一个新的对象。</p>
-</li>
-<li><p>创建 dispatch 转换成 props 的函数</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const mapDispatchToProps = (dispatch) =&gt; &#123;</span><br><span class="line">     return &#123;</span><br><span class="line">         add: () =&gt; dispatch(&#123; type: &quot;add&quot;, payload: 1 &#125;)</span><br><span class="line">         &#125;;</span><br><span class="line"> &#125;;</span><br></pre></td></tr></table></figure>
-<p> 这里传入的是 dispatch ， 返回一个对象，对象里边有一个 add 函数，在 App 组件中使用 props.add 即可引用该函数。<br> 如果函数不复杂的话可以省去这一步，直接在 App 组件中使用 useDispatch 即可。</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const dispatch = useDispatch();</span><br><span class="line">...</span><br><span class="line">&lt;button onClick = &#123;()=&gt;&#123;dispatch(&#123; type: &quot;add&quot;, payload: 1 &#125;)&#125;&#125;&gt;...&lt;/button&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>连接 UI 和数据逻辑</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">export default connect(mapStateToProps, mapDispatchToProps)(App);</span><br></pre></td></tr></table></figure>
-<p> 这里的语法不要写错<code>connection()()</code><br> 第一个 connection() 的返回值是一个函数，然后 App 是返回的这个函数的参数，<br> 形如这样</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function add(a)&#123;</span><br><span class="line">    a=a+1</span><br><span class="line">    return function fn(b)&#123;</span><br><span class="line">        return a+b</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(add(1)(2))</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>react-redux 的好处在于在不污染全局变量的条件下，我们不需要将 store 层层传递，只需要在根节点上使用 Provider 就能够让所有的子组件获取 store 的值。</p>
-<hr>
-<p>以上，如果出现异步操作，action 发出之后，过一段时间再执行 reducer ，那么需要使用中间件 (middleware)。</p>
-<hr>
-<p>参考文献：<br><a href="http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html" target="_blank" rel="noopener">阮一峰Redux 入门教程</a></p>
+    <title>src和href的区别</title>
+    <url>/2022/12/01/src%E5%92%8Chref%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><ul>
+<li>src 指的是 source，用来内联一个额外的文件，比如 <code>&lt;img src=&#39;a.png&#39; /&gt;</code> 就是下载 a.png , 然后把它放到这个位置上来。</li>
+<li>href 全称是 hypertext reference, 超文本引用，一般是用来建立当前文档和外部文档的一个联系，相当于一个桥梁的作用。比如 <code>&lt;a href=&#39;https://www.baidu.com&#39;&gt;上网&lt;/a&gt;</code>, 点击这个超文本就能顺着它到外部文档上去。</li>
+</ul>
+<h1 id="link-和-script"><a href="#link-和-script" class="headerlink" title="link 和 script"></a>link 和 script</h1><p>这两个标签分别是用来引入 css 和 js 的，分别用到了 href 和 src 属性，这里之所以拿出来单独讲是因为就我个人而言上面的定义没法说服我理解这两个标签。<br>讲之前先简单地提一下浏览器的渲染过程：加载 HTML -&gt; 解析 HTML 以构建 DOM 树 -&gt; 发请求下载 DOM 链接的资源 -&gt; 确定渲染规则构建 render 树 -&gt; 将 style 应用到 DOM 节点上(布局 render 树) -&gt; 渲染页面(绘制 render 树)<br>在我们输入 URL 之后，浏览器会向服务器发送请求，服务器返回的一般是一个 HTML，浏览器拿到这个 HTML 文件之后开始做解析开始构建 DOM 树。浏览器是从上往下一行一行解析的，在遇到需要做资源请求的时候就继续向服务器发请求。<br>link 和 script 的不同点在于，link 发了请求之后就继续解析下一行，而 script 发了请求之后，就在等待请求的返回结果，然后执行 js 语句。执行完 js 语句之后，再去解析下一行。也因此如果内嵌 script 的话，最好是放在文档结尾，一般在 body 结束标签的上方（因为 body 标签下面的可能会被部分浏览器忽略）；而内嵌 style 的话都是放在文档头部，head 结束标签的上方。<br>但实际上我们在 html 里面写如下一段代码会发现链接的几个资源是同时下载的，并没有出现阻塞的情况。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;./styles.css&quot; /&gt;</span><br><span class="line">&lt;script src=&quot;./index.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;img src=&quot;1.jpg&quot; /&gt;</span><br><span class="line">&lt;div id=&quot;app&quot;&gt;111&lt;/div&gt;</span><br><span class="line">&lt;script src=&quot;./index2.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这是因为浏览器的预加载机制，在浏览器解析并构建 DOM 树的时候，预加载扫描仪同时扫描文档并请求高优先级资源，它的存在减少了 script 标签带来的阻塞。<br>但这并不影响它的主流程：解析 HTML 的时候遇到 script 标签会执行完里面的脚本再继续解析下一行。</p>
+<h2 id="link"><a href="#link" class="headerlink" title="link"></a>link</h2><p>link 的特殊之处在于，虽然它使用的是 href，但是它是会主动下载它链接的资源的。相比之下 a 标签其实只是做了一个链接，并不会主动去发送请求。<br>另外想要提的一点就是 CSS 是渲染阻塞的：浏览器会阻塞页面渲染直到它接收和执行了所有的 CSS。CSS 是渲染阻塞是因为规则可以被覆盖，所以内容不能被渲染直到 CSSOM 的完成。但是它不阻塞 DOM 的加载，而且 DOM 的构建是一点一点往页面上 push 的。</p>
+<h2 id="script"><a href="#script" class="headerlink" title="script"></a>script</h2><p>script 和 img 相比较而言，img 不会阻塞加载，只是做资源请求。在 HTML5 中，script 标签添加了两个属性：async 和 defer，可以用来控制是否做内容的阻塞。<br>如果添加了 async，那么会异步加载这个 script 引入的资源，在资源获取完成的时候执行脚本，与浏览器当前解析到哪里无关；<br>如果添加了 defer，那么会等到页面全部解析完成之后再去加载这个 script 引入的资源（在预加载的情况下会预加载，但还是会放到最后执行加载进来的 js ）；<br>如果都没有添加的话，就是前面说的先获取资源执行脚本，再解析下一行。<br>之前默认阻塞是因为 js 是可以操作 DOM 的，所以 js 的执行顺序其实是会影响页面布局，在添加了这两个属性之后相当于其中的风险由开发者控制，在没有必要的时候不需要让它阻塞流程。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://stackoverflow.com/questions/3395359/difference-between-src-and-href" target="_blank" rel="noopener">stack overflow: difference between src and href</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/What_is_JavaScript" target="_blank" rel="noopener">MDN: 什么是 JavaScript</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/Performance/How_browsers_work" target="_blank" rel="noopener">MDN: 渲染页面：浏览器的工作原理</a><br><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_works#how_does_css_actually_work" target="_blank" rel="noopener">MDN: How CSS works</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/Performance/Critical_rendering_path" target="_blank" rel="noopener">MDN: 关键渲染路径</a></p>
 ]]></content>
       <categories>
         <category>计算机</category>
         <category>前端</category>
+        <category>HTML</category>
       </categories>
       <tags>
-        <tag>react</tag>
-        <tag>redux</tag>
-        <tag>react-redux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《如何阅读一本书》笔记</title>
-    <url>/2021/01/22/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>书名：《如何阅读一本书》<br>作者：[美]莫提默·艾德勒，查尔斯·范多伦<br>译者：郝明义，朱衣</p>
-<p>这本书教人们使用不同的方法去阅读不同类型的书，并详细描述了阅读的不同层次和阅读时的注意事项。</p>
-<h1 id="你为什么要读那本书？"><a href="#你为什么要读那本书？" class="headerlink" title="你为什么要读那本书？"></a>你为什么要读那本书？</h1><p>当你阅读一本书的时候，你要清楚你的读书目的。(获得资讯、增进理解力、消遣)你为什么要读这本书？为了增加你对某个行业的理解?或者是对某件事情的理解?还是仅仅想要获得资讯，知道某件事情的来龙去脉?或者是just for fun?</p>
-<h1 id="你该如何读那本书？"><a href="#你该如何读那本书？" class="headerlink" title="你该如何读那本书？"></a>你该如何读那本书？</h1><p>阅读分三个层次: 浏览、细读和主题阅读。</p>
-<ol>
-<li>先看引言、目录，然后大致浏览，知道这是一本什么样的书，讲了什么。</li>
-<li>仔细阅读这本书，其间不要去看别人的书评之类的东西。完成你自己对这本书的理解，完成你自己的评论。</li>
-<li>辅助阅读去了解与这本书相关的其他的知识，进行主题阅读，建立知识结构网。</li>
-</ol>
-<h2 id="浏览一本书"><a href="#浏览一本书" class="headerlink" title="浏览一本书"></a>浏览一本书</h2><p>浏览的时候你要学会抓住有用的信息，作者引言、目录、推荐语，以及每个章节的开头几段结尾几段，把握整体，决定你是否要继续对这本书进行更深层次的阅读。<br>这个阶段你需要对这本书进行图书分类，你知道这是哪一类的书，这本书是怎么个架构，这本书讲了什么，包含哪些部分?</p>
-<blockquote>
-<p>需要控制在一定的时间内完成。</p>
-</blockquote>
-<p>如果你觉得这本书值得你进一步花时间阅读，那你可以完成粗略的阅读。带着你前面得到的关于这本书的信息，从头到尾地读一遍这本书。然后完善你脑海中关于这本书的信息。<br>对于比较难懂的书，你第一遍的时候可以略过那些难懂的部分，专心放在你能读懂的地方，读完它。在你把握住了这本书的整体之后，有空再去读第二遍。</p>
-<blockquote>
-<p>先把握大的原则，然后再看细节。<br>一本书的四个问题:</p>
-<ol>
-<li>这本书在讲什么?</li>
-<li>作者是如何发展他的论题的，分论点有哪些?分别是从哪里开始讲的?</li>
-<li>作者讲的有道理吗?全部有道理还是部分有道理?你需要自己说出个所以然来。学会不要被作者的主观情绪所误导。</li>
-<li>你真的需要看这本书吗?它是不是在浪费你的时间?</li>
-</ol>
-</blockquote>
-<h2 id="仔细阅读一本书"><a href="#仔细阅读一本书" class="headerlink" title="仔细阅读一本书"></a>仔细阅读一本书</h2><ol>
-<li>用一句话或一小段话来描述这本书到底写了些什么</li>
-<li>为这本书写一段推荐语</li>
-<li>与这本书相关的书单。这本书应该要归为哪一类。</li>
-<li>按照你自己的思路给这本书归纳出一个架构。对作者的目录既不忽略也不盲从。</li>
-<li>找出作者在问的问题或者作者想要解决的问题。</li>
-</ol>
-<h1 id="阅读不同类别的书籍"><a href="#阅读不同类别的书籍" class="headerlink" title="阅读不同类别的书籍"></a>阅读不同类别的书籍</h1><ul>
-<li>对于论述性的文章/书籍，请拿出中国学生与生俱来的划重点的本事来读。</li>
-<li>对于小说性质的文章/书籍，找出文章脉络，找到作者要表达的重点。</li>
-<li>读一本实用性的书时，你先确定你的目标是什么，确认这本书可以让你达到你的目的，或者至少让你进一步，这样才值得继续阅读</li>
-<li>阅读小说的时候先不要怕人物太多捋不清，将自己代入故事，继续看下去。你总会逐渐记住谁是谁。</li>
-<li>对于剧本（莎士比亚的戏剧等），把剧本大声地读出来。要慢慢读，就像是听众在听你说话一样，还是带着感情读</li>
-<li>对于诗，先一口气读完，不要停。读者最好是知道关于这个作者的生平经历、这首诗的时代背景。然后去了解这首诗大概是写了什么，表达了什么。再是逐字逐句分析意思。<br>理想与现实的冲突、爱与时间、生与死、入世出世、抱怨社会、抒发豪情壮志等等。<blockquote>
-<p>一首好诗可以用心研读，一读再读，并在你一生当中不断地想起这首诗。你会在诗中不断地找到新点子、新的乐趣与启示，对你自己及这个世界产生新的想法。</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li>对于历史书，你如果想要了解真正的历史，不要听信某一个作者的一面之词，即使他尽量使文章足够客观。另外，不要只关心真正发生了什么，关心那些人为什么要那样做，才能以史为镜。除非你只是想找资料。</li>
-<li>数学科学一类的书，并不全是给他们专业人士看的，有些书也是写给我们普罗大众的。看的时候不需要每个公式都去演算一遍，掌握重点就好。<br>你要了解作者想要解决的是什么问题，然后看作者如何去解决这些问题。<blockquote>
-<p>数学既然是一种语言，那就拥有自己的字汇、文法与句法（Syntax），初学者一定要学会这些东西。特定的符号或符号之间的关系要记下来。</p>
-</blockquote>
-</li>
-</ul>
-<p>把数学看作是一门语言，一种沟通方式。把符号当做是另一种字词，你要知道符号代表的意义、符号与符号之间的关系，用这样的方法来阅读数学书。</p>
-<ul>
-<li>阅读哲学书，发现问题，或者找到作者试图回答的答案。</li>
-</ul>
-<h1 id="主题阅读"><a href="#主题阅读" class="headerlink" title="主题阅读"></a>主题阅读</h1><p>找到你的主题，找到与你主题相关的书籍，甚至于找到书中与你的主题相关的章节。此时你的阅读重点不在某本书，而是在你的主题。</p>
-]]></content>
-      <categories>
-        <category>书籍</category>
-      </categories>
-      <tags>
-        <tag>书籍</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>发布订阅模式的实现</title>
-    <url>/2021/04/17/%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/</url>
-    <content><![CDATA[<h1 id="什么叫做“发布-订阅”模式"><a href="#什么叫做“发布-订阅”模式" class="headerlink" title="什么叫做“发布-订阅”模式"></a>什么叫做“发布-订阅”模式</h1><p>举一个简单的例子，我对物理感兴趣，于是我上微信公众号关注了“中科院物理所”，所以“中科院物理所”每天发文章我都能收到。<br>在这个过程中，我“订阅”了中科院物理所的文章，因此，只要它一“发布”文章，我就能收到。在这之间，还有一个媒介——微信公众号平台。我通过这个平台去订阅事件，物理所通过这个平台来发布事件。<br>发布事件的人，订阅事件的人，加一个两者沟通的中介。这就是一个完整的“发布-订阅”模式。</p>
-<h2 id="写一个例子"><a href="#写一个例子" class="headerlink" title="写一个例子"></a>写一个例子</h2><p><a href="https://codesandbox.io/s/fabu-dingyue-74pyv" target="_blank" rel="noopener">代码</a><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class EventHub &#123;  // 事件中心</span><br><span class="line">  constructor() &#123;</span><br><span class="line">    this.list = &#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  publish(eventName) &#123;  // 发布</span><br><span class="line">    if (!this.list || !this.list.hasOwnProperty(eventName)) &#123;</span><br><span class="line">      return;</span><br><span class="line">    &#125;</span><br><span class="line">    for (let i = 0; i &lt; this.list[eventName].length; i++) &#123;</span><br><span class="line">      let fn = this.list[eventName][i].fn;</span><br><span class="line">      let event = this.list[eventName][i].event;</span><br><span class="line">      fn(event);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  subscribe(eventName, fn) &#123;  // 订阅</span><br><span class="line">    if (!this.list) &#123;</span><br><span class="line">      this.list = &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    if (!this.list.hasOwnProperty(eventName)) &#123;</span><br><span class="line">      this.list[eventName] = [];</span><br><span class="line">    &#125;</span><br><span class="line">    let event = new Event(eventName);</span><br><span class="line">    this.list[eventName].push(&#123; event: event, fn: fn &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">const eventhub = new EventHub();</span><br><span class="line">eventhub.subscribe(&quot;progress&quot;, (e) =&gt; &#123;  // 订阅 progress 事件</span><br><span class="line">  console.log(e.type);</span><br><span class="line">&#125;);</span><br><span class="line">eventhub.subscribe(&quot;progress&quot;, () =&gt; &#123;</span><br><span class="line">  console.log(&quot;progress 2&quot;);</span><br><span class="line">&#125;);</span><br><span class="line">eventhub.publish(&quot;progress&quot;);  // 发布 progress 事件</span><br></pre></td></tr></table></figure></p>
-<h1 id="从一道面试题说起"><a href="#从一道面试题说起" class="headerlink" title="从一道面试题说起"></a>从一道面试题说起</h1><blockquote>
-<p>通过 new PipeLine() 可以创建一个 pipe 实例，该实例挂载两个方法：</p>
-<ol>
-<li>on 方法<br>调用 on 方法，可以通过传参来绑定事件名、事件函数，事件函数会默认携带两个参数：ctx、next。<br>其中 ctx 是一个对象，访问 name 可以获取当前的事件名。<br>next 是一个函数，表示执行事件列表中的下一个事件。如果 next 不被调用，则默认不执行下一个事件。</li>
-<li>run 方法<br>调用 run 方法，会按照 pipe 的事件绑定顺序，依次执行，直到事件函数中不再调用 next。<br>实现效果如下：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const pipe = new PipeLine();</span><br><span class="line">pipe.on(&quot;start&quot;, (ctx, next) =&gt;&#123;</span><br><span class="line"> console.log(ctx.name);</span><br><span class="line"> next();</span><br><span class="line">&#125;);</span><br><span class="line">pipe.on(&quot;progress&quot;, (ctx, next) =&gt;&#123;</span><br><span class="line"> console.log(ctx.name);</span><br><span class="line">&#125;);</span><br><span class="line">pipe.on(&quot;end&quot;, (ctx, next) =&gt;&#123;</span><br><span class="line"> console.log(ctx.name);</span><br><span class="line"> next();</span><br><span class="line">&#125;);</span><br><span class="line">pipe.run();</span><br><span class="line">// 输出结果：&quot;start&quot; &quot;progress&quot;</span><br><span class="line">// 因为 progress 没有执行 next() , 因此后面绑定的 &quot;end&quot; 不执行</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</blockquote>
-<p>拿到题目的第一反应是发布-订阅模式，与前面的例子不同的是：</p>
-<ol>
-<li>不区分事件名</li>
-<li>默认不继续执行下一个绑定事件</li>
-</ol>
-<p>顺着这个思路往下写，应该是先去掉事件名。<br>因此 <code>this.list[eventName].push()</code> 直接变成了 <code>this.list.push()</code>.<br>这样不论你绑定的是什么事件，都会直接运行，<code>run</code> 方法也不需要传递参数 <code>eventName</code>.<br>再有就是在 next 方法没有执行的时候阻止后续绑定事件的执行。<br>也就是把后续执行函数放到 next 方法中传给前一个绑定事件。<br>原先的代码是这样的<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for (let i = 0; i &lt; this.list.length; i++) &#123;</span><br><span class="line">  let fn = this.list[i].fn;</span><br><span class="line">  let ctx = this.list[i].ctx;</span><br><span class="line">  fn(ctx, next);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>把 <code>fn(ctx, next)</code> 提取出来，放到 fn 的第二个参数中，作为 next 函数传递给这个事件，通过递归就可以实现前一个事件调用 next 之后执行下一个事件。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let a = (i) =&gt; &#123;</span><br><span class="line">  if (i &lt; this.list.length) &#123;</span><br><span class="line">    let fn = this.list[i].fn;</span><br><span class="line">    let ctx = this.list[i].ctx;</span><br><span class="line">    fn(ctx, () =&gt; &#123;</span><br><span class="line">      a(++i);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">a(0);</span><br></pre></td></tr></table></figure></p>
-<p><a href="https://codesandbox.io/s/class-pipelinemianshiti-5urhw?file=/src/index.js" target="_blank" rel="noopener">完整代码</a></p>
-<p>如果，我想要默认按顺序执行所有的绑定事件，但是一旦执行了 <code>ctx.stop()</code> 就终止后面的绑定事件呢？<br>把上面的代码稍稍改一改，让 ctx.stop 终止循环，是不是就可以了？<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let a = (i) =&gt; &#123;</span><br><span class="line">  if (i &lt; this.list.length) &#123;</span><br><span class="line">    let fn = this.list[i].fn;</span><br><span class="line">    let ctx = this.list[i].ctx;</span><br><span class="line">    ctx.stop = ()=&gt;&#123;i=this.list.length&#125;</span><br><span class="line">    fn(ctx);</span><br><span class="line">    a(++i)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">a(0);</span><br></pre></td></tr></table></figure></p>
-<p>看到这里，有没有想到什么？</p>
-<h1 id="addEventListener-做了什么"><a href="#addEventListener-做了什么" class="headerlink" title="addEventListener 做了什么"></a>addEventListener 做了什么</h1><p>不知道你们有没有了解过 DOM 的 addEventListener 和 click事件。<br>添加一个事件监听，执行一个点击事件。<br>下面是一个简单的 click 事件。<br><a href="https://jsbin.com/noqitor/4/edit?js,console,output" target="_blank" rel="noopener">源码</a><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let btn = document.querySelector(&quot;#btn&quot;)</span><br><span class="line">btn.addEventListener(&quot;click&quot;, (e)=&gt;&#123;</span><br><span class="line">  console.log(e.type);  // 输出 &quot;click&quot;</span><br><span class="line">&#125;)</span><br><span class="line">btn.addEventListener(&quot;click&quot;, (e)=&gt;&#123;</span><br><span class="line">  console.log(&quot;2&quot;)</span><br><span class="line">  e.stopImmediatePropagation(); // 阻止后面绑定的监听事件</span><br><span class="line">&#125;)</span><br><span class="line">btn.addEventListener(&quot;click&quot;, (e)=&gt;&#123;</span><br><span class="line">  console.log(&quot;3&quot;)</span><br><span class="line">&#125;)</span><br><span class="line">btn.click()  // 手动执行 click 事件</span><br></pre></td></tr></table></figure></p>
-<p>和上面的面试题是不是有点像？<br>我们把上面面试题代码稍稍改动一下，把 <code>on</code> 变成 <code>addEventListener</code> , 同时把 <code>run</code> 变成 <code>click</code>, 把 <code>ctx</code> 变成 <code>event</code>, 把 <code>stop()</code> 变成 <code>stopImmediatePropagation()</code>.<br>像这样<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const pipe = new PipeLine();</span><br><span class="line">pipe.addEventListener(&quot;start&quot;, (e) =&gt; &#123;</span><br><span class="line">  console.log(e.type);</span><br><span class="line">&#125;);</span><br><span class="line">pipe.addEventListener(&quot;progress&quot;, (e) =&gt; &#123;</span><br><span class="line">  console.log(e.type);</span><br><span class="line">  e.stopImmediatePropagation()</span><br><span class="line">&#125;);</span><br><span class="line">pipe.addEventListener(&quot;end&quot;, (e) =&gt; &#123;</span><br><span class="line">  console.log(e.type);</span><br><span class="line">&#125;);</span><br><span class="line">pipe.click();</span><br></pre></td></tr></table></figure></p>
-<p>现在是不是更像一点了？<br><a href="https://codesandbox.io/s/monionclickdefabu-dingyue-8wmbp?file=/src/index.js" target="_blank" rel="noopener">源码</a><br>addEventListener 实际上是添加了一个事件监听，在监听这个事件被触发之后，就会执行回调函数。<br><code>a.addEventListener(&quot;click&quot;, fn)</code> a 订阅了 click 事件，一旦这个事件被触发，就调用函数 fn 。<br><code>a.click()</code> 发布了 click 事件，通知所有订阅了 click 事件的人，可以执行你的操作了。</p>
-<hr>
-<p>以上，发布-订阅模式和实际应用场景。</p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>onClick</tag>
-        <tag>发布-订阅模式</tag>
+        <tag>面试</tag>
       </tags>
   </entry>
   <entry>
@@ -884,6 +670,344 @@
       </categories>
   </entry>
   <entry>
+    <title>同源策略的理解</title>
+    <url>/2022/12/07/%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5%E7%9A%84%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<h1 id="什么叫同源"><a href="#什么叫同源" class="headerlink" title="什么叫同源"></a>什么叫同源</h1><p>协议域名端口号三者相同则为同源。拿 <code>http://www.baidu.com</code> 举例：</p>
+<ul>
+<li><a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a> 不同源，协议不同、端口号不同（ http 默认端口号为 80，https 默认端口号为 443 ）</li>
+<li><a href="http://baidu.com" target="_blank" rel="noopener">http://baidu.com</a> 不同源，域名不同</li>
+<li><a href="http://www.baidu.com:81" target="_blank" rel="noopener">http://www.baidu.com:81</a> 不同源，端口号不同( http 协议默认端口号为 80)</li>
+<li><a href="http://www.baidu.com/index" target="_blank" rel="noopener">http://www.baidu.com/index</a> 同源，后面的 <code>/index</code> 是域名下的文件夹，不作为同源判断依据</li>
+</ul>
+<h1 id="什么是同源策略"><a href="#什么是同源策略" class="headerlink" title="什么是同源策略"></a>什么是同源策略</h1><p>1995 年，同源策略由 Netscape 公司引入浏览器。目前，所有浏览器都实行这个策略。<br>浏览器的同源策略实际是想要限制两个不同源的网站交互。它想要达成的目标是：在用户访问恶意网站的时候，这个恶意网站无法影响到用户与正常网站之间的交互。<br>为了遵循同源策略衍生出来了三种不同的限制：</p>
+<ul>
+<li>限制不同源的网站读取 Cookie, LocalStorage, indexDB</li>
+<li>限制不同源的网站读取 DOM</li>
+<li>限制不同源的网站发送 AJAX 请求<br>但由于万维网的诞生就是为了做资源的链接共享，所以完全限制两个网站之间的交互是不现实的，因此浏览器的目标是控制这个交互的受控。所以我们可以看到，浏览器的同源策略不针对一些纯粹的对资源的操作，比如 img、link、script 等标签的资源引进操作，比如 a 标签的点击跳转。另外，对于 form 表单的提交，同源策略同样不做限制，同源策略只针对读操作，也因此对于 ajax 请求，其实是能够正常发送的，但是浏览器阻止了资源的接收。<br>对于同源策略限制的以上三点，单独分析的话：</li>
+<li>浏览器本地保存了用户的隐私信息，假设恶意网站能够随意读取其他网站的 Cookie 的话，就可以模仿用户登录进而拿到用户的隐私信息。</li>
+<li>限制不同源的网站读取 DOM 主要是为了防止恶意网站通过 iframe 调用被攻击网站，等到用户在 iframe 里输入了用户名和密码之后，恶意网站再拿到 iframe 的 DOM 节点中输入的用户名密码，从而获取用户的隐私信息。</li>
+<li>ajax 请求的限制源于它的自由度，它可以支持任意请求的发送，也可以拿到网站的响应信息。如果不限制 ajax 的话，那么用户在登录了 A 网站后，再进入 B 网站，B 网站虽然不能直接拿到 A 网站的 Cookie，但是在它向 A 网站发送请求的时候，会携带 A 网站的 Cookie，免除了登录步骤。B 网站就可以通过这种方法拿到 A 网站的用户隐私信息。</li>
+</ul>
+<h1 id="规避同源的方法"><a href="#规避同源的方法" class="headerlink" title="规避同源的方法"></a>规避同源的方法</h1><p>同源策略对不同源的网站之间的通信做出了诸多的限制，但实际使用中又存在需要跨域的情况，因此就有了“规避同源的方法”这个需求。在这个基础上，一方面是开发者通过一些“特性”来规避同源策略，另一方面 W3C 也提供了一些方法来做不同源之间的通信。这里列举一部分。</p>
+<h2 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h2><p>jsonp 利用 script 标签不受同源策略限制的漏洞，通过动态创建 script 标签，并把 src 指向目标地址的方式发送请求，通过服务器调用 callback 来获取响应。<br>具体实现 <a href="https://blog.csdn.net/writing_happy/article/details/80328774" target="_blank" rel="noopener">点这里</a></p>
+<h2 id="window-postMessage"><a href="#window-postMessage" class="headerlink" title="window.postMessage"></a>window.postMessage</h2><p>HTML5 引入了跨文档通信 API，A 网站通过 <code>window.postMessage(&#39;message&#39;, &#39;http://B.com&#39;)</code> 向 B 网站发送请求，B 网站通过监听 message 事件来拿到消息。</p>
+<h2 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h2><p>跨域资源共享是 W3C 提供的一种解决 AJAX 跨域问题的方法，通过设置 HTTP 响应头 Access-Control-Allow-Origin 来指定哪些源可以对该资源进行跨域访问来解决同源问题。相当于告诉浏览器这个来源是自己人，可以让它进行访问。这其实在一方面印证了上面所说的，浏览器并不限制 ajax 请求的发送，它限制的是响应的读取。<br>CORS 相关的详细可访问阮一峰老师的<a href="https://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="noopener">这篇文章</a>来查看。</p>
+<h2 id="nginx-反向代理"><a href="#nginx-反向代理" class="headerlink" title="nginx 反向代理"></a>nginx 反向代理</h2><p>nginx 是利用反向代理对同源策略的一种规避。<br>首先了解一下什么是代理，试想一个场景：用户想要访问 google.com ，但是因为安全上网策略无法访问，所以挂了个代理，代理拦截了用户发的请求，然后转发给 google.com，google.com 发送响应给代理服务器，接着代理服务器又返回给用户，这就完成一次正向代理的过程。正向代理其实是，我知道我要去 A 商店买东西，但是我找不到路，那么正向代理拿着我的钱去了 A 商店，然后又把货物给我运了回来。<br>而反向代理则是，我想要买东西，但是我不在乎去哪里买，我只要找到这个反向代理，把钱给他，然后让他把货物给我。<br>因为同源策略限制的只是不同源的网站之间的交互，服务器向服务器发请求，这个过程是不受同源策略限制的。所以 nginx 做的操作是：它把 origin 设置为和网站一致，然后接收网站发来的请求，再去向服务器发请求，拿到服务器的响应后，又把响应返回给网站。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy" target="_blank" rel="noopener">MDN 浏览器的同源策略</a><br><a href="http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html" target="_blank" rel="noopener">阮一峰 浏览器同源政策及其规避方法</a><br><a href="https://tsejx.github.io/javascript-guidebook/computer-networks/web-security/same-origin-policy/" target="_blank" rel="noopener">JavaScript GuideBook</a><br><a href="https://www.w3.org/Security/wiki/Same_Origin_Policy" target="_blank" rel="noopener">W3C same origin policy</a><br><a href="https://code.google.com/archive/p/browsersec/wikis/Part2.wiki#Same-origin_policy" target="_blank" rel="noopener">浏览器安全手册</a><br><a href="https://www.rfc-editor.org/rfc/rfc6454" target="_blank" rel="noopener">同源策略草案</a><br><a href="https://www.cnblogs.com/bala/p/15990013.html" target="_blank" rel="noopener">同源策略的分析随笔</a></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>网络安全</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>react背景知识</title>
+    <url>/2021/03/25/react%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<p>网页三要素：HTML、CSS and JS，在 react 里应该是什么样子的呢？</p>
+<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><p>react 没有 HTML 。<br>这样说有点绝对，但是并不是完全不正确。你使用 create-react-app 创建一个 react 项目的时候，会发现在 public 文件夹下有一个 index.html 文件，里边有一个 id 为 root 的 div 。<br>但是你要知道，我们写的所有代码，都应该是在 src 文件夹下的。我们不需要去修改这个唯一的 html 文件，为什么？<br>抛开 react ，如果我们需要修改页面中的某个东西的时候，我们会怎么做？<br>获取元素，修改元素，然后再把元素放回去。<br>而 react 给了我们另一种可能——<br>创建一个元素，然后放到页面。需要更新的时候创建一个新的元素，然后替换掉之前的元素。省去了从页面获取元素的那一步。<br>还是那句话， react 没有 HTML 。<br>平时写在 html 文件里的东西， react 放到了 JavaScript 里边。<br>react 使用 <code>React.createElement(&quot;div&quot;)</code> 来创建一个 <code>&lt;div /&gt;</code> ，用 <code>React.render(React.createElement(&quot;div&quot;), document.querySelector(&quot;#root&quot;))</code> 将 <code>&lt;div /&gt;</code> 挂到 id 为 root 的元素下。<br>在 react 中，html 唯一的作用就是提供一个节点，让 js 把生成的元素挂到这个节点上。<br>这样我们在需要修改 DOM 元素的时候，只需要用 js 直接修改，然后再重新 render ，将修改好的虚拟的 DOM 元素渲染到页面。省去了之前从页面获取 DOM 元素的步骤。</p>
+<h2 id="关于虚拟-DOM"><a href="#关于虚拟-DOM" class="headerlink" title="关于虚拟 DOM"></a>关于虚拟 DOM</h2><p>DOM 全称 Document Object Model ，文档对象模型，将 html 页面元素与一个个对象相对应，方便我们使用 js 来操控 html 文档。比如 <code>var x = document.querySelector(&quot;#root&quot;)</code>,我们通过这段代码从 html 页面上获取了一个真实的 DOM 元素。变量 x 对应着页面上一个 id 为 root 的节点。<br>而我们使用<code>const x = React.createElement(&quot;div&quot;)</code>则创建了一个标签为 div 的虚拟 DOM ，它与页面上的 div 相对应。<br>总的来说，虚拟 DOM 是表示 DOM 节点的 js 对象，对应页面的真实的 DOM 元素。</p>
+<h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><p>如果我想往页面加一个 button ，那么我应该这样写 <code>React.render(React.createElement(&quot;button&quot;), document.querySelector(&quot;#root&quot;))</code> ，如果这个 button 需要绑定事件，那么应该使用<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">React.createElement(&quot;button&quot;, &#123;</span><br><span class="line">    onClick: ()=&gt;&#123;console.log(&quot;here are we&quot;)&#125;</span><br><span class="line">&#125;, &quot;Click me&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>其中第一个参数是元素标签；第二个参数是一个对象，上边写了元素属性；第三个参数是元素的内容。这样我们创建好了一个虚拟 DOM。<br>感觉很麻烦。<br>所以有了 jsx 语法。<br>jsx 做了什么呢？它允许我们在 js 里写一段看上去像 html 的代码。<br>比如上述的 button 创建，你可以这样<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;button onClick=&#123;()=&gt;console.log(&quot;here are we&quot;)&#125;&gt;Click me&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
+<p>其中<code>{}</code>里边是 js 的变量，如果不加的话会默认把它当做字符串。<br>需要注意的是在这里 onClick 是给 button 绑定一个事件，如果你直接写 <code>onClick = {console.log(1)}</code> ，意思是把 console.log(1) 当做一个事件绑定上去，于是在绑定事件的时候会执行这段代码。所以需要使用一个函数把它包裹起来，这样才是在点击按钮的时候执行这个匿名函数。<br>另，给函数加 class 的话用的是 <code>className=&quot;xxx&quot;</code> 而不是 html 中的 <code>class=&quot;xxx&quot;</code>。</p>
+<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><p>react 里的 css 有两种方案。</p>
+<h2 id="传统方案"><a href="#传统方案" class="headerlink" title="传统方案"></a>传统方案</h2><p>传统的给元素加 class ，内容与样式分离。css 写在 css 文件里，然后 <code>import &quot;./style.css&quot;</code> 引入 css 。<br>这种方法的一个弊端在于我们需要特别注意 class 的互相影响问题。如果组件 A 有一个叫做 title 的类，而它引用的另一个组件 B 同样也有一个 title 类，B 组件会继承 A 组件设置的 title 的样式。<br>而为了干掉这个不确定的因素，部分人会选择以组件名为前缀的 class 名字，这样可以有效防止各组件之间的样式冲突。参考 BEM 命名规范。</p>
+<h2 id="CSS-in-JS"><a href="#CSS-in-JS" class="headerlink" title="CSS in JS"></a>CSS in JS</h2><p>因为上一个方案命名的繁琐为人诟病，而 css 没有办法做到自动区分两个重名的 class ，所以有人想，不要 css 了。<br>根据这个思路，很多人，想了很多不同的解决方案。<br>在 github 搜索 “css in js” 可以看到一个完整的列表——版本号、star 数、下载量、package 名，你可以根据需要自行选择好用的方案。<br>这里介绍三种</p>
+<ol>
+<li><p><a href="https://styled-components.com/docs/basics#installation" target="_blank" rel="noopener">styled-components</a> 在组件内部的 js 文件中写样式代码。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 样式</span><br><span class="line">const Title = styled.h1`</span><br><span class="line">    font-size: 1.5em;</span><br><span class="line">    text-align: center;</span><br><span class="line">    color: palevioletred;</span><br><span class="line">`;</span><br><span class="line">// jsx</span><br><span class="line">&lt;Title&gt; hello &lt;/Title&gt;</span><br></pre></td></tr></table></figure>
+<p> 组件之间是彼此分离的，而组件内部内容样式和行为杂糅在了一起，好处是不论这个组件写的如何，不会影响到其他的组件。</p>
+</li>
+<li><p><a href="https://github.com/gajus/react-css-modules" target="_blank" rel="noopener">react-css-module</a> 配置略麻烦，解决方案比前面的那种纯净一点。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import CSSModules from &apos;react-css-modules&apos;;</span><br><span class="line">import styles from &apos;./style.css&apos;;</span><br><span class="line">&lt;h1 styleName=&apos;title&apos;&gt;hello&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>emotion 语法繁琐，有点像内联样式。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/** @jsx jsx */</span><br><span class="line">import &#123; jsx &#125; from &apos;@emotion/react&apos;</span><br><span class="line">&lt;h1 css=&#123;&#123; color: &apos;red&apos; &#125;&#125;&gt; hello &lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>具体选择什么方案自然是仁者见仁，但是需要注意的是，如果你是打算要建一个 UI 库，那么请选择传统方案。<br>在 CSS in JS 方案中，虽然我们没有写类名，但是在运行的时候， js 会自动为我们生成一个类名，你可以在浏览器的检查元素里看见。<br>在你自己的应用中，这不是什么问题。但是如果是建 UI 库，别人不知道类名，就无法覆盖样式。</p>
+<hr>
+<p>以上， react 可能只有 js ….</p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>前端</category>
+        <category>react</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>redux使用指南</title>
+    <url>/2021/03/27/redux%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<h1 id="什么时候使用"><a href="#什么时候使用" class="headerlink" title="什么时候使用"></a>什么时候使用</h1><p>redux 帮助我们进行状态（数据）管理。如果你可以不用，那么就没有必要用。<br>如果应用中有以下场景可以考虑使用：</p>
+<ol>
+<li>某个组件的状态需要共享</li>
+<li>某个组件需要在任何地方都可以拿到</li>
+<li>一个组件需要改变全局状态</li>
+<li>一个组件需要改变另一个组件的状态</li>
+</ol>
+<h1 id="redux-思路"><a href="#redux-思路" class="headerlink" title="redux 思路"></a>redux 思路</h1><p>所有的变量和处理函数都放在 store 里。<code>var store = Redux.createStore(reducer)</code><br>变量用 state 存储，处理函数是 action . reducer 是一个函数，接收旧的 state , 返回新的 state . 并且负责 state 的初始化和 action 的分类处理 . <code>reducer = function(state, action){...}</code><br>action 参数是一个对象 <code>{type: &quot;&quot;, payload: &quot;&quot;}</code> , 其中 type 表示 action 类型， payload 是 action 函数 的参数。<br>外部获取变量使用 <code>store.getState()</code> 拿到 state 的值。<br><code>store.subscribe(render)</code> 用来监听 action ，一旦 action 被触发 (dispatch) 了，就执行 render 函数。 render 函数负责刷新页面。<br><code>store.dispatch({ type: &quot;add&quot;, payload: 1 })</code> 触发一个类型为 “add” 的 action ， 并且传入参数 1 。在需要调用的时候调用。</p>
+<h1 id="原生-js-redux"><a href="#原生-js-redux" class="headerlink" title="原生 js + redux"></a>原生 js + redux</h1><p><a href="https://codesandbox.io/s/redux-with-js-uon9m?file=/src/index.js" target="_blank" rel="noopener">原生 js + redux Demo</a><br>redux 作为一个状态管理工具，同样适用于原生 js 。这里用它实现一个点击加一的效果。</p>
+<ol>
+<li>在 index.html 里创建一个 id 为 app 的 div 作为根元素。</li>
+<li>安装 redux 包</li>
+<li><p>声明一个 reducer 函数，传递两个参数 state (数据) 和 action (类型和函数参数) 。</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var reducer = function (state, action) &#123;</span><br><span class="line">    state = state || &#123;  // init state</span><br><span class="line">        number: 0</span><br><span class="line">    &#125;;</span><br><span class="line">    switch (action.type) &#123; // 事件处理</span><br><span class="line">        case &quot;add&quot;:</span><br><span class="line">            return &#123; number: state.number + action.payload &#125;;</span><br><span class="line">        default:</span><br><span class="line">            return state;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>根据 reducer 创建 store</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; createStore &#125; from &quot;redux&quot;;</span><br><span class="line">var store = createStore(reducer);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>监听 store 里边的改动。<code>store.subscribe(render)</code></p>
+</li>
+<li><p>创建 render 函数</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function render() &#123;</span><br><span class="line">    let str = `</span><br><span class="line">        &lt;div id=&quot;display&quot;&gt;$&#123;store.getState().number&#125;&lt;/div&gt;</span><br><span class="line">            &lt;button id=&quot;add1&quot;&gt;点我加一&lt;/button&gt;</span><br><span class="line">    `;</span><br><span class="line">    document.getElementById(&quot;app&quot;).innerHTML = str;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行 render 函数，渲染页面。<code>render()</code></p>
+</li>
+<li>给 button 添加事件监听，在点击了按钮之后执行 store.dispatch ，发布时间。<br>这里因为 render 的时候会重新弄一个 button 上去，并不是原先的 button 了，如果直接监听 button 的点击事件的话，那么这个函数只能执行一次。所以采用事件委托，监听根节点 #app 的点击事件，然后判断如果是在 button 上的点击则执行接下来的语句。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">document.getElementById(&quot;app&quot;).addEventListener(&quot;click&quot;, (e) =&gt; &#123;</span><br><span class="line">    if (e.target.id === &quot;add1&quot;) &#123;</span><br><span class="line">        store.dispatch(&#123; type: &quot;add&quot;, payload: 1 &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>至此效果完成。<br>可以看见我们创建了一个页面，然后给 button 添加了一个事件，如果点击了这个按钮，就发布（ dispatch ） 一个类型为 add 、 参数为 1 的事件。<br>而 store.subscribe(render) 监听到了这个事件，并在响应之后调用 render 函数，从而刷新页面。</p>
+<h1 id="react-redux"><a href="#react-redux" class="headerlink" title="react + redux"></a>react + redux</h1><p><a href="https://codesandbox.io/s/redux-with-react-vfq19?file=/src/index.js" target="_blank" rel="noopener">react + redux Demo</a><br>和 react 结合的 redux 和上面几乎没有区别，只是页面的刷新从 js 的刷新变成了 react 的刷新。<br>还是点击加一的例子，步骤 1~5 同上。<br>其余代码如下<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function App() &#123;</span><br><span class="line">  function add() &#123;</span><br><span class="line">    store.dispatch(&#123; type: &quot;add&quot;, payload: 1 &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  return (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;div&gt; &#123;store.getState().number&#125; &lt;/div&gt;</span><br><span class="line">      &lt;button onClick=&#123;add&#125;&gt; 点我加一 &lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line">function render() &#123;</span><br><span class="line">  ReactDOM.render(&lt;App /&gt;, document.getElementById(&quot;root&quot;));</span><br><span class="line">&#125;</span><br><span class="line">render();</span><br></pre></td></tr></table></figure></p>
+<h1 id="react-redux-1"><a href="#react-redux-1" class="headerlink" title="react-redux"></a>react-redux</h1><p><a href="https://codesandbox.io/s/react-redux-ko0b1?file=/src/App.js" target="_blank" rel="noopener">react-redux Demo</a><br>react-redux 是一个单独的依赖包，为了更便捷地在 react 中使用 redux 。<br>它把组件分成了 UI 组件和容器组件，UI 组件负责 UI 的呈现，而容器组件负责管理数据和逻辑。<br>我们知道，redux 是用来帮助我们管理数据的一个工具。<br>在 react-redux 中，如果一个组件既有 UI 又有业务逻辑，我们需要把它拆分为两个部分：外面是一个容器组件，里边包含一个 UI 组件。<br>依然是这个点击加一的例子。</p>
+<ol>
+<li>创建 reducer , 创建 store</li>
+<li><p>使用 Provider 将 store 传给子组件</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; Provider &#125; from &quot;react-redux&quot;;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;Provider store=&#123;store&#125;&gt;</span><br><span class="line">        &lt;App /&gt;</span><br><span class="line">    &lt;/Provider&gt;,</span><br><span class="line">    rootElement</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在子组件 App 中接收 state . （创建一个 App.js 文件）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function App(props) &#123;</span><br><span class="line">    return (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;div&gt;&#123;props.number&#125;&lt;/div&gt;</span><br><span class="line">            &lt;button onClick=&#123;props.add.bind(this)&#125;&gt;点我加一&lt;/button&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个 App 就是 UI 组件，它没有自己的状态，直接接收 props 的 number 并展示在页面上。<br>button 的 click 事件同样也是 props 传进来的。</p>
+</li>
+<li><p>创建 state 转换成 props 的函数</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function mapStateToProps(state) &#123;</span><br><span class="line">    const &#123; number &#125; = state;</span><br><span class="line">    return &#123; number: number &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 将 state.number 赋值给 props.number , 并返回一个新的对象。</p>
+</li>
+<li><p>创建 dispatch 转换成 props 的函数</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const mapDispatchToProps = (dispatch) =&gt; &#123;</span><br><span class="line">     return &#123;</span><br><span class="line">         add: () =&gt; dispatch(&#123; type: &quot;add&quot;, payload: 1 &#125;)</span><br><span class="line">         &#125;;</span><br><span class="line"> &#125;;</span><br></pre></td></tr></table></figure>
+<p> 这里传入的是 dispatch ， 返回一个对象，对象里边有一个 add 函数，在 App 组件中使用 props.add 即可引用该函数。<br> 如果函数不复杂的话可以省去这一步，直接在 App 组件中使用 useDispatch 即可。</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const dispatch = useDispatch();</span><br><span class="line">...</span><br><span class="line">&lt;button onClick = &#123;()=&gt;&#123;dispatch(&#123; type: &quot;add&quot;, payload: 1 &#125;)&#125;&#125;&gt;...&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>连接 UI 和数据逻辑</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">export default connect(mapStateToProps, mapDispatchToProps)(App);</span><br></pre></td></tr></table></figure>
+<p> 这里的语法不要写错<code>connection()()</code><br> 第一个 connection() 的返回值是一个函数，然后 App 是返回的这个函数的参数，<br> 形如这样</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function add(a)&#123;</span><br><span class="line">    a=a+1</span><br><span class="line">    return function fn(b)&#123;</span><br><span class="line">        return a+b</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(add(1)(2))</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>react-redux 的好处在于在不污染全局变量的条件下，我们不需要将 store 层层传递，只需要在根节点上使用 Provider 就能够让所有的子组件获取 store 的值。</p>
+<hr>
+<p>以上，如果出现异步操作，action 发出之后，过一段时间再执行 reducer ，那么需要使用中间件 (middleware)。</p>
+<hr>
+<p>参考文献：<br><a href="http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html" target="_blank" rel="noopener">阮一峰Redux 入门教程</a></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+        <tag>redux</tag>
+        <tag>react-redux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>发布订阅模式的实现</title>
+    <url>/2021/04/17/%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/</url>
+    <content><![CDATA[<h1 id="什么叫做“发布-订阅”模式"><a href="#什么叫做“发布-订阅”模式" class="headerlink" title="什么叫做“发布-订阅”模式"></a>什么叫做“发布-订阅”模式</h1><p>举一个简单的例子，我对物理感兴趣，于是我上微信公众号关注了“中科院物理所”，所以“中科院物理所”每天发文章我都能收到。<br>在这个过程中，我“订阅”了中科院物理所的文章，因此，只要它一“发布”文章，我就能收到。在这之间，还有一个媒介——微信公众号平台。我通过这个平台去订阅事件，物理所通过这个平台来发布事件。<br>发布事件的人，订阅事件的人，加一个两者沟通的中介。这就是一个完整的“发布-订阅”模式。</p>
+<h2 id="写一个例子"><a href="#写一个例子" class="headerlink" title="写一个例子"></a>写一个例子</h2><p><a href="https://codesandbox.io/s/fabu-dingyue-74pyv" target="_blank" rel="noopener">代码</a><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class EventHub &#123;  // 事件中心</span><br><span class="line">  constructor() &#123;</span><br><span class="line">    this.list = &#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  publish(eventName) &#123;  // 发布</span><br><span class="line">    if (!this.list || !this.list.hasOwnProperty(eventName)) &#123;</span><br><span class="line">      return;</span><br><span class="line">    &#125;</span><br><span class="line">    for (let i = 0; i &lt; this.list[eventName].length; i++) &#123;</span><br><span class="line">      let fn = this.list[eventName][i].fn;</span><br><span class="line">      let event = this.list[eventName][i].event;</span><br><span class="line">      fn(event);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  subscribe(eventName, fn) &#123;  // 订阅</span><br><span class="line">    if (!this.list) &#123;</span><br><span class="line">      this.list = &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    if (!this.list.hasOwnProperty(eventName)) &#123;</span><br><span class="line">      this.list[eventName] = [];</span><br><span class="line">    &#125;</span><br><span class="line">    let event = new Event(eventName);</span><br><span class="line">    this.list[eventName].push(&#123; event: event, fn: fn &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">const eventhub = new EventHub();</span><br><span class="line">eventhub.subscribe(&quot;progress&quot;, (e) =&gt; &#123;  // 订阅 progress 事件</span><br><span class="line">  console.log(e.type);</span><br><span class="line">&#125;);</span><br><span class="line">eventhub.subscribe(&quot;progress&quot;, () =&gt; &#123;</span><br><span class="line">  console.log(&quot;progress 2&quot;);</span><br><span class="line">&#125;);</span><br><span class="line">eventhub.publish(&quot;progress&quot;);  // 发布 progress 事件</span><br></pre></td></tr></table></figure></p>
+<h1 id="从一道面试题说起"><a href="#从一道面试题说起" class="headerlink" title="从一道面试题说起"></a>从一道面试题说起</h1><blockquote>
+<p>通过 new PipeLine() 可以创建一个 pipe 实例，该实例挂载两个方法：</p>
+<ol>
+<li>on 方法<br>调用 on 方法，可以通过传参来绑定事件名、事件函数，事件函数会默认携带两个参数：ctx、next。<br>其中 ctx 是一个对象，访问 name 可以获取当前的事件名。<br>next 是一个函数，表示执行事件列表中的下一个事件。如果 next 不被调用，则默认不执行下一个事件。</li>
+<li>run 方法<br>调用 run 方法，会按照 pipe 的事件绑定顺序，依次执行，直到事件函数中不再调用 next。<br>实现效果如下：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const pipe = new PipeLine();</span><br><span class="line">pipe.on(&quot;start&quot;, (ctx, next) =&gt;&#123;</span><br><span class="line"> console.log(ctx.name);</span><br><span class="line"> next();</span><br><span class="line">&#125;);</span><br><span class="line">pipe.on(&quot;progress&quot;, (ctx, next) =&gt;&#123;</span><br><span class="line"> console.log(ctx.name);</span><br><span class="line">&#125;);</span><br><span class="line">pipe.on(&quot;end&quot;, (ctx, next) =&gt;&#123;</span><br><span class="line"> console.log(ctx.name);</span><br><span class="line"> next();</span><br><span class="line">&#125;);</span><br><span class="line">pipe.run();</span><br><span class="line">// 输出结果：&quot;start&quot; &quot;progress&quot;</span><br><span class="line">// 因为 progress 没有执行 next() , 因此后面绑定的 &quot;end&quot; 不执行</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<p>拿到题目的第一反应是发布-订阅模式，与前面的例子不同的是：</p>
+<ol>
+<li>不区分事件名</li>
+<li>默认不继续执行下一个绑定事件</li>
+</ol>
+<p>顺着这个思路往下写，应该是先去掉事件名。<br>因此 <code>this.list[eventName].push()</code> 直接变成了 <code>this.list.push()</code>.<br>这样不论你绑定的是什么事件，都会直接运行，<code>run</code> 方法也不需要传递参数 <code>eventName</code>.<br>再有就是在 next 方法没有执行的时候阻止后续绑定事件的执行。<br>也就是把后续执行函数放到 next 方法中传给前一个绑定事件。<br>原先的代码是这样的<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for (let i = 0; i &lt; this.list.length; i++) &#123;</span><br><span class="line">  let fn = this.list[i].fn;</span><br><span class="line">  let ctx = this.list[i].ctx;</span><br><span class="line">  fn(ctx, next);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>把 <code>fn(ctx, next)</code> 提取出来，放到 fn 的第二个参数中，作为 next 函数传递给这个事件，通过递归就可以实现前一个事件调用 next 之后执行下一个事件。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let a = (i) =&gt; &#123;</span><br><span class="line">  if (i &lt; this.list.length) &#123;</span><br><span class="line">    let fn = this.list[i].fn;</span><br><span class="line">    let ctx = this.list[i].ctx;</span><br><span class="line">    fn(ctx, () =&gt; &#123;</span><br><span class="line">      a(++i);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">a(0);</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://codesandbox.io/s/class-pipelinemianshiti-5urhw?file=/src/index.js" target="_blank" rel="noopener">完整代码</a></p>
+<p>如果，我想要默认按顺序执行所有的绑定事件，但是一旦执行了 <code>ctx.stop()</code> 就终止后面的绑定事件呢？<br>把上面的代码稍稍改一改，让 ctx.stop 终止循环，是不是就可以了？<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let a = (i) =&gt; &#123;</span><br><span class="line">  if (i &lt; this.list.length) &#123;</span><br><span class="line">    let fn = this.list[i].fn;</span><br><span class="line">    let ctx = this.list[i].ctx;</span><br><span class="line">    ctx.stop = ()=&gt;&#123;i=this.list.length&#125;</span><br><span class="line">    fn(ctx);</span><br><span class="line">    a(++i)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">a(0);</span><br></pre></td></tr></table></figure></p>
+<p>看到这里，有没有想到什么？</p>
+<h1 id="addEventListener-做了什么"><a href="#addEventListener-做了什么" class="headerlink" title="addEventListener 做了什么"></a>addEventListener 做了什么</h1><p>不知道你们有没有了解过 DOM 的 addEventListener 和 click事件。<br>添加一个事件监听，执行一个点击事件。<br>下面是一个简单的 click 事件。<br><a href="https://jsbin.com/noqitor/4/edit?js,console,output" target="_blank" rel="noopener">源码</a><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let btn = document.querySelector(&quot;#btn&quot;)</span><br><span class="line">btn.addEventListener(&quot;click&quot;, (e)=&gt;&#123;</span><br><span class="line">  console.log(e.type);  // 输出 &quot;click&quot;</span><br><span class="line">&#125;)</span><br><span class="line">btn.addEventListener(&quot;click&quot;, (e)=&gt;&#123;</span><br><span class="line">  console.log(&quot;2&quot;)</span><br><span class="line">  e.stopImmediatePropagation(); // 阻止后面绑定的监听事件</span><br><span class="line">&#125;)</span><br><span class="line">btn.addEventListener(&quot;click&quot;, (e)=&gt;&#123;</span><br><span class="line">  console.log(&quot;3&quot;)</span><br><span class="line">&#125;)</span><br><span class="line">btn.click()  // 手动执行 click 事件</span><br></pre></td></tr></table></figure></p>
+<p>和上面的面试题是不是有点像？<br>我们把上面面试题代码稍稍改动一下，把 <code>on</code> 变成 <code>addEventListener</code> , 同时把 <code>run</code> 变成 <code>click</code>, 把 <code>ctx</code> 变成 <code>event</code>, 把 <code>stop()</code> 变成 <code>stopImmediatePropagation()</code>.<br>像这样<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const pipe = new PipeLine();</span><br><span class="line">pipe.addEventListener(&quot;start&quot;, (e) =&gt; &#123;</span><br><span class="line">  console.log(e.type);</span><br><span class="line">&#125;);</span><br><span class="line">pipe.addEventListener(&quot;progress&quot;, (e) =&gt; &#123;</span><br><span class="line">  console.log(e.type);</span><br><span class="line">  e.stopImmediatePropagation()</span><br><span class="line">&#125;);</span><br><span class="line">pipe.addEventListener(&quot;end&quot;, (e) =&gt; &#123;</span><br><span class="line">  console.log(e.type);</span><br><span class="line">&#125;);</span><br><span class="line">pipe.click();</span><br></pre></td></tr></table></figure></p>
+<p>现在是不是更像一点了？<br><a href="https://codesandbox.io/s/monionclickdefabu-dingyue-8wmbp?file=/src/index.js" target="_blank" rel="noopener">源码</a><br>addEventListener 实际上是添加了一个事件监听，在监听这个事件被触发之后，就会执行回调函数。<br><code>a.addEventListener(&quot;click&quot;, fn)</code> a 订阅了 click 事件，一旦这个事件被触发，就调用函数 fn 。<br><code>a.click()</code> 发布了 click 事件，通知所有订阅了 click 事件的人，可以执行你的操作了。</p>
+<hr>
+<p>以上，发布-订阅模式和实际应用场景。</p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>onClick</tag>
+        <tag>发布-订阅模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《如何阅读一本书》笔记</title>
+    <url>/2021/01/22/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>书名：《如何阅读一本书》<br>作者：[美]莫提默·艾德勒，查尔斯·范多伦<br>译者：郝明义，朱衣</p>
+<p>这本书教人们使用不同的方法去阅读不同类型的书，并详细描述了阅读的不同层次和阅读时的注意事项。</p>
+<h1 id="你为什么要读那本书？"><a href="#你为什么要读那本书？" class="headerlink" title="你为什么要读那本书？"></a>你为什么要读那本书？</h1><p>当你阅读一本书的时候，你要清楚你的读书目的。(获得资讯、增进理解力、消遣)你为什么要读这本书？为了增加你对某个行业的理解?或者是对某件事情的理解?还是仅仅想要获得资讯，知道某件事情的来龙去脉?或者是just for fun?</p>
+<h1 id="你该如何读那本书？"><a href="#你该如何读那本书？" class="headerlink" title="你该如何读那本书？"></a>你该如何读那本书？</h1><p>阅读分三个层次: 浏览、细读和主题阅读。</p>
+<ol>
+<li>先看引言、目录，然后大致浏览，知道这是一本什么样的书，讲了什么。</li>
+<li>仔细阅读这本书，其间不要去看别人的书评之类的东西。完成你自己对这本书的理解，完成你自己的评论。</li>
+<li>辅助阅读去了解与这本书相关的其他的知识，进行主题阅读，建立知识结构网。</li>
+</ol>
+<h2 id="浏览一本书"><a href="#浏览一本书" class="headerlink" title="浏览一本书"></a>浏览一本书</h2><p>浏览的时候你要学会抓住有用的信息，作者引言、目录、推荐语，以及每个章节的开头几段结尾几段，把握整体，决定你是否要继续对这本书进行更深层次的阅读。<br>这个阶段你需要对这本书进行图书分类，你知道这是哪一类的书，这本书是怎么个架构，这本书讲了什么，包含哪些部分?</p>
+<blockquote>
+<p>需要控制在一定的时间内完成。</p>
+</blockquote>
+<p>如果你觉得这本书值得你进一步花时间阅读，那你可以完成粗略的阅读。带着你前面得到的关于这本书的信息，从头到尾地读一遍这本书。然后完善你脑海中关于这本书的信息。<br>对于比较难懂的书，你第一遍的时候可以略过那些难懂的部分，专心放在你能读懂的地方，读完它。在你把握住了这本书的整体之后，有空再去读第二遍。</p>
+<blockquote>
+<p>先把握大的原则，然后再看细节。<br>一本书的四个问题:</p>
+<ol>
+<li>这本书在讲什么?</li>
+<li>作者是如何发展他的论题的，分论点有哪些?分别是从哪里开始讲的?</li>
+<li>作者讲的有道理吗?全部有道理还是部分有道理?你需要自己说出个所以然来。学会不要被作者的主观情绪所误导。</li>
+<li>你真的需要看这本书吗?它是不是在浪费你的时间?</li>
+</ol>
+</blockquote>
+<h2 id="仔细阅读一本书"><a href="#仔细阅读一本书" class="headerlink" title="仔细阅读一本书"></a>仔细阅读一本书</h2><ol>
+<li>用一句话或一小段话来描述这本书到底写了些什么</li>
+<li>为这本书写一段推荐语</li>
+<li>与这本书相关的书单。这本书应该要归为哪一类。</li>
+<li>按照你自己的思路给这本书归纳出一个架构。对作者的目录既不忽略也不盲从。</li>
+<li>找出作者在问的问题或者作者想要解决的问题。</li>
+</ol>
+<h1 id="阅读不同类别的书籍"><a href="#阅读不同类别的书籍" class="headerlink" title="阅读不同类别的书籍"></a>阅读不同类别的书籍</h1><ul>
+<li>对于论述性的文章/书籍，请拿出中国学生与生俱来的划重点的本事来读。</li>
+<li>对于小说性质的文章/书籍，找出文章脉络，找到作者要表达的重点。</li>
+<li>读一本实用性的书时，你先确定你的目标是什么，确认这本书可以让你达到你的目的，或者至少让你进一步，这样才值得继续阅读</li>
+<li>阅读小说的时候先不要怕人物太多捋不清，将自己代入故事，继续看下去。你总会逐渐记住谁是谁。</li>
+<li>对于剧本（莎士比亚的戏剧等），把剧本大声地读出来。要慢慢读，就像是听众在听你说话一样，还是带着感情读</li>
+<li>对于诗，先一口气读完，不要停。读者最好是知道关于这个作者的生平经历、这首诗的时代背景。然后去了解这首诗大概是写了什么，表达了什么。再是逐字逐句分析意思。<br>理想与现实的冲突、爱与时间、生与死、入世出世、抱怨社会、抒发豪情壮志等等。<blockquote>
+<p>一首好诗可以用心研读，一读再读，并在你一生当中不断地想起这首诗。你会在诗中不断地找到新点子、新的乐趣与启示，对你自己及这个世界产生新的想法。</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>对于历史书，你如果想要了解真正的历史，不要听信某一个作者的一面之词，即使他尽量使文章足够客观。另外，不要只关心真正发生了什么，关心那些人为什么要那样做，才能以史为镜。除非你只是想找资料。</li>
+<li>数学科学一类的书，并不全是给他们专业人士看的，有些书也是写给我们普罗大众的。看的时候不需要每个公式都去演算一遍，掌握重点就好。<br>你要了解作者想要解决的是什么问题，然后看作者如何去解决这些问题。<blockquote>
+<p>数学既然是一种语言，那就拥有自己的字汇、文法与句法（Syntax），初学者一定要学会这些东西。特定的符号或符号之间的关系要记下来。</p>
+</blockquote>
+</li>
+</ul>
+<p>把数学看作是一门语言，一种沟通方式。把符号当做是另一种字词，你要知道符号代表的意义、符号与符号之间的关系，用这样的方法来阅读数学书。</p>
+<ul>
+<li>阅读哲学书，发现问题，或者找到作者试图回答的答案。</li>
+</ul>
+<h1 id="主题阅读"><a href="#主题阅读" class="headerlink" title="主题阅读"></a>主题阅读</h1><p>找到你的主题，找到与你主题相关的书籍，甚至于找到书中与你的主题相关的章节。此时你的阅读重点不在某本书，而是在你的主题。</p>
+]]></content>
+      <categories>
+        <category>书籍</category>
+      </categories>
+      <tags>
+        <tag>书籍</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>父子组件通信</title>
+    <url>/2021/03/26/%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/</url>
+    <content><![CDATA[<h1 id="react-组件"><a href="#react-组件" class="headerlink" title="react 组件"></a>react 组件</h1><p>react 组件有 <strong>function 组件</strong>和 <strong>class 组件</strong>，在以前，function 组件和 class 组件最大的区别在于 function 组件没有自己的状态。<br>当然，后边使用 useState 另说，这里不做讨论。<br>如果一个函数组件，需要做一个点击按钮加一的效果的话，需要先声明一个全局变量，然后再给按钮绑定 add 函数，在点击了之后重新 render 页面。<a href="https://codesandbox.io/s/winter-https-mkiw8?file=/src/index.js" target="_blank" rel="noopener">demo</a><br>类组件实现点击加一效果则不需要全局变量，可以直接在组件内部通过 this.state 来声明局部变量，需要修改变量的时候使用 react 提供的 this.setState 来修改变量。<a href="https://codesandbox.io/s/class-component-b2s72?file=/src/index.js" target="_blank" rel="noopener">demo</a><br>为什么函数组件不使用局部变量呢，因为函数组件重新 render 的话会把函数内部的变量重置，而类组件只是重新调用 render 函数，不影响 constructor 里的 this.state。<br>关于 setState:</p>
+<ol>
+<li><p>不能直接修改 state ，而要使用 setState。而且在使用 setState 给某个变量赋值的时候，不会覆盖掉其他的变量。比如</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">this.state = &#123;a: 1, b: 2&#125;</span><br><span class="line">this.setState(&#123;b: 3&#125;) // 这一步不会把 a: 1 这个键值对覆盖掉。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>react 会把多个 setState 合并成一个。比如</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// a: 0</span><br><span class="line">this.setState(&#123;a: this.state.a+2&#125;)</span><br><span class="line">this.setState(&#123;a: this.state.a+1&#125;)</span><br><span class="line">// a: 1</span><br></pre></td></tr></table></figure>
+<p>得到的结果是 <code>a: 1</code> ，因为前面的被后面的覆盖掉了。而如果你想要分两次调用的话，则需要借助函数。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// a: 0</span><br><span class="line"> this.setState(&#123;</span><br><span class="line">   number: this.state.number + 2</span><br><span class="line"> &#125;)</span><br><span class="line"> this.setState((state)=&gt;&#123;</span><br><span class="line">   return &#123;number: state.number + 1&#125;</span><br><span class="line"> &#125;)</span><br><span class="line"> // a: 3</span><br></pre></td></tr></table></figure>
+<p>使用第二个参数传入一个回调函数也是可以的</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">this.setState(&#123;</span><br><span class="line">  number: this.state.number + 2</span><br><span class="line">&#125;, ()=&gt;&#123;</span><br><span class="line">    number: this.state.number + 1</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>此外，react 在 setState 之后，如果检查到了页面的变化，会主动去重新 render 局部更新页面（找到需要更新哪些地方的过程叫做 DOM diff）。</p>
+<h1 id="组件通信之父传子"><a href="#组件通信之父传子" class="headerlink" title="组件通信之父传子"></a>组件通信之父传子</h1><p>父组件要给子组件传递信息的话，使用 props 直接传递即可。<br>比如说父组件有一个 number ，要在子组件中显示，那么直接在调用子组件的时候 <code>&lt;Son number={this.state.number} /&gt;</code><br>子组件使用 props 接收父组件传过来的参数<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Son(props) &#123;</span><br><span class="line">  return &lt;div&gt;&#123;props.number&#125;&lt;/div&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>对于 class 组件也一样<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Son extends React.Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return &lt;div&gt;&#123;this.props.number&#125;&lt;/div&gt;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>原则上不要去修改父组件传进来的 props 。</strong></p>
+<p>另， <code>props.children</code> 可以获取子节点。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;Son&gt; &lt;h1&gt;hello&lt;/h1&gt; &lt;/Son&gt;</span><br><span class="line">function Son(props) &#123;</span><br><span class="line">    return &lt;div&gt;&#123;props.children&#125;&lt;/div&gt;</span><br><span class="line">&#125;</span><br><span class="line">// 得到的就是  &lt;div&gt; &lt;h1&gt;hello&lt;/h1&gt; &lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<h1 id="组件通信之子传父"><a href="#组件通信之子传父" class="headerlink" title="组件通信之子传父"></a>组件通信之子传父</h1><p>子组件如果要传递信息给父组件，先由父组件通过 props 传递一个函数给子组件，然后子组件在一定的时候调用这个函数，把数据放在函数的参数里。<a href="https://codesandbox.io/s/click-add-n-v9e9h?file=/src/index.js" target="_blank" rel="noopener">demo</a></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+        <tag>组件通信</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>任意组件通信</title>
+    <url>/2021/03/26/%E4%BB%BB%E6%84%8F%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/</url>
+    <content><![CDATA[<h1 id="发布-订阅模式"><a href="#发布-订阅模式" class="headerlink" title="发布-订阅模式"></a>发布-订阅模式</h1><p>参考父子组件通信，如果兄弟组件通信的话，应该是子A传父-父传子B-子B传父-父传子A。如果堂兄弟…<br>很麻烦，所以使用发布-订阅模式。<br>假设有一个变量，在家族树里的每个人都需要用到。那么如果 成员 A 需要操作这个变量，就发布一个事件，说：”我要改这个变量了”。<br>我们加一个人进来，观察这个公有变量的动态，一旦有人发布了 “我要改这个变量了” 这个事件，那么就做出相应的响应——修改这个变量，然后再把信息发布给父组件，由父组件把这个新变量层层传递下去，从而避免了子传父父再传子的尴尬局面。<br><a href="https://codesandbox.io/s/eventhub-xzn6t?file=/src/index.js" target="_blank" rel="noopener">Demo</a><br>下面实现一个简单的发布-订阅模式</p>
+<ol>
+<li><p>写一个 eventHub ：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var fnLists = &#123;&#125;</span><br><span class="line">var eventHub = &#123;</span><br><span class="line">    trigger(eventName, data) &#123; // 发布</span><br><span class="line">        let fnList = fnLists[eventName]</span><br><span class="line">        if(!fnList) &#123; return &#125;</span><br><span class="line">        for(let i = 0; i&lt;fnList.length; i++) &#123;</span><br><span class="line">            fnList[i](data)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    on(eventName, fn) &#123;  // 订阅</span><br><span class="line">        if(!fnLists[eventName]) &#123;</span><br><span class="line">            fnLists[eventName] = []</span><br><span class="line">        &#125;</span><br><span class="line">        fnLists[eventName].push(fn)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加全局变量和事件处理函数<br>事件处理函数用来监听（订阅）事件并作出响应，通过管家来修改变量并更新页面，而不允许其他的组件擅自修改。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var money = &#123;</span><br><span class="line">    amount: 10000</span><br><span class="line">&#125;</span><br><span class="line">var x = &#123;</span><br><span class="line">    init() &#123;</span><br><span class="line">        eventHub.on(&quot;pay&quot;, function(data) &#123;  // 订阅事件 &quot;pay&quot;</span><br><span class="line">            money.amount -= data</span><br><span class="line">            render()  // 更新页面</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">x.init()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>组件内部发布事件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Son1 extends React.Component &#123;</span><br><span class="line">    pay() &#123;</span><br><span class="line">        eventHub.trigger(&quot;pay&quot;, 100)  // 发布事件 &quot;pay&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;div className=&quot;son&quot;&gt;amount: &#123;this.props.amount&#125;</span><br><span class="line">                &lt;button onClick=&#123;this.pay&#125;&gt;付款100&lt;/button&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h1><p>redux 帮助我们进行状态管理，在这里可以看做是发布-订阅模式的一个实现。<br>它将变量声明和处理函数统一放到了 store 里边，然后使用 store.subscribe() 来订阅事件，使用 store.dispatch({type: “事件类型”, payload: “参数” }) 来发布事件。<br>使用 redux 改写上面的 <a href="https://codesandbox.io/s/redux-6j6gt?file=/src/index.js" target="_blank" rel="noopener">demo</a>。</p>
+<ol>
+<li>redux 帮我们封装了一个 eventHub ，所以不用写。但是要<code>npm install redux</code> 来下载它。</li>
+<li>添加 store （添加全局变量和事件处理函数）。这里的事件处理函数会我们只需要关心值的变化，redux 会帮我们重新 render 页面。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; createStore &#125; from &quot;redux&quot;;</span><br><span class="line">function money(state, action) &#123;</span><br><span class="line">  if (typeof state === &quot;undefined&quot;) &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      amount: 10000</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  switch (action.type) &#123;</span><br><span class="line">    case &quot;pay&quot;:</span><br><span class="line">      return &#123; amount: state.amount - action.payload &#125;;</span><br><span class="line">    default:</span><br><span class="line">      return state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">var store = createStore(money);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>其中 money 的参数 state 是我们要使用的全局变量，而 action 是事件的类型，根据事件类型选择处理函数。所有的处理函数和全局变量都封装在了这里。通过 <code>store.getState().amount</code> 来获取 amount 的值。</p>
+<ol start="2">
+<li>dispatch 事件（组件内部发布事件）<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Son1 extends React.Component &#123;</span><br><span class="line">    pay() &#123;</span><br><span class="line">        store.dispatch(&#123; type: &quot;pay&quot;, payload: 100 &#125;);  // 发布事件 &quot;pay&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;div className=&quot;son&quot;&gt;amount: &#123;this.props.amount&#125;</span><br><span class="line">                &lt;button onClick=&#123;this.pay&#125;&gt;付款100&lt;/button&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="Context"><a href="#Context" class="headerlink" title="Context"></a>Context</h1><p>Context 给我们创造一个局部的全局变量（只在 provider 内部的 component 里算是全局变量，其他地方无法访问），同样可以用来做组件通信。使用 context 修改的 <a href="https://codesandbox.io/s/context-zujiantongxin-sjqv8?file=/src/index.js" target="_blank" rel="noopener">demo</a></p>
+<ol>
+<li><code>const MoneyContext = React.createContext({});</code> 创建一个 context。其中 <code>{}</code> 是初始化这个 context 的值。</li>
+<li><p>提供一个你需要用的变量，和修改这个变量的方法。这里我们在根组件上设置 state 的值。这里因为是 state 里的值，在 setState 完成之后 react 会帮我们重新 render 页面，所以也只需要关心值的变化。</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">this.state = &#123;</span><br><span class="line">    amount: 10000,</span><br><span class="line">    pay: (amount) =&gt; &#123;</span><br><span class="line">    this.setState(&#123;</span><br><span class="line">        amount: this.state.amount - amount</span><br><span class="line">    &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p> 然后将 this.state 通过 Provider 的 value 属性传出去</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;MoneyContext.Provider value=&#123;this.state&#125;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;Dad1 /&gt;</span><br><span class="line">        &lt;Dad2 /&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/MoneyContext.Provider&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在需要调用的地方使用 Consumer 接收这个值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;MoneyContext.Consumer&gt;</span><br><span class="line">    &#123;(value) =&gt; (</span><br><span class="line">      &lt;div className=&quot;dad&quot;&gt;</span><br><span class="line">        Dad1 amount: &#123;value.amount&#125;</span><br><span class="line">        &lt;button onClick=&#123;() =&gt; &#123; value.pay(10); &#125;&#125;&gt;</span><br><span class="line">          付款10</span><br><span class="line">        &lt;/button&gt;</span><br><span class="line">        &lt;Son1 /&gt;</span><br><span class="line">        &lt;Son2 /&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    )&#125;</span><br><span class="line">&lt;/MoneyContext.Consumer&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<p>总的来说</p>
+<ol>
+<li>使用 eventHub/eventBus 来通信。用一个组件来监听某个事件，另一个组件触发这个事件并传递参数，即可实现两个组件的通信。缺点是当事件很多的时候，代码会变得略复杂。</li>
+<li>使用 redux ，每次操作的时候触发一个 action ，这个 action 会根据旧的 state 生成新的 state 。使用 store.subscribe 来监听 state 的变化，一旦 state 变化了就重新 render 页面。</li>
+<li>使用 context ，创造一个局部的全局变量。然后通过 provider 将这个变量和修改变量的函数传递出去。使用 consumer 来接收变量和函数，调用函数从而实现通信。利用 class 组件内部的 this.state 来实现页面的 render 。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+        <tag>context</tag>
+        <tag>redux</tag>
+        <tag>组件通信</tag>
+        <tag>eventHub</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>浏览器信息存储方式</title>
     <url>/2021/02/03/%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BF%A1%E6%81%AF%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F/</url>
     <content><![CDATA[<h1 id="Cookie和Session的关系"><a href="#Cookie和Session的关系" class="headerlink" title="Cookie和Session的关系"></a>Cookie和Session的关系</h1><p>关于Cookie的具体使用我们可以见这篇<a href="/2021/01/25/登录的前后端合作/" title="登录的前后端合作">登录的前后端合作</a>博客，这里我们只从理论方面来讨论。<br>打开浏览器的控制台 -&gt; Application tab页 -&gt; Storage -&gt; Cookies我们可以看到当前url下存储的所有Cookie，这些Cookie记录了我们的一些信息，当我们清除掉Cookie之后，可能需要重新登录这个网站。<br>通俗的来讲，我们说Cookie存储了用户信息。但是，你会发现，你看见的Cookie的键值对是一串接近于乱码的字符串。为什么？这就涉及到了Session。<br>Session保存在服务器端，服务器关闭则Session清空，但一般服务器不会直接关闭，关闭也会把它先存起来。用户登录的时候随机一个SessionID，然后用Cookie保存SessionID。通过这个SessionID去找到对应的信息。<br>写成伪代码大概是这个样子：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SessionID = 随机数</span><br><span class="line">Sessions[SessionID] = 用户信息</span><br><span class="line">Set-Cookie: xxx=SessionID</span><br></pre></td></tr></table></figure></p>
@@ -976,132 +1100,6 @@
       </tags>
   </entry>
   <entry>
-    <title>任意组件通信</title>
-    <url>/2021/03/26/%E4%BB%BB%E6%84%8F%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/</url>
-    <content><![CDATA[<h1 id="发布-订阅模式"><a href="#发布-订阅模式" class="headerlink" title="发布-订阅模式"></a>发布-订阅模式</h1><p>参考父子组件通信，如果兄弟组件通信的话，应该是子A传父-父传子B-子B传父-父传子A。如果堂兄弟…<br>很麻烦，所以使用发布-订阅模式。<br>假设有一个变量，在家族树里的每个人都需要用到。那么如果 成员 A 需要操作这个变量，就发布一个事件，说：”我要改这个变量了”。<br>我们加一个人进来，观察这个公有变量的动态，一旦有人发布了 “我要改这个变量了” 这个事件，那么就做出相应的响应——修改这个变量，然后再把信息发布给父组件，由父组件把这个新变量层层传递下去，从而避免了子传父父再传子的尴尬局面。<br><a href="https://codesandbox.io/s/eventhub-xzn6t?file=/src/index.js" target="_blank" rel="noopener">Demo</a><br>下面实现一个简单的发布-订阅模式</p>
-<ol>
-<li><p>写一个 eventHub ：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var fnLists = &#123;&#125;</span><br><span class="line">var eventHub = &#123;</span><br><span class="line">    trigger(eventName, data) &#123; // 发布</span><br><span class="line">        let fnList = fnLists[eventName]</span><br><span class="line">        if(!fnList) &#123; return &#125;</span><br><span class="line">        for(let i = 0; i&lt;fnList.length; i++) &#123;</span><br><span class="line">            fnList[i](data)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    on(eventName, fn) &#123;  // 订阅</span><br><span class="line">        if(!fnLists[eventName]) &#123;</span><br><span class="line">            fnLists[eventName] = []</span><br><span class="line">        &#125;</span><br><span class="line">        fnLists[eventName].push(fn)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加全局变量和事件处理函数<br>事件处理函数用来监听（订阅）事件并作出响应，通过管家来修改变量并更新页面，而不允许其他的组件擅自修改。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var money = &#123;</span><br><span class="line">    amount: 10000</span><br><span class="line">&#125;</span><br><span class="line">var x = &#123;</span><br><span class="line">    init() &#123;</span><br><span class="line">        eventHub.on(&quot;pay&quot;, function(data) &#123;  // 订阅事件 &quot;pay&quot;</span><br><span class="line">            money.amount -= data</span><br><span class="line">            render()  // 更新页面</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">x.init()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>组件内部发布事件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Son1 extends React.Component &#123;</span><br><span class="line">    pay() &#123;</span><br><span class="line">        eventHub.trigger(&quot;pay&quot;, 100)  // 发布事件 &quot;pay&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;div className=&quot;son&quot;&gt;amount: &#123;this.props.amount&#125;</span><br><span class="line">                &lt;button onClick=&#123;this.pay&#125;&gt;付款100&lt;/button&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h1 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h1><p>redux 帮助我们进行状态管理，在这里可以看做是发布-订阅模式的一个实现。<br>它将变量声明和处理函数统一放到了 store 里边，然后使用 store.subscribe() 来订阅事件，使用 store.dispatch({type: “事件类型”, payload: “参数” }) 来发布事件。<br>使用 redux 改写上面的 <a href="https://codesandbox.io/s/redux-6j6gt?file=/src/index.js" target="_blank" rel="noopener">demo</a>。</p>
-<ol>
-<li>redux 帮我们封装了一个 eventHub ，所以不用写。但是要<code>npm install redux</code> 来下载它。</li>
-<li>添加 store （添加全局变量和事件处理函数）。这里的事件处理函数会我们只需要关心值的变化，redux 会帮我们重新 render 页面。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; createStore &#125; from &quot;redux&quot;;</span><br><span class="line">function money(state, action) &#123;</span><br><span class="line">  if (typeof state === &quot;undefined&quot;) &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      amount: 10000</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  switch (action.type) &#123;</span><br><span class="line">    case &quot;pay&quot;:</span><br><span class="line">      return &#123; amount: state.amount - action.payload &#125;;</span><br><span class="line">    default:</span><br><span class="line">      return state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">var store = createStore(money);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>其中 money 的参数 state 是我们要使用的全局变量，而 action 是事件的类型，根据事件类型选择处理函数。所有的处理函数和全局变量都封装在了这里。通过 <code>store.getState().amount</code> 来获取 amount 的值。</p>
-<ol start="2">
-<li>dispatch 事件（组件内部发布事件）<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Son1 extends React.Component &#123;</span><br><span class="line">    pay() &#123;</span><br><span class="line">        store.dispatch(&#123; type: &quot;pay&quot;, payload: 100 &#125;);  // 发布事件 &quot;pay&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;div className=&quot;son&quot;&gt;amount: &#123;this.props.amount&#125;</span><br><span class="line">                &lt;button onClick=&#123;this.pay&#125;&gt;付款100&lt;/button&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h1 id="Context"><a href="#Context" class="headerlink" title="Context"></a>Context</h1><p>Context 给我们创造一个局部的全局变量（只在 provider 内部的 component 里算是全局变量，其他地方无法访问），同样可以用来做组件通信。使用 context 修改的 <a href="https://codesandbox.io/s/context-zujiantongxin-sjqv8?file=/src/index.js" target="_blank" rel="noopener">demo</a></p>
-<ol>
-<li><code>const MoneyContext = React.createContext({});</code> 创建一个 context。其中 <code>{}</code> 是初始化这个 context 的值。</li>
-<li><p>提供一个你需要用的变量，和修改这个变量的方法。这里我们在根组件上设置 state 的值。这里因为是 state 里的值，在 setState 完成之后 react 会帮我们重新 render 页面，所以也只需要关心值的变化。</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">this.state = &#123;</span><br><span class="line">    amount: 10000,</span><br><span class="line">    pay: (amount) =&gt; &#123;</span><br><span class="line">    this.setState(&#123;</span><br><span class="line">        amount: this.state.amount - amount</span><br><span class="line">    &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p> 然后将 this.state 通过 Provider 的 value 属性传出去</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;MoneyContext.Provider value=&#123;this.state&#125;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;Dad1 /&gt;</span><br><span class="line">        &lt;Dad2 /&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/MoneyContext.Provider&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在需要调用的地方使用 Consumer 接收这个值。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;MoneyContext.Consumer&gt;</span><br><span class="line">    &#123;(value) =&gt; (</span><br><span class="line">      &lt;div className=&quot;dad&quot;&gt;</span><br><span class="line">        Dad1 amount: &#123;value.amount&#125;</span><br><span class="line">        &lt;button onClick=&#123;() =&gt; &#123; value.pay(10); &#125;&#125;&gt;</span><br><span class="line">          付款10</span><br><span class="line">        &lt;/button&gt;</span><br><span class="line">        &lt;Son1 /&gt;</span><br><span class="line">        &lt;Son2 /&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    )&#125;</span><br><span class="line">&lt;/MoneyContext.Consumer&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<p>总的来说</p>
-<ol>
-<li>使用 eventHub/eventBus 来通信。用一个组件来监听某个事件，另一个组件触发这个事件并传递参数，即可实现两个组件的通信。缺点是当事件很多的时候，代码会变得略复杂。</li>
-<li>使用 redux ，每次操作的时候触发一个 action ，这个 action 会根据旧的 state 生成新的 state 。使用 store.subscribe 来监听 state 的变化，一旦 state 变化了就重新 render 页面。</li>
-<li>使用 context ，创造一个局部的全局变量。然后通过 provider 将这个变量和修改变量的函数传递出去。使用 consumer 来接收变量和函数，调用函数从而实现通信。利用 class 组件内部的 this.state 来实现页面的 render 。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>react</tag>
-        <tag>context</tag>
-        <tag>redux</tag>
-        <tag>组件通信</tag>
-        <tag>eventHub</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>父子组件通信</title>
-    <url>/2021/03/26/%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/</url>
-    <content><![CDATA[<h1 id="react-组件"><a href="#react-组件" class="headerlink" title="react 组件"></a>react 组件</h1><p>react 组件有 <strong>function 组件</strong>和 <strong>class 组件</strong>，在以前，function 组件和 class 组件最大的区别在于 function 组件没有自己的状态。<br>当然，后边使用 useState 另说，这里不做讨论。<br>如果一个函数组件，需要做一个点击按钮加一的效果的话，需要先声明一个全局变量，然后再给按钮绑定 add 函数，在点击了之后重新 render 页面。<a href="https://codesandbox.io/s/winter-https-mkiw8?file=/src/index.js" target="_blank" rel="noopener">demo</a><br>类组件实现点击加一效果则不需要全局变量，可以直接在组件内部通过 this.state 来声明局部变量，需要修改变量的时候使用 react 提供的 this.setState 来修改变量。<a href="https://codesandbox.io/s/class-component-b2s72?file=/src/index.js" target="_blank" rel="noopener">demo</a><br>为什么函数组件不使用局部变量呢，因为函数组件重新 render 的话会把函数内部的变量重置，而类组件只是重新调用 render 函数，不影响 constructor 里的 this.state。<br>关于 setState:</p>
-<ol>
-<li><p>不能直接修改 state ，而要使用 setState。而且在使用 setState 给某个变量赋值的时候，不会覆盖掉其他的变量。比如</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">this.state = &#123;a: 1, b: 2&#125;</span><br><span class="line">this.setState(&#123;b: 3&#125;) // 这一步不会把 a: 1 这个键值对覆盖掉。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>react 会把多个 setState 合并成一个。比如</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// a: 0</span><br><span class="line">this.setState(&#123;a: this.state.a+2&#125;)</span><br><span class="line">this.setState(&#123;a: this.state.a+1&#125;)</span><br><span class="line">// a: 1</span><br></pre></td></tr></table></figure>
-<p>得到的结果是 <code>a: 1</code> ，因为前面的被后面的覆盖掉了。而如果你想要分两次调用的话，则需要借助函数。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// a: 0</span><br><span class="line"> this.setState(&#123;</span><br><span class="line">   number: this.state.number + 2</span><br><span class="line"> &#125;)</span><br><span class="line"> this.setState((state)=&gt;&#123;</span><br><span class="line">   return &#123;number: state.number + 1&#125;</span><br><span class="line"> &#125;)</span><br><span class="line"> // a: 3</span><br></pre></td></tr></table></figure>
-<p>使用第二个参数传入一个回调函数也是可以的</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">this.setState(&#123;</span><br><span class="line">  number: this.state.number + 2</span><br><span class="line">&#125;, ()=&gt;&#123;</span><br><span class="line">    number: this.state.number + 1</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>此外，react 在 setState 之后，如果检查到了页面的变化，会主动去重新 render 局部更新页面（找到需要更新哪些地方的过程叫做 DOM diff）。</p>
-<h1 id="组件通信之父传子"><a href="#组件通信之父传子" class="headerlink" title="组件通信之父传子"></a>组件通信之父传子</h1><p>父组件要给子组件传递信息的话，使用 props 直接传递即可。<br>比如说父组件有一个 number ，要在子组件中显示，那么直接在调用子组件的时候 <code>&lt;Son number={this.state.number} /&gt;</code><br>子组件使用 props 接收父组件传过来的参数<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Son(props) &#123;</span><br><span class="line">  return &lt;div&gt;&#123;props.number&#125;&lt;/div&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>对于 class 组件也一样<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Son extends React.Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return &lt;div&gt;&#123;this.props.number&#125;&lt;/div&gt;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>原则上不要去修改父组件传进来的 props 。</strong></p>
-<p>另， <code>props.children</code> 可以获取子节点。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;Son&gt; &lt;h1&gt;hello&lt;/h1&gt; &lt;/Son&gt;</span><br><span class="line">function Son(props) &#123;</span><br><span class="line">    return &lt;div&gt;&#123;props.children&#125;&lt;/div&gt;</span><br><span class="line">&#125;</span><br><span class="line">// 得到的就是  &lt;div&gt; &lt;h1&gt;hello&lt;/h1&gt; &lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<h1 id="组件通信之子传父"><a href="#组件通信之子传父" class="headerlink" title="组件通信之子传父"></a>组件通信之子传父</h1><p>子组件如果要传递信息给父组件，先由父组件通过 props 传递一个函数给子组件，然后子组件在一定的时候调用这个函数，把数据放在函数的参数里。<a href="https://codesandbox.io/s/click-add-n-v9e9h?file=/src/index.js" target="_blank" rel="noopener">demo</a></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>react</tag>
-        <tag>组件通信</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>脚本编程基础知识</title>
-    <url>/2018/01/08/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
-    <content><![CDATA[<h2 id="你以为什么是脚本？"><a href="#你以为什么是脚本？" class="headerlink" title="你以为什么是脚本？"></a>你以为什么是脚本？</h2><p>&emsp;&emsp;不知道你有没有接触过高级编程语言，比如C、C++、Java等，这些语言的执行通常需要经过编写-编译-链接-运行等过程，而脚本语言则不然。一个脚本通常是解释运行而非编译。<br>&emsp;&emsp;我们在维基百科上搜Script（脚本），得到的结果有两个——剧本和脚本程序。虽然说两个是不一样的东西，但依然是可以放在一起理解的。所谓的剧本，就是演员照着一步一步做的东西。比如下边的这一段<br><img src="https://raw.githubusercontent.com/wenchuyang/ImagesForMarkdown/856d1eae45643b8a5af8bc9aea027822b53a007a/images/90%600S%40Z14FH3WGF%7D~NURDVQ.png" alt><br>&emsp;&emsp;而我们编程领域的脚本程序不是给人照着做的，而是给计算机照着做的。你输入指令，让计算机能够看懂，然后计算机为你一步一步执行这些指令。</p>
-<h2 id="让我们来试着写一个脚本？"><a href="#让我们来试着写一个脚本？" class="headerlink" title="让我们来试着写一个脚本？"></a>让我们来试着写一个脚本？</h2><ol>
-<li>进入一个目录，然后新建脚本文件，一般脚本文件的后缀是.sh，但是它并没有什么用。在Windows下文件的后缀名决定着该文件的默认打开方式，但在命令行下，打开方式是我们手动指定的，比如<code>vim demo.txt</code>或者<code>open -a &#39;Google Chrome&#39; demo.txt</code>都是可以的。所以命令行下我们写后缀主要还是给我们自己看，让我们自己一眼就知道这个文件是个什么文件。<br>&emsp;&emsp;我们在/f/wcy/local文件目录下建立一个demo.sh文件。</li>
-<li><p>编辑demo.sh文件。<code>vim demo.sh</code>(当然，你也可以用其他方式打开然后编辑。或者你也可以写下其他的脚本代码。)</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir demo //新建一个名为demo的目录</span><br><span class="line">cd demo //进入demo这个目录</span><br><span class="line">mkdir css js //新建两个文件夹css和js</span><br><span class="line">touch index.html css/style.css js/main.js //新建三个文件</span><br><span class="line">exit //退出</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>（Windows不需要）给demo.sh添加执行权限<code>chmod +x demo.sh</code></p>
-</li>
-<li>在你需要执行该脚本的目录执行<code>sh /f/wcy/local/demo.sh</code>，然后你就可以在当前目录看到你需要的demo文件夹以及里边你使用脚本创建的文件了。</li>
-<li>事实上，你可以现在结束这篇文章，因为你已经成功地运行了一个你自己写的脚本。但是，作为一名程序员，你还需要知道一些其他的东西。比如——把你的脚本文件目录添加到path中。<br>&emsp;&emsp;玩过java的应该对path都不会太陌生，虽然可能并不能理解path的含义，但是多少都应该是听过的。这里我不想太深入写，只能说，path里边可以写一堆目录，我们每次输入命令的时候都会依次在这些目录里边查找有没有同名的文件，如果有就执行。<br>&emsp;&emsp;type命令可以显示这个查找的过程。which命令可以告诉你查询最终的结果是什么，比如<code>which mkdir</code>在我这边执行的结果就是<code>/usr/bin/mkdir</code>。在计算机当中，所有的命令都是可执行文件，也就是，脚本。计算机中不可执行的文件是配置文件，就是我们常说的config文件。<br>&emsp;&emsp;以上，我们只需要把/f/wcy/local（请修改成你的脚本文件存在的目录）添加到<code>~/.bashrc</code>（这个文件不解释了，以前解释过。<a href="http://blog.csdn.net/writing_happy/article/details/78686739" target="_blank" rel="noopener">常见问题合集，修改bash命令路径下有这个文件的作用</a>，事实上你可以不用了解。）<br>&emsp;&emsp;先进入local目录，输入<code>pwd</code>得到它的绝对路径。然后<code>touch ~/.bashrc</code>创建.bashrc文件。接着打开文件，在最后一行添加<code>export PATH=&quot;local的绝对路径:$PATH&quot;</code>。然后<code>source ~/.bashrc</code>。成功。之前你需要运行<code>sh /f/wcy/local/demo.sh</code>而现在你可以不需要输入路径直接运行<code>sh demo.sh</code>了。</li>
-<li>仅仅是创建一个名为demo的文件夹会不会太单调了呢？让我们来加个参数吧！<br>&emsp;&emsp;在bash里边，$1表示第一个参数，别问我怎么知道的，自己搜去。你只需要看懂下边的代码就好了，有需要的功能再去搜索。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir $1</span><br><span class="line">cd $1</span><br><span class="line">mkdir css js</span><br><span class="line">touch index.html css/style.css js/main.js</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>&emsp;&emsp;现在，你可以运行<code>sh demo.sh aa</code>来创建一个名为aa的文件夹了。</p>
-<ol start="7">
-<li><p>如果说我已经创建过一个名为aa的文件夹，然后又来运行<code>sh demo.sh aa</code>呢？显而易见，它是会报错的。那么我们能不能不让它报那么难看的错，给用户一个提示信息呢？是的，加一个判断。如果这个文件存在，那么就让它输出”The directory is already exist!”，如果不存在那就创建。所以，你可以Google一下bash脚本的if语句怎么用。这里是代码。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if [ -d $1 ]; then</span><br><span class="line">  echo &apos;The directory is already exist!&apos;</span><br><span class="line">  exit 1 //表示程序运行出错，错误代码为1</span><br><span class="line">else</span><br><span class="line">  mkdir $1</span><br><span class="line">  cd $1</span><br><span class="line">  mkdir css js</span><br><span class="line">  touch index.html css/style.css js/main.js</span><br><span class="line">  echo &apos;success&apos;</span><br><span class="line">  exit 0 //表示0个错误</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>是的，经过上述步骤基本已经完成了一个小脚本案例了。我们最后来进行测试环节。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sh demo.sh aa &amp;&amp; echo &apos;成功&apos; //如果前边的程序执行成功就显示字符串“成功”</span><br><span class="line">sh demo.sh bb || echo &apos;失败&apos; //如果前边的程序返回的是非0，显示“失败”</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="换个node-js脚本玩玩？"><a href="#换个node-js脚本玩玩？" class="headerlink" title="换个node.js脚本玩玩？"></a>换个node.js脚本玩玩？</h2><p>&emsp;&emsp;我们上边写的脚本是Bash Script（Bash脚本），现在，换个我们前端用的js脚本玩玩？基本规则其实都差不多，两个的语法方面略微有一点差别。你想要实现什么功能的话都可以去Google。比如你可以搜索node js change dir，来找到如何在node下转换路径。你也可以进入nodejs官网nodejs.org–&gt;docs–&gt;api直接在里边查，<a href="https://nodejs.org/api/fs.html#fs_fs_mkdirsync_path_mode" target="_blank" rel="noopener">比如文件系统(file system—fs)的一些操作。</a><br><img src="https://raw.githubusercontent.com/wenchuyang/ImagesForMarkdown/5b61dc97261e0b4500a194a722e950116aeef692/images/5ULKJXL4ACL%24YCDQ%24TXKY.png" alt><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">node //先进入node</span><br><span class="line">process.chdir(&apos;F:\\wcy\\local&apos;) //改变系统路径到你需要的目录（这个路径写法是windows下的写法。。。保持微笑不吐槽）</span><br><span class="line">console.log(process.cwd())  //得到当前所处路径并打印出来console.log()相信你不会陌生。</span><br><span class="line">//Ctrl+D退出node环境</span><br></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;上边用bash命令我们执行写的是<code>sh demo.sh</code>，如果你省略sh直接写<code>demo.sh</code>依然可以得到你想要的结果。因为系统默认使用sh（即shell）来运行脚本。但到了这里可就不行了。你知道的，文件后缀并不影响，所以如果你依然用shell来执行demo.js文件，显然是有问题的。我们一般会用<code>node demo.js</code>来运行这个文件。如果你想让这个文件默认用node执行，请在文件的第一行加上<code>#!/usr/bin/env node</code>。<br>综上，将上述功能换成js脚本的话，就应该是这样的：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!/usr/bin/env node</span><br><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line">dirName = process.argv[2] // 你传的参数是从第 2 个开始的</span><br><span class="line">if (fs.existsSync(dirName)) &#123;</span><br><span class="line">	console.log(&quot;The file is already exist&quot;);</span><br><span class="line">	process.exit(1);</span><br><span class="line">&#125;</span><br><span class="line">	fs.mkdirSync(&quot;./&quot; + dirName) // mkdir $1</span><br><span class="line">	process.chdir(&quot;./&quot; + dirName) // cd $1</span><br><span class="line">	fs.mkdirSync(&apos;css&apos;) // mkdir css</span><br><span class="line">	fs.mkdirSync(&apos;js&apos;) // mkdir js</span><br><span class="line">	fs.writeFileSync(&quot;./index.html&quot;, &quot;&lt;!DOCTYPE&gt;&lt;title&gt;Hello&lt;/title&gt;&lt;h1&gt;Hi&lt;/h1&gt;&quot;)</span><br><span class="line">	fs.writeFileSync(&quot;css/style.css&quot;, &quot;h1&#123;color: red;&#125;&quot;)</span><br><span class="line">	fs.writeFileSync(&quot;./js/main.js&quot;, &quot;var string = &apos;Hello World&apos; alert(string)&quot;)</span><br><span class="line">	process.exit(0)</span><br></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;这里对第三行稍微解释一下，为什么前边bash传的参数算是第一个而后边js算是第二个呢？给一段代码吧，反正我是这样理解的。<code>demo.sh xx</code>，<code>node demo.js xx</code>，从0开始数。</p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-      </categories>
-      <tags>
-        <tag>node.js</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>登录的前后端合作</title>
     <url>/2021/01/25/%E7%99%BB%E5%BD%95%E7%9A%84%E5%89%8D%E5%90%8E%E7%AB%AF%E5%90%88%E4%BD%9C/</url>
     <content><![CDATA[<h1 id="从创建用户到用户登录"><a href="#从创建用户到用户登录" class="headerlink" title="从创建用户到用户登录"></a>从创建用户到用户登录</h1><ol>
@@ -1139,25 +1137,117 @@
       </categories>
   </entry>
   <entry>
-    <title>获取表单数据</title>
-    <url>/2021/04/03/%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E6%95%B0%E6%8D%AE/</url>
-    <content><![CDATA[<h1 id="使用-js-获取表单数据"><a href="#使用-js-获取表单数据" class="headerlink" title="使用 js 获取表单数据"></a>使用 js 获取表单数据</h1><p>使用 js 提供的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FormData" target="_blank" rel="noopener">FormData</a> 来获取表单数据。</p>
+    <title>《这样写出好故事》练习题</title>
+    <url>/2021/01/14/%E8%BF%99%E6%A0%B7%E5%86%99%E5%87%BA%E5%A5%BD%E6%95%85%E4%BA%8B%E7%BB%83%E4%B9%A0%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>书名：《这样写出好故事》<br>作者：[美]詹姆斯·斯科特·贝尔。<br>译者：苏雅薇</p>
+<p>作者以他的写作经验写了一本写作指导书，详实的描述了如何写一本结构完整、有吸引力的商业小说。完成了如何想出好的写作点子、如何编排情节、如何吸引读者的手把手教学。</p>
+<p>本部分收集了每章结束的练习。<br><a href="/2021/01/15/这样写出好故事笔记/" title="《这样写出好故事》笔记">《这样写出好故事》笔记</a></p>
+<h1 id="所以情节到底是什么——搭建小说的骨架"><a href="#所以情节到底是什么——搭建小说的骨架" class="headerlink" title="所以情节到底是什么——搭建小说的骨架"></a>所以情节到底是什么——搭建小说的骨架</h1><ul>
+<li>排定十分钟不受干扰的写作时间。在这段时间内，写一篇短文回答下列问题：读者读我的小说时，我希望他们能感到<code>_______</code>，因为对我来说，小说就是<code>_______</code>。<br>不要多想，发自肺腑地写。<br>写完之后，分析一下你的短文。从中看来，你更喜欢什么样的情节呢？你怀疑情节的重要性吗？你对“虚无缥缈”的文学小说比较有兴趣吗？如果是的话，想想假如你学会一些情节编排技巧，可以替作品增色多少。</li>
+<li>拿几本你最喜欢的小说，用LOCK系统分析，研究每项元素在你喜爱的书中如何发挥作用。你可以参考下列问题：<br>·主角为什么吸引你？<br>·主角想要追求或逃离什么？<br>·故事什么时候进入“高潮”？<br>·主角追求目标时，面对的主要障碍是什么？<br>·看完结局你感觉如何？为什么这个结局很棒？</li>
+<li>为你现在想到的点子写下简单的情节。写四句，每句提一个LOCK系统的元素。<br>·我的主角是<code>_______</code><br>·他的目标是<code>_______</code><br>·他遭到<code>_______</code>的阻挠，对手阻挠他的原因是<code>_______</code>。<br>·结尾非常冲击，因为<code>_______</code><br>等你填满空格，你就写出了一本骨架扎实的小说。接下来这本书会协助你把骨架发展成完整的作品。</li>
+<li>从你读过的小说中，挑选一系列你喜欢的“调味料”。特别注意：<br>·独特的设定<br>·多层次的角色<br>·铿锵有力的对话<br>·极具影响力的场景<br>当你看到这些元素，请分析它们为什么有用？作者用了哪些技巧？</li>
+</ul>
+<h1 id="结构：稳固你的情节——推动情节发展的事件"><a href="#结构：稳固你的情节——推动情节发展的事件" class="headerlink" title="结构：稳固你的情节——推动情节发展的事件"></a>结构：稳固你的情节——推动情节发展的事件</h1><ul>
+<li>分析一些小说或电影，研究这些作品的三幕结构。特别注意：</li>
+</ul>
 <ol>
-<li>获取表单 <code>const form = document.querySelector(&quot;#myForm&quot;)</code></li>
-<li>创建一个 FormData 对象 <code>let formData = new FormData(form)</code></li>
-<li>for 循环遍历 FormData.entires() 获取所有的 key、value <code>for(let [key, value] of formData.entires()){}</code> . formData.entires() 每一项分别是 <code>item[0]</code> 和 <code>item[1]</code>, 给它们赋值为 key 和 value。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function getFormDataWithJs() &#123;</span><br><span class="line">  const form = document.querySelector(&quot;form&quot;);</span><br><span class="line">  let formData = new FormData(form);</span><br><span class="line">  let data = [] // 这里不能用 hash 存否则多选框的多个值会被覆盖掉</span><br><span class="line">  for (let [key, value] of formData.entries()) &#123;</span><br><span class="line">    let item=&#123;&#125;;</span><br><span class="line">    item[key] = value</span><br><span class="line">    data.push(item)</span><br><span class="line">  &#125;</span><br><span class="line">  return data</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>扰乱事件</li>
+<li>两扇无法折返的门</li>
 </ol>
-<h1 id="使用-jquery-获取表单数据"><a href="#使用-jquery-获取表单数据" class="headerlink" title="使用 jquery 获取表单数据"></a>使用 jquery 获取表单数据</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function getFormDataWithJquery() &#123;</span><br><span class="line">  // $(&quot;#myForm&quot;).serialize() get a string</span><br><span class="line">  return $(&quot;#myForm&quot;).serializeArray()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p><a href="https://codesandbox.io/s/getformdata-bksx0?file=/src/index.js" target="_blank" rel="noopener">获取表单信息的 demo</a></p>
+<ul>
+<li>画出你的情节结构简图。想出一件扰乱事件，还有那成为两扇门的事件，把事件摘要写下来，再稍加变化，变成独特又吸引人的桥段。</li>
+</ul>
+<h1 id="如何“头脑风暴”情节点子——如何发现好的小说题材"><a href="#如何“头脑风暴”情节点子——如何发现好的小说题材" class="headerlink" title="如何“头脑风暴”情节点子——如何发现好的小说题材"></a>如何“头脑风暴”情节点子——如何发现好的小说题材</h1><ul>
+<li>本周挑两个方法来想点子，每个方法至少预留一小时写作时间，好好练习。</li>
+<li>从练习一的成果中，挑出你最喜欢的点子。你和你的点子有足够的热情、潜能和精准度，能让你继续写下去吗？</li>
+<li>每个月花几个小时来想点子。随时注意周遭可能出现的点子，勤记笔记，搜集新闻简报。每个月检查一次你的点子，开始培养。</li>
+</ul>
+<h1 id="强劲的开头——如何写好故事的开头"><a href="#强劲的开头——如何写好故事的开头" class="headerlink" title="强劲的开头——如何写好故事的开头"></a>强劲的开头——如何写好故事的开头</h1><ul>
+<li>重新审视你正在写的小说的第一章。你会使用什么技巧从第一段开始就吸引读者的注意？你有建立动感吗？</li>
+<li>你的故事发生在什么世界？你对这个世界有多了解？你要如何不靠一大段的描述，让读者感受到这个世界的细节？</li>
+<li>你怎么介绍主角出场？你的主角为什么令人难忘？<br>在下面四个类别中，分别替你的主角想出5个答案。<ol>
+<li>认同。如何让读者对你的主角产生认同感，主角哪些地方“像我们”？</li>
+<li>同情。想想主角的（实质或精神上的）危机、困难、弱者处境和脆弱感。</li>
+<li>喜爱。他机智吗？关心别人吗？</li>
+<li>内心冲突。主角脑中有哪两个对立的“声音”？</li>
+</ol>
+</li>
+<li>主角所在的日常世界遭到什么事物的干扰？哪些改变会造成连带影响？</li>
+<li>给对手反抗主角的正当理由。<br>你要如何从对手的角度，合理解释他的作为？他的过去能解释他现在的为人吗？他有哪些特质很有魅力、吸引人，甚至令人着迷呢？</li>
+</ul>
+<h1 id="中段"><a href="#中段" class="headerlink" title="中段"></a>中段</h1><ul>
+<li>决定如果你的主角无法达成目标，会面临哪种实际、心理或职业生涯的死亡。如果你答不上来，先自问主角的目标是否真的密切影响他的命运，然后设法提升目标的重要性，让读者了解为何主角一定要达成目标。</li>
+<li>深入描写对手角色，自问“为什么我这么喜欢这个角色？”，你有替他的行为想好合理的解释吗？他有比主角强，或至少跟主角一样强吗？如果没有，请赶快让他变强。</li>
+<li>从你的小说中挑一个充满紧张冲突的场景，将情绪最紧绷的段落独立出来。这部分可能有几段或几页，但不论长短，都请试着拉长紧张段落的长度。使用本章建议的每个方法。一两天后，再回来读这个场景，你从头到尾都觉得很有趣吗？必要时你当然可以删掉增加的内容，不过通常你会发现这样一改，反而增添了阅读的乐趣。</li>
+<li>你的小说中，角色要付出哪些代价？请考虑每个层面——情节、角色和社会，并把没有用到的类型加入故事中。同时想想在情节发展的过程中，你能如何把每种代价提升到极限。</li>
+<li>重读一本你觉得失败的小说。把自己当做编辑，依照本章的内容，寻找可以改进的地方。接着写一封信给作者，建议他可以做哪些改变。不用真的寄出去。</li>
+</ul>
+<h1 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h1><ul>
+<li>重读你最喜欢的小说最后几章，并分析每个结局。结局明确吗？结果正向还是负面？有没有意外转折？为什么你觉得这个结局好？如此分析能协助你了解自己的写作偏好。</li>
+<li>你为你的小说想了什么结局？试着写下结尾的高潮场景。最终你未必要用这个场景，但这个联系能促使你思考结局，让你更加深入了解角色。可以将得到的信息运用在作品中。</li>
+<li>想出两三种替代结局。首先列出十种可能，每种各写一行。接着挑出两三个最有潜力的选项，写出结尾场景摘要（500字以内）。如果替代结尾感觉比原先的版本更有冲击，那就用吧。把原本的结局当做最后可能的转折，或者保留原先的结局，将替代结局之一当成可能的转折。</li>
+<li>列出你的小说中所有没收好的梗。可以边写边做，每次埋梗时，在另一个档案里做记录。想好策略，利用情节发展、配角或报纸报道把这些四散的梗收好。</li>
+</ul>
+<h1 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h1><ul>
+<li>从书柜上随便拿起一本小说，翻开一个场景开始读。请分析：<ol>
+<li>这是行动场景吗？找出你在何处得知角色在这个场景的目标，以及他面临的冲突。场景如何结束？你会想继续读吗？为什么？</li>
+<li>这主要是反应场景吗？角色感到了什么情绪？作者如何展现角色的情绪？场景结束时，角色决定要怎么办了吗？角色有所转变吗？变得坚强，还是软弱？</li>
+</ol>
+</li>
+<li>找一个行动场景，使用紧张程度表，画出场景的紧张程度。<br><img src="https://i.loli.net/2021/01/14/oRDbhOg6C58ELZd.png" alt="无标题1.png"></li>
+<li>检视你写的一个章节，分析其中的引子、紧张程度和结尾推手。你能如何把每一项写得更好？</li>
+</ul>
+<h1 id="复杂的情节"><a href="#复杂的情节" class="headerlink" title="复杂的情节"></a>复杂的情节</h1><ul>
+<li>在纸上画三栏。第一栏记下场景中突出的丰富细节，第二栏列出主要角色，最后一栏记录重要的地点。接着开始寻找每一栏之间的联结，将某项细节跟角色和地点连在一起，或者倒过来，从地点去联想角色和细节。挑出最强的两三组联结，试着融入情节中，当做象征或主题。</li>
+<li>决定你的小说要讲述的主旨价值，用一句话写出来。在编写情节的任何阶段都可以做这项练习，如果你很早就想好，那发展场景时可别忘了。千万注意别显得太刻意，你的信息一定要自然呈现。</li>
+<li>听音乐也是替小说想画面的良方。先放松，深呼吸，然后播放让你感动的音乐，可能是电影配乐、古典音乐或爵士。不要选有歌词的曲子。沉浸在隐约之中，闭上眼睛，让画面甚至是场景自动出现在你的想象当中。然后停下来，把想到的画面场景记在纸上或计算机上。写作过程中，你可以不时重复这项练习。</li>
+</ul>
+<h1 id="情节中的角色弧线"><a href="#情节中的角色弧线" class="headerlink" title="情节中的角色弧线"></a>情节中的角色弧线</h1><ul>
+<li>从你喜欢的小说中，挑一本主角发生重大转变的作品来分析。《圣诞颂歌》就是经典范例。以双线标出主角生命中受到严重挑战的段落，然后在上述事件影响角色转变的段落打钩。</li>
+<li>写一段小说简介，描述你的主角在故事刚开始时的个性。请描述他的：<ul>
+<li>理念</li>
+<li>价值观</li>
+<li>主要态度</li>
+<li>看法<br>接着问问自己，情节中会发生什么事，能改变或挑战主角的上述特质？</li>
+</ul>
+</li>
+<li>制作你的角色弧线表。在第一列填入改变角色内心世界的主要事件，下方的空格则描述角色发生了什么事。<br><img src="https://i.loli.net/2021/01/15/S7Y5iusVCpqtkAB.png" alt="1RPTYTUE0SB_GOVN`M@Z7_5.png"></li>
+</ul>
+<h1 id="修改你的情节"><a href="#修改你的情节" class="headerlink" title="修改你的情节"></a>修改你的情节</h1><ul>
+<li>为了体验改稿的过程，请将你正在写的两三章打印出来。读一遍，在页缘画下下列记号：<ul>
+<li>如果你觉得情节拖沓，就打个钩。</li>
+<li>用括号标出看不懂的句子。</li>
+<li>你觉得某一段可能需要增加内容，就在边边画个圈。也许你想拉长紧张感，或者让情节别那么断断续续。</li>
+<li>你觉得某一段可能需要删减，就画个问号。这段可能是过长的解释场景，或者你“说明”太多却没有“展示”。</li>
+</ul>
+</li>
+<li>看看你手边档案的章节开头和结尾。每章开头都能马上吸引读者的兴趣吗？每章结尾都有促使读者继续读下去的推手吗？朝这个目标修改。尝试不同的写法，挑选最好的一种。</li>
+<li>还有一个办法能让你更习惯改稿：拿练习一的符号去标示你正在读的小说。如果这套改稿方式有的地方你用不惯，请试着思考为什么；如果有的部分你很喜欢，也试着去想为什么。</li>
+</ul>
+<h1 id="情节模式"><a href="#情节模式" class="headerlink" title="情节模式"></a>情节模式</h1><ul>
+<li>分析几本你最喜欢的小说。你能从每个故事认出一个熟悉的情节模式，还是几个模式的综合体呢？</li>
+<li>分析你选的小说结构，写下每一幕发生的事。</li>
+<li>选择本章其中一个模式，以此为本写出新情节。这时还不用考虑原创性，只要使用你想到的角色，写两三页的叙述。借此感受一下情节模式的结构。</li>
+<li>重复练习三，但这次结合两种模式。</li>
+</ul>
+<h1 id="常见的情节问题及解决办法"><a href="#常见的情节问题及解决办法" class="headerlink" title="常见的情节问题及解决办法"></a>常见的情节问题及解决办法</h1><ul>
+<li>列出你碰到的主要情节问题，请读过你作品的朋友给你一些意见。将最严重的问题摆在前头。利用你从本书和其他地方学到的技巧，确定练习计划，加强你在这些方面的写作能力。</li>
+<li>从你的书架或图书馆找出一本你觉得不成功的小说，重读一次，记下到底为什么不成功。你会怎么改进？如果你不确定，请参考写作教学的书，直到找到答案为止。</li>
+</ul>
+<h1 id="关于情节和结构的建议与工具"><a href="#关于情节和结构的建议与工具" class="headerlink" title="关于情节和结构的建议与工具"></a>关于情节和结构的建议与工具</h1><ul>
+<li>挑一个你不熟悉的小说类型，写一段这类小说的情节摘要。这个练习可以加强你的情节编排能力。</li>
+<li>随着你学会越多的新技巧，请建立自己的写作工具和技巧档案，尽可能积累记录学到的内容。每隔一阵子，请替你收集的技巧写一句短大纲。这样可以在最短的时间内读完你积累的内容。</li>
+</ul>
 ]]></content>
       <categories>
-        <category>计算机</category>
-        <category>前端</category>
+        <category>书籍</category>
+        <category>写作</category>
       </categories>
       <tags>
-        <tag>js</tag>
+        <tag>书籍</tag>
+        <tag>笔记</tag>
+        <tag>写作方法</tag>
       </tags>
   </entry>
   <entry>
@@ -1766,117 +1856,61 @@
       </tags>
   </entry>
   <entry>
-    <title>《这样写出好故事》练习题</title>
-    <url>/2021/01/14/%E8%BF%99%E6%A0%B7%E5%86%99%E5%87%BA%E5%A5%BD%E6%95%85%E4%BA%8B%E7%BB%83%E4%B9%A0%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>书名：《这样写出好故事》<br>作者：[美]詹姆斯·斯科特·贝尔。<br>译者：苏雅薇</p>
-<p>作者以他的写作经验写了一本写作指导书，详实的描述了如何写一本结构完整、有吸引力的商业小说。完成了如何想出好的写作点子、如何编排情节、如何吸引读者的手把手教学。</p>
-<p>本部分收集了每章结束的练习。<br><a href="/2021/01/15/这样写出好故事笔记/" title="《这样写出好故事》笔记">《这样写出好故事》笔记</a></p>
-<h1 id="所以情节到底是什么——搭建小说的骨架"><a href="#所以情节到底是什么——搭建小说的骨架" class="headerlink" title="所以情节到底是什么——搭建小说的骨架"></a>所以情节到底是什么——搭建小说的骨架</h1><ul>
-<li>排定十分钟不受干扰的写作时间。在这段时间内，写一篇短文回答下列问题：读者读我的小说时，我希望他们能感到<code>_______</code>，因为对我来说，小说就是<code>_______</code>。<br>不要多想，发自肺腑地写。<br>写完之后，分析一下你的短文。从中看来，你更喜欢什么样的情节呢？你怀疑情节的重要性吗？你对“虚无缥缈”的文学小说比较有兴趣吗？如果是的话，想想假如你学会一些情节编排技巧，可以替作品增色多少。</li>
-<li>拿几本你最喜欢的小说，用LOCK系统分析，研究每项元素在你喜爱的书中如何发挥作用。你可以参考下列问题：<br>·主角为什么吸引你？<br>·主角想要追求或逃离什么？<br>·故事什么时候进入“高潮”？<br>·主角追求目标时，面对的主要障碍是什么？<br>·看完结局你感觉如何？为什么这个结局很棒？</li>
-<li>为你现在想到的点子写下简单的情节。写四句，每句提一个LOCK系统的元素。<br>·我的主角是<code>_______</code><br>·他的目标是<code>_______</code><br>·他遭到<code>_______</code>的阻挠，对手阻挠他的原因是<code>_______</code>。<br>·结尾非常冲击，因为<code>_______</code><br>等你填满空格，你就写出了一本骨架扎实的小说。接下来这本书会协助你把骨架发展成完整的作品。</li>
-<li>从你读过的小说中，挑选一系列你喜欢的“调味料”。特别注意：<br>·独特的设定<br>·多层次的角色<br>·铿锵有力的对话<br>·极具影响力的场景<br>当你看到这些元素，请分析它们为什么有用？作者用了哪些技巧？</li>
-</ul>
-<h1 id="结构：稳固你的情节——推动情节发展的事件"><a href="#结构：稳固你的情节——推动情节发展的事件" class="headerlink" title="结构：稳固你的情节——推动情节发展的事件"></a>结构：稳固你的情节——推动情节发展的事件</h1><ul>
-<li>分析一些小说或电影，研究这些作品的三幕结构。特别注意：</li>
-</ul>
+    <title>获取表单数据</title>
+    <url>/2021/04/03/%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E6%95%B0%E6%8D%AE/</url>
+    <content><![CDATA[<h1 id="使用-js-获取表单数据"><a href="#使用-js-获取表单数据" class="headerlink" title="使用 js 获取表单数据"></a>使用 js 获取表单数据</h1><p>使用 js 提供的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FormData" target="_blank" rel="noopener">FormData</a> 来获取表单数据。</p>
 <ol>
-<li>扰乱事件</li>
-<li>两扇无法折返的门</li>
+<li>获取表单 <code>const form = document.querySelector(&quot;#myForm&quot;)</code></li>
+<li>创建一个 FormData 对象 <code>let formData = new FormData(form)</code></li>
+<li>for 循环遍历 FormData.entires() 获取所有的 key、value <code>for(let [key, value] of formData.entires()){}</code> . formData.entires() 每一项分别是 <code>item[0]</code> 和 <code>item[1]</code>, 给它们赋值为 key 和 value。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function getFormDataWithJs() &#123;</span><br><span class="line">  const form = document.querySelector(&quot;form&quot;);</span><br><span class="line">  let formData = new FormData(form);</span><br><span class="line">  let data = [] // 这里不能用 hash 存否则多选框的多个值会被覆盖掉</span><br><span class="line">  for (let [key, value] of formData.entries()) &#123;</span><br><span class="line">    let item=&#123;&#125;;</span><br><span class="line">    item[key] = value</span><br><span class="line">    data.push(item)</span><br><span class="line">  &#125;</span><br><span class="line">  return data</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<ul>
-<li>画出你的情节结构简图。想出一件扰乱事件，还有那成为两扇门的事件，把事件摘要写下来，再稍加变化，变成独特又吸引人的桥段。</li>
-</ul>
-<h1 id="如何“头脑风暴”情节点子——如何发现好的小说题材"><a href="#如何“头脑风暴”情节点子——如何发现好的小说题材" class="headerlink" title="如何“头脑风暴”情节点子——如何发现好的小说题材"></a>如何“头脑风暴”情节点子——如何发现好的小说题材</h1><ul>
-<li>本周挑两个方法来想点子，每个方法至少预留一小时写作时间，好好练习。</li>
-<li>从练习一的成果中，挑出你最喜欢的点子。你和你的点子有足够的热情、潜能和精准度，能让你继续写下去吗？</li>
-<li>每个月花几个小时来想点子。随时注意周遭可能出现的点子，勤记笔记，搜集新闻简报。每个月检查一次你的点子，开始培养。</li>
-</ul>
-<h1 id="强劲的开头——如何写好故事的开头"><a href="#强劲的开头——如何写好故事的开头" class="headerlink" title="强劲的开头——如何写好故事的开头"></a>强劲的开头——如何写好故事的开头</h1><ul>
-<li>重新审视你正在写的小说的第一章。你会使用什么技巧从第一段开始就吸引读者的注意？你有建立动感吗？</li>
-<li>你的故事发生在什么世界？你对这个世界有多了解？你要如何不靠一大段的描述，让读者感受到这个世界的细节？</li>
-<li>你怎么介绍主角出场？你的主角为什么令人难忘？<br>在下面四个类别中，分别替你的主角想出5个答案。<ol>
-<li>认同。如何让读者对你的主角产生认同感，主角哪些地方“像我们”？</li>
-<li>同情。想想主角的（实质或精神上的）危机、困难、弱者处境和脆弱感。</li>
-<li>喜爱。他机智吗？关心别人吗？</li>
-<li>内心冲突。主角脑中有哪两个对立的“声音”？</li>
-</ol>
-</li>
-<li>主角所在的日常世界遭到什么事物的干扰？哪些改变会造成连带影响？</li>
-<li>给对手反抗主角的正当理由。<br>你要如何从对手的角度，合理解释他的作为？他的过去能解释他现在的为人吗？他有哪些特质很有魅力、吸引人，甚至令人着迷呢？</li>
-</ul>
-<h1 id="中段"><a href="#中段" class="headerlink" title="中段"></a>中段</h1><ul>
-<li>决定如果你的主角无法达成目标，会面临哪种实际、心理或职业生涯的死亡。如果你答不上来，先自问主角的目标是否真的密切影响他的命运，然后设法提升目标的重要性，让读者了解为何主角一定要达成目标。</li>
-<li>深入描写对手角色，自问“为什么我这么喜欢这个角色？”，你有替他的行为想好合理的解释吗？他有比主角强，或至少跟主角一样强吗？如果没有，请赶快让他变强。</li>
-<li>从你的小说中挑一个充满紧张冲突的场景，将情绪最紧绷的段落独立出来。这部分可能有几段或几页，但不论长短，都请试着拉长紧张段落的长度。使用本章建议的每个方法。一两天后，再回来读这个场景，你从头到尾都觉得很有趣吗？必要时你当然可以删掉增加的内容，不过通常你会发现这样一改，反而增添了阅读的乐趣。</li>
-<li>你的小说中，角色要付出哪些代价？请考虑每个层面——情节、角色和社会，并把没有用到的类型加入故事中。同时想想在情节发展的过程中，你能如何把每种代价提升到极限。</li>
-<li>重读一本你觉得失败的小说。把自己当做编辑，依照本章的内容，寻找可以改进的地方。接着写一封信给作者，建议他可以做哪些改变。不用真的寄出去。</li>
-</ul>
-<h1 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h1><ul>
-<li>重读你最喜欢的小说最后几章，并分析每个结局。结局明确吗？结果正向还是负面？有没有意外转折？为什么你觉得这个结局好？如此分析能协助你了解自己的写作偏好。</li>
-<li>你为你的小说想了什么结局？试着写下结尾的高潮场景。最终你未必要用这个场景，但这个联系能促使你思考结局，让你更加深入了解角色。可以将得到的信息运用在作品中。</li>
-<li>想出两三种替代结局。首先列出十种可能，每种各写一行。接着挑出两三个最有潜力的选项，写出结尾场景摘要（500字以内）。如果替代结尾感觉比原先的版本更有冲击，那就用吧。把原本的结局当做最后可能的转折，或者保留原先的结局，将替代结局之一当成可能的转折。</li>
-<li>列出你的小说中所有没收好的梗。可以边写边做，每次埋梗时，在另一个档案里做记录。想好策略，利用情节发展、配角或报纸报道把这些四散的梗收好。</li>
-</ul>
-<h1 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h1><ul>
-<li>从书柜上随便拿起一本小说，翻开一个场景开始读。请分析：<ol>
-<li>这是行动场景吗？找出你在何处得知角色在这个场景的目标，以及他面临的冲突。场景如何结束？你会想继续读吗？为什么？</li>
-<li>这主要是反应场景吗？角色感到了什么情绪？作者如何展现角色的情绪？场景结束时，角色决定要怎么办了吗？角色有所转变吗？变得坚强，还是软弱？</li>
-</ol>
-</li>
-<li>找一个行动场景，使用紧张程度表，画出场景的紧张程度。<br><img src="https://i.loli.net/2021/01/14/oRDbhOg6C58ELZd.png" alt="无标题1.png"></li>
-<li>检视你写的一个章节，分析其中的引子、紧张程度和结尾推手。你能如何把每一项写得更好？</li>
-</ul>
-<h1 id="复杂的情节"><a href="#复杂的情节" class="headerlink" title="复杂的情节"></a>复杂的情节</h1><ul>
-<li>在纸上画三栏。第一栏记下场景中突出的丰富细节，第二栏列出主要角色，最后一栏记录重要的地点。接着开始寻找每一栏之间的联结，将某项细节跟角色和地点连在一起，或者倒过来，从地点去联想角色和细节。挑出最强的两三组联结，试着融入情节中，当做象征或主题。</li>
-<li>决定你的小说要讲述的主旨价值，用一句话写出来。在编写情节的任何阶段都可以做这项练习，如果你很早就想好，那发展场景时可别忘了。千万注意别显得太刻意，你的信息一定要自然呈现。</li>
-<li>听音乐也是替小说想画面的良方。先放松，深呼吸，然后播放让你感动的音乐，可能是电影配乐、古典音乐或爵士。不要选有歌词的曲子。沉浸在隐约之中，闭上眼睛，让画面甚至是场景自动出现在你的想象当中。然后停下来，把想到的画面场景记在纸上或计算机上。写作过程中，你可以不时重复这项练习。</li>
-</ul>
-<h1 id="情节中的角色弧线"><a href="#情节中的角色弧线" class="headerlink" title="情节中的角色弧线"></a>情节中的角色弧线</h1><ul>
-<li>从你喜欢的小说中，挑一本主角发生重大转变的作品来分析。《圣诞颂歌》就是经典范例。以双线标出主角生命中受到严重挑战的段落，然后在上述事件影响角色转变的段落打钩。</li>
-<li>写一段小说简介，描述你的主角在故事刚开始时的个性。请描述他的：<ul>
-<li>理念</li>
-<li>价值观</li>
-<li>主要态度</li>
-<li>看法<br>接着问问自己，情节中会发生什么事，能改变或挑战主角的上述特质？</li>
-</ul>
-</li>
-<li>制作你的角色弧线表。在第一列填入改变角色内心世界的主要事件，下方的空格则描述角色发生了什么事。<br><img src="https://i.loli.net/2021/01/15/S7Y5iusVCpqtkAB.png" alt="1RPTYTUE0SB_GOVN`M@Z7_5.png"></li>
-</ul>
-<h1 id="修改你的情节"><a href="#修改你的情节" class="headerlink" title="修改你的情节"></a>修改你的情节</h1><ul>
-<li>为了体验改稿的过程，请将你正在写的两三章打印出来。读一遍，在页缘画下下列记号：<ul>
-<li>如果你觉得情节拖沓，就打个钩。</li>
-<li>用括号标出看不懂的句子。</li>
-<li>你觉得某一段可能需要增加内容，就在边边画个圈。也许你想拉长紧张感，或者让情节别那么断断续续。</li>
-<li>你觉得某一段可能需要删减，就画个问号。这段可能是过长的解释场景，或者你“说明”太多却没有“展示”。</li>
-</ul>
-</li>
-<li>看看你手边档案的章节开头和结尾。每章开头都能马上吸引读者的兴趣吗？每章结尾都有促使读者继续读下去的推手吗？朝这个目标修改。尝试不同的写法，挑选最好的一种。</li>
-<li>还有一个办法能让你更习惯改稿：拿练习一的符号去标示你正在读的小说。如果这套改稿方式有的地方你用不惯，请试着思考为什么；如果有的部分你很喜欢，也试着去想为什么。</li>
-</ul>
-<h1 id="情节模式"><a href="#情节模式" class="headerlink" title="情节模式"></a>情节模式</h1><ul>
-<li>分析几本你最喜欢的小说。你能从每个故事认出一个熟悉的情节模式，还是几个模式的综合体呢？</li>
-<li>分析你选的小说结构，写下每一幕发生的事。</li>
-<li>选择本章其中一个模式，以此为本写出新情节。这时还不用考虑原创性，只要使用你想到的角色，写两三页的叙述。借此感受一下情节模式的结构。</li>
-<li>重复练习三，但这次结合两种模式。</li>
-</ul>
-<h1 id="常见的情节问题及解决办法"><a href="#常见的情节问题及解决办法" class="headerlink" title="常见的情节问题及解决办法"></a>常见的情节问题及解决办法</h1><ul>
-<li>列出你碰到的主要情节问题，请读过你作品的朋友给你一些意见。将最严重的问题摆在前头。利用你从本书和其他地方学到的技巧，确定练习计划，加强你在这些方面的写作能力。</li>
-<li>从你的书架或图书馆找出一本你觉得不成功的小说，重读一次，记下到底为什么不成功。你会怎么改进？如果你不确定，请参考写作教学的书，直到找到答案为止。</li>
-</ul>
-<h1 id="关于情节和结构的建议与工具"><a href="#关于情节和结构的建议与工具" class="headerlink" title="关于情节和结构的建议与工具"></a>关于情节和结构的建议与工具</h1><ul>
-<li>挑一个你不熟悉的小说类型，写一段这类小说的情节摘要。这个练习可以加强你的情节编排能力。</li>
-<li>随着你学会越多的新技巧，请建立自己的写作工具和技巧档案，尽可能积累记录学到的内容。每隔一阵子，请替你收集的技巧写一句短大纲。这样可以在最短的时间内读完你积累的内容。</li>
-</ul>
+<h1 id="使用-jquery-获取表单数据"><a href="#使用-jquery-获取表单数据" class="headerlink" title="使用 jquery 获取表单数据"></a>使用 jquery 获取表单数据</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function getFormDataWithJquery() &#123;</span><br><span class="line">  // $(&quot;#myForm&quot;).serialize() get a string</span><br><span class="line">  return $(&quot;#myForm&quot;).serializeArray()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><a href="https://codesandbox.io/s/getformdata-bksx0?file=/src/index.js" target="_blank" rel="noopener">获取表单信息的 demo</a></p>
 ]]></content>
       <categories>
-        <category>书籍</category>
-        <category>写作</category>
+        <category>计算机</category>
+        <category>前端</category>
       </categories>
       <tags>
-        <tag>书籍</tag>
-        <tag>笔记</tag>
-        <tag>写作方法</tag>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>脚本编程基础知识</title>
+    <url>/2018/01/08/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<h2 id="你以为什么是脚本？"><a href="#你以为什么是脚本？" class="headerlink" title="你以为什么是脚本？"></a>你以为什么是脚本？</h2><p>&emsp;&emsp;不知道你有没有接触过高级编程语言，比如C、C++、Java等，这些语言的执行通常需要经过编写-编译-链接-运行等过程，而脚本语言则不然。一个脚本通常是解释运行而非编译。<br>&emsp;&emsp;我们在维基百科上搜Script（脚本），得到的结果有两个——剧本和脚本程序。虽然说两个是不一样的东西，但依然是可以放在一起理解的。所谓的剧本，就是演员照着一步一步做的东西。比如下边的这一段<br><img src="https://raw.githubusercontent.com/wenchuyang/ImagesForMarkdown/856d1eae45643b8a5af8bc9aea027822b53a007a/images/90%600S%40Z14FH3WGF%7D~NURDVQ.png" alt><br>&emsp;&emsp;而我们编程领域的脚本程序不是给人照着做的，而是给计算机照着做的。你输入指令，让计算机能够看懂，然后计算机为你一步一步执行这些指令。</p>
+<h2 id="让我们来试着写一个脚本？"><a href="#让我们来试着写一个脚本？" class="headerlink" title="让我们来试着写一个脚本？"></a>让我们来试着写一个脚本？</h2><ol>
+<li>进入一个目录，然后新建脚本文件，一般脚本文件的后缀是.sh，但是它并没有什么用。在Windows下文件的后缀名决定着该文件的默认打开方式，但在命令行下，打开方式是我们手动指定的，比如<code>vim demo.txt</code>或者<code>open -a &#39;Google Chrome&#39; demo.txt</code>都是可以的。所以命令行下我们写后缀主要还是给我们自己看，让我们自己一眼就知道这个文件是个什么文件。<br>&emsp;&emsp;我们在/f/wcy/local文件目录下建立一个demo.sh文件。</li>
+<li><p>编辑demo.sh文件。<code>vim demo.sh</code>(当然，你也可以用其他方式打开然后编辑。或者你也可以写下其他的脚本代码。)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir demo //新建一个名为demo的目录</span><br><span class="line">cd demo //进入demo这个目录</span><br><span class="line">mkdir css js //新建两个文件夹css和js</span><br><span class="line">touch index.html css/style.css js/main.js //新建三个文件</span><br><span class="line">exit //退出</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>（Windows不需要）给demo.sh添加执行权限<code>chmod +x demo.sh</code></p>
+</li>
+<li>在你需要执行该脚本的目录执行<code>sh /f/wcy/local/demo.sh</code>，然后你就可以在当前目录看到你需要的demo文件夹以及里边你使用脚本创建的文件了。</li>
+<li>事实上，你可以现在结束这篇文章，因为你已经成功地运行了一个你自己写的脚本。但是，作为一名程序员，你还需要知道一些其他的东西。比如——把你的脚本文件目录添加到path中。<br>&emsp;&emsp;玩过java的应该对path都不会太陌生，虽然可能并不能理解path的含义，但是多少都应该是听过的。这里我不想太深入写，只能说，path里边可以写一堆目录，我们每次输入命令的时候都会依次在这些目录里边查找有没有同名的文件，如果有就执行。<br>&emsp;&emsp;type命令可以显示这个查找的过程。which命令可以告诉你查询最终的结果是什么，比如<code>which mkdir</code>在我这边执行的结果就是<code>/usr/bin/mkdir</code>。在计算机当中，所有的命令都是可执行文件，也就是，脚本。计算机中不可执行的文件是配置文件，就是我们常说的config文件。<br>&emsp;&emsp;以上，我们只需要把/f/wcy/local（请修改成你的脚本文件存在的目录）添加到<code>~/.bashrc</code>（这个文件不解释了，以前解释过。<a href="http://blog.csdn.net/writing_happy/article/details/78686739" target="_blank" rel="noopener">常见问题合集，修改bash命令路径下有这个文件的作用</a>，事实上你可以不用了解。）<br>&emsp;&emsp;先进入local目录，输入<code>pwd</code>得到它的绝对路径。然后<code>touch ~/.bashrc</code>创建.bashrc文件。接着打开文件，在最后一行添加<code>export PATH=&quot;local的绝对路径:$PATH&quot;</code>。然后<code>source ~/.bashrc</code>。成功。之前你需要运行<code>sh /f/wcy/local/demo.sh</code>而现在你可以不需要输入路径直接运行<code>sh demo.sh</code>了。</li>
+<li>仅仅是创建一个名为demo的文件夹会不会太单调了呢？让我们来加个参数吧！<br>&emsp;&emsp;在bash里边，$1表示第一个参数，别问我怎么知道的，自己搜去。你只需要看懂下边的代码就好了，有需要的功能再去搜索。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir $1</span><br><span class="line">cd $1</span><br><span class="line">mkdir css js</span><br><span class="line">touch index.html css/style.css js/main.js</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>&emsp;&emsp;现在，你可以运行<code>sh demo.sh aa</code>来创建一个名为aa的文件夹了。</p>
+<ol start="7">
+<li><p>如果说我已经创建过一个名为aa的文件夹，然后又来运行<code>sh demo.sh aa</code>呢？显而易见，它是会报错的。那么我们能不能不让它报那么难看的错，给用户一个提示信息呢？是的，加一个判断。如果这个文件存在，那么就让它输出”The directory is already exist!”，如果不存在那就创建。所以，你可以Google一下bash脚本的if语句怎么用。这里是代码。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if [ -d $1 ]; then</span><br><span class="line">  echo &apos;The directory is already exist!&apos;</span><br><span class="line">  exit 1 //表示程序运行出错，错误代码为1</span><br><span class="line">else</span><br><span class="line">  mkdir $1</span><br><span class="line">  cd $1</span><br><span class="line">  mkdir css js</span><br><span class="line">  touch index.html css/style.css js/main.js</span><br><span class="line">  echo &apos;success&apos;</span><br><span class="line">  exit 0 //表示0个错误</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>是的，经过上述步骤基本已经完成了一个小脚本案例了。我们最后来进行测试环节。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sh demo.sh aa &amp;&amp; echo &apos;成功&apos; //如果前边的程序执行成功就显示字符串“成功”</span><br><span class="line">sh demo.sh bb || echo &apos;失败&apos; //如果前边的程序返回的是非0，显示“失败”</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="换个node-js脚本玩玩？"><a href="#换个node-js脚本玩玩？" class="headerlink" title="换个node.js脚本玩玩？"></a>换个node.js脚本玩玩？</h2><p>&emsp;&emsp;我们上边写的脚本是Bash Script（Bash脚本），现在，换个我们前端用的js脚本玩玩？基本规则其实都差不多，两个的语法方面略微有一点差别。你想要实现什么功能的话都可以去Google。比如你可以搜索node js change dir，来找到如何在node下转换路径。你也可以进入nodejs官网nodejs.org–&gt;docs–&gt;api直接在里边查，<a href="https://nodejs.org/api/fs.html#fs_fs_mkdirsync_path_mode" target="_blank" rel="noopener">比如文件系统(file system—fs)的一些操作。</a><br><img src="https://raw.githubusercontent.com/wenchuyang/ImagesForMarkdown/5b61dc97261e0b4500a194a722e950116aeef692/images/5ULKJXL4ACL%24YCDQ%24TXKY.png" alt><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">node //先进入node</span><br><span class="line">process.chdir(&apos;F:\\wcy\\local&apos;) //改变系统路径到你需要的目录（这个路径写法是windows下的写法。。。保持微笑不吐槽）</span><br><span class="line">console.log(process.cwd())  //得到当前所处路径并打印出来console.log()相信你不会陌生。</span><br><span class="line">//Ctrl+D退出node环境</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;上边用bash命令我们执行写的是<code>sh demo.sh</code>，如果你省略sh直接写<code>demo.sh</code>依然可以得到你想要的结果。因为系统默认使用sh（即shell）来运行脚本。但到了这里可就不行了。你知道的，文件后缀并不影响，所以如果你依然用shell来执行demo.js文件，显然是有问题的。我们一般会用<code>node demo.js</code>来运行这个文件。如果你想让这个文件默认用node执行，请在文件的第一行加上<code>#!/usr/bin/env node</code>。<br>综上，将上述功能换成js脚本的话，就应该是这样的：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!/usr/bin/env node</span><br><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line">dirName = process.argv[2] // 你传的参数是从第 2 个开始的</span><br><span class="line">if (fs.existsSync(dirName)) &#123;</span><br><span class="line">	console.log(&quot;The file is already exist&quot;);</span><br><span class="line">	process.exit(1);</span><br><span class="line">&#125;</span><br><span class="line">	fs.mkdirSync(&quot;./&quot; + dirName) // mkdir $1</span><br><span class="line">	process.chdir(&quot;./&quot; + dirName) // cd $1</span><br><span class="line">	fs.mkdirSync(&apos;css&apos;) // mkdir css</span><br><span class="line">	fs.mkdirSync(&apos;js&apos;) // mkdir js</span><br><span class="line">	fs.writeFileSync(&quot;./index.html&quot;, &quot;&lt;!DOCTYPE&gt;&lt;title&gt;Hello&lt;/title&gt;&lt;h1&gt;Hi&lt;/h1&gt;&quot;)</span><br><span class="line">	fs.writeFileSync(&quot;css/style.css&quot;, &quot;h1&#123;color: red;&#125;&quot;)</span><br><span class="line">	fs.writeFileSync(&quot;./js/main.js&quot;, &quot;var string = &apos;Hello World&apos; alert(string)&quot;)</span><br><span class="line">	process.exit(0)</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;这里对第三行稍微解释一下，为什么前边bash传的参数算是第一个而后边js算是第二个呢？给一段代码吧，反正我是这样理解的。<code>demo.sh xx</code>，<code>node demo.js xx</code>，从0开始数。</p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>node.js</tag>
       </tags>
   </entry>
 </search>
