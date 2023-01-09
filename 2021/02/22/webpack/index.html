@@ -70,7 +70,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line vab"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.7k</span>
+            <span class="post-count">1.8k</span>
         </span>
     </span>
 
@@ -95,7 +95,7 @@
 <p>或许这样的描述仍然不够清晰，那么不妨想象一下，如果没有 webpack ，会怎么样？<br>如果我们想要在一个项目中使用 sass ， 而 sass 不能被浏览器正确地解析，那么我们是不是需要一个 sass 解析的工具，从而能让我们开发的时候能够使用 sass ？ node-sass 就是用来做这件事情的。<br>ECMA 规范不断地发展，而用户多的时候总有那么些人用的是旧版本的浏览器，为了做兼容我们难道要一直使用旧的属性吗（ <a href="https://caniuse.com/" target="_blank" rel="noopener">Can I use</a> 可以搜索属性是否存在兼容性问题 ）？当然不是。Babel 就是用来解决这个问题的，它可以把我们的新代码重新编译成浏览器能看得懂的代码。<br>如你所见，我们使用新的技术总是会遇见很多的阻力，为了能赶上潮流，我们不得不借助一些工具。而前端的潮流变化太快，工具也变得更多了，那么如果有一种东西，能够集合所有的这些工具，会不会让我们的开发更方便一些？ webpack 就是这样做的。它集成了这些工具，让我们用起来更方便一些。<br>这里我先介绍一下不使用 webpack 的情况，再来讨论如果使用 webpack 的话应该是怎么样的。</p>
 <h1 id="一些工具的使用"><a href="#一些工具的使用" class="headerlink" title="一些工具的使用"></a>一些工具的使用</h1><h2 id="Sass"><a href="#Sass" class="headerlink" title="Sass"></a>Sass</h2><p>Sass 是 Ruby 社区发明的一种 css 语言，使用 Sass 可以使你的 css 写起来更加的简洁，但是浏览器不认识。<br><em><code>*.sass</code> 和 <code>*.scss</code> 都是 Sass 文件， 语法略微不同。<code>*.scss</code> 比 <code>*.sass</code> 多了括号。</em><br>我们需要一个工具来把我们写的 Sass 翻译成浏览器可以识别的 css ，这就是 node-sass。<br>node-sass 给我们提供了一个 <code>-watch</code> 参数，可以实现自动化实时更新，免去了我们每次修改 Sass 文件之后都重新运行编译命令的麻烦。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g node-sass // 全局安装 node-sass</span><br><span class="line">node-sass main.scss main.css  // 将 main.scss 翻译成 main.css</span><br><span class="line">node-sass src/css -o dist/css  // 将 src/css 目录下的所有 Sass 文件 翻译成 css 并输出到 dist/css 目录下</span><br><span class="line">node-sass src/css/main.scss dist/css/main.css -w  // 自动实时翻译</span><br></pre></td></tr></table></figure></p>
 <p>使用 <code>node-sass src/css -o dist/css -w</code> 可以实时监听 <code>src/css</code> 文件夹下所有的 scss 文件的改动并输出到 <code>dist/css</code> 文件夹下。</p>
-<h2 id="Babel"><a href="#Babel" class="headerlink" title="Babel"></a>Babel</h2><p>node-sass 是翻译 sass 的工具，Babel 则是翻译 js 的工具。js 在不断地更新，ES5、ES6，TypeScript，等等，使用 Babel 可以将它们统一翻译为所有浏览器都可以接受的js。<br><a href="https://babeljs.io/docs/en/babel-cli" target="_blank" rel="noopener">Babel官方文档</a></p>
+<h2 id="Babel"><a href="#Babel" class="headerlink" title="Babel"></a>Babel</h2><p>node-sass 是翻译 sass 的工具，Babel 则是翻译 js 的工具。js 在不断地更新，ES5、ES6，TypeScript，等等，使用 Babel 可以将它们统一翻译为所有浏览器都可以接受的 js。<br><a href="https://babeljs.io/docs/en/babel-cli" target="_blank" rel="noopener">Babel官方文档</a></p>
 <ol>
 <li><code>npm init</code> 创建一个合法的 package.json 文件</li>
 <li><code>npx babel main.js --out-file main-compiled.js</code> 使用 <code>npx babel</code> 代替 <code>./node_modules/.bin/babel</code>。<code>--out-file</code> 可以简写为 <code>-o</code>.</li>
@@ -148,6 +148,7 @@
 </li>
 </ol>
 <h3 id="添加实时更新"><a href="#添加实时更新" class="headerlink" title="添加实时更新"></a>添加实时更新</h3><p>在你的 webpack.config.js 文件中添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    watch: true,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="plugin-和-loader-的区别"><a href="#plugin-和-loader-的区别" class="headerlink" title="plugin 和 loader 的区别"></a>plugin 和 loader 的区别</h1><p>loader: 转换器，将一个文件编译成另一个文件，比如将 scss 转换成 css，将 ts 转换成 js 等等，将 webpack 本身不能理解的文件转换成它能够理解的文件。<br>plugin: 相当于一个扩展，在 loader 结束后，对 webpack 打包的生命周期事件进行监听并使用 webpack 提供的一些 API 来改变打包的输出结果。</p>
 <h1 id="todo"><a href="#todo" class="headerlink" title="todo"></a>todo</h1><p>打包工具的发展：grunt -&gt; gulp -&gt; webpack -&gt; parcel? vite?</p>
 <p>webpack 相关面试题, 你对webpack的理解？</p>
 <ol>
@@ -229,6 +230,8 @@
 </div>
 
 <div id="share-mask"></div>  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+
     </footer>
   </div>
 
@@ -263,7 +266,7 @@
     <ul>
       <li>
         Copyrights &copy;
-        2018-2022
+        2018-2023
         <i class="ri-heart-fill heart_icon"></i> 文初阳
       </li>
     </ul>
