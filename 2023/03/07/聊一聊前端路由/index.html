@@ -13,7 +13,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    归档 |  夜落初阳
+    聊一聊前端路由 |  夜落初阳
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -39,246 +39,166 @@
       
     <main class="content on">
       <section class="outer">
-  
-  
-  <article class="articles">
+  <article
+  id="post-聊一聊前端路由"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
     
-    
-    <h1 class="page-type-title">归档</h1>
-    
-    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  聊一聊前端路由
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/03/07/聊一聊前端路由/" class="article-date">
+  <time datetime="2023-03-07T05:56:42.000Z" itemprop="datePublished">2023-03-07</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/计算机/">计算机</a> / <a class="article-category-link" href="/categories/计算机/前端/">前端</a>
+  </div>
   
-  
-  
-  
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2021" class="archive-year">2021</a>
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line vab"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">675</span>
+        </span>
+    </span>
+
+     
+</div>
+ 
     </div>
-    <div class="archives">
       
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/04/17/发布订阅模式的实现/" class="archive-article-date">
-  <time datetime="2021-04-17T15:06:57.000Z" itemprop="datePublished">04/17</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/04/17/发布订阅模式的实现/"
-    >发布订阅模式的实现</a> 
-</h2>
- 
+    <div class="tocbot"></div>
 
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/04/05/react获取元素/" class="archive-article-date">
-  <time datetime="2021-04-05T05:06:37.000Z" itemprop="datePublished">04/05</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/04/05/react获取元素/"
-    >react获取元素</a> 
-</h2>
- 
 
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/04/03/react入门使用/" class="archive-article-date">
-  <time datetime="2021-04-03T08:17:19.000Z" itemprop="datePublished">04/03</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/04/03/react入门使用/"
-    >react入门使用</a> 
-</h2>
- 
 
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/04/03/获取表单数据/" class="archive-article-date">
-  <time datetime="2021-04-03T02:57:10.000Z" itemprop="datePublished">04/03</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/04/03/获取表单数据/"
-    >获取表单数据</a> 
-</h2>
- 
 
-    </header>
-    
-    
-  </div>
-</article>
-      
   
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/04/02/Hooks使用指南/" class="archive-article-date">
-  <time datetime="2021-04-02T04:08:51.000Z" itemprop="datePublished">04/02</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
        
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/04/02/Hooks使用指南/"
-    >Hooks使用指南</a> 
-</h2>
+  <h1 id="闲聊一下"><a href="#闲聊一下" class="headerlink" title="闲聊一下"></a>闲聊一下</h1><p>先说什么是路由，简单一点来讲，你输入一个 url，会拿到一个资源，路由在其中的作用就是，保证你输入特定的 url 拿到的是特定的资源，而不是胡乱分配的。<br>服务器就像一个资源池，url 里域名的作用是找到这个资源池，然后斜杠后面才是具体这个资源池里面的内容。早期路由的匹配是完全由后端控制的，url 上请求这个资源池里的什么东西，后端就返回对应的资源到浏览器。但是在这种情况下，每次我进入到一个新的页面，就会有浏览器的刷新。<br>前端路由应运而生。前端路由让页面的跳转只在前端做操作，不需要服务器返回给我们全新的资源文件，实现无刷新的页面跳转。<br>一开始的前端路由是基于 <code>#</code> 的 hash，在路由后面加上 <code>#</code> 不会重新请求服务器，而前端代码通过不同的 hash 值来判断显示不同的页面，这样就实现了简单的前端路由。在 <code>#</code> 后面的内容发生改变的时候，会触发一个 hashchange 事件，前端代码给这个 hashchange 事件添加监听函数，在监听函数内部做路由匹配，简单来讲就是：当你匹配到 <code>#aaa</code> 的时候，给它返回 <code>aaa.html</code>；当你匹配到 <code>#bbb</code> 的时候，给它返回 <code>bbb.html</code>。这样的步骤从后端转向了前端。<br>而由于 <code># + 实际路由</code> 的丑陋，在 2014 年 HTML5 技术的提出后，<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/History" target="_blank" rel="noopener">History</a> 成了我们常用的方式。<br>window.history 对象提供了 pushState 方法，让开发者可以在修改 url 的时候避免页面刷新问题。而这种方法需要后端的支持，后端需要把所有不明意义的 url 重定向到首页，交给前端来处理而不是让浏览器自动识别为 404。</p>
+<h1 id="两种路由总结"><a href="#两种路由总结" class="headerlink" title="两种路由总结"></a>两种路由总结</h1><ol>
+<li>hash 模式，可以通过 window.location.hash 来改变 url，通过 hashchange 事件监听 url 的改动来做页面展示的处理。<a href="https://codesandbox.io/s/hashrouter-xkit9x" target="_blank" rel="noopener">demo 点这里</a>。</li>
+<li>history 模式，在用户点击页面按钮的时候使用 window.history.pushState(null, ‘’, ‘url’) 修改 url，同时对页面的展示进行处理；添加页面 onload 事件在用户主动修改 url 的时候通过判断 window.location.pathname 来对页面的展示进行处理。<a href="https://codesandbox.io/s/historyrouter-qpsexw" target="_blank" rel="noopener">demo 点这里</a>。</li>
+</ol>
+<p>另，结合 react 看前端路由可以看我的另一篇博客 <a href="/2021/03/29/ReactRouter使用指南/" title="ReactRouter使用指南">ReactRouter使用指南</a></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://github.com/hwen/blogSome/issues/2" target="_blank" rel="noopener">前端路由的前生今世及实现原理</a></p>
  
-
-    </header>
-    
-    
-  </div>
-</article>
+      <!-- reward -->
       
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/03/30/react生命周期/" class="archive-article-date">
-  <time datetime="2021-03-30T13:54:20.000Z" itemprop="datePublished">03/30</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/03/30/react生命周期/"
-    >react生命周期</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/03/29/ReactRouter使用指南/" class="archive-article-date">
-  <time datetime="2021-03-29T10:32:56.000Z" itemprop="datePublished">03/29</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/03/29/ReactRouter使用指南/"
-    >ReactRouter使用指南</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/03/29/Context使用指南/" class="archive-article-date">
-  <time datetime="2021-03-29T08:41:06.000Z" itemprop="datePublished">03/29</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/03/29/Context使用指南/"
-    >Context使用指南</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/03/27/redux使用指南/" class="archive-article-date">
-  <time datetime="2021-03-27T03:40:47.000Z" itemprop="datePublished">03/27</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/03/27/redux使用指南/"
-    >redux使用指南</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/03/26/任意组件通信/" class="archive-article-date">
-  <time datetime="2021-03-26T09:00:52.000Z" itemprop="datePublished">03/26</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/03/26/任意组件通信/"
-    >任意组件通信</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
       
     </div>
-  </div>
-  
-  
-
-  
-  <nav class="page-nav">
     
-    <a class="extend prev" rel="prev" href="/archives/">上一页</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/3/">下一页</a>
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2023/03/07/聊一聊前端路由/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/router/">router</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2023/03/11/React父组件调用子组件方法/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            React父组件调用子组件方法
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2023/03/06/webpack面试题/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">webpack面试题</div>
+      </a>
+    
   </nav>
+
   
+   
+     
+</article>
+
 </section>
       <footer class="footer">
   <div class="outer">
@@ -414,6 +334,21 @@
     <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/lazyload.min.js"></script>
 <!-- Tocbot -->
+
+<script src="/js/tocbot.min.js"></script>
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
